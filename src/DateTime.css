@@ -1,0 +1,9 @@
+.datetime {
+    padding: 20px;
+    color: white;
+}
+
+
+.datetime__time {
+    font-size: 3.6em !important;
+}
