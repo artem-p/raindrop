@@ -5,7 +5,9 @@ import DateTime from './DateTime';
 function App() {
   return (
     <div className="app">
-      <DateTime />
+      <div className="datetime-container">
+        <DateTime />
+      </div>
     </div>
   );
 }
