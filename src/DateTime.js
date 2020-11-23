@@ -17,6 +17,7 @@ function DateTime() {
     return (
         <div className="datetime">
             <h1 className="datetime__time">{date.toLocaleTimeString()}</h1>
+            <h1 className="datetime__date">{date.toLocaleDateString()}</h1>
         </div>
     )
 }
