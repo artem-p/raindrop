@@ -6,3 +6,5 @@ const requests = {
     fetchCurrentWeather: `weather?q=${city}&appid=${API_KEY}`,
     fetchForecast: `forecast?q=${city}&appid=${API_KEY}`
 }
+
+export default requests;

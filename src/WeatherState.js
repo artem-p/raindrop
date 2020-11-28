@@ -6,7 +6,7 @@ function WeatherState() {
     return (
         <div className='weather'>
             <div className="weather__icon">
-                <i class="wi wi-night-sleet"></i>
+                <i className="wi wi-night-sleet"></i>
             </div>
 
             <div className="weather__temperature">3 °С</div>
