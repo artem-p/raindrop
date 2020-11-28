@@ -10,6 +10,8 @@ function App() {
       <div className="datetime-container">
         <DateTime />
       </div>
+
+      <WeatherState />
     </div>
   );
 }

@@ -1,0 +1,6 @@
+.weather-state {
+    color: white;
+    font-size: 12em;
+    display: flex;
+    justify-content: center;
+}
