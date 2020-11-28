@@ -2,7 +2,7 @@ import './App.css';
 import './DateTime';
 import DateTime from './DateTime';
 import WeatherState from './WeatherState';
-
+import Wind from './Wind.js';
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
       </div>
 
       <WeatherState />
+      <Wind />
     </div>
   );
 }

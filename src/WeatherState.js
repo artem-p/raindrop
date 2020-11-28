@@ -9,7 +9,7 @@ function WeatherState() {
                 <i class="wi wi-night-sleet"></i>
             </div>
 
-            <div className="weather__temperature">5 °С</div>
+            <div className="weather__temperature">3 °С</div>
         </div>
     )
 }
