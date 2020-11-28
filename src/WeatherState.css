@@ -1,6 +1,15 @@
-.weather-state {
+.weather {
     color: white;
-    font-size: 12em;
     display: flex;
     justify-content: center;
+    align-items: baseline;
+}
+
+.weather__icon {
+    font-size: 12em;
+}
+
+.weather__temperature {
+    margin-left: 30px;
+    font-size: 6em;
 }

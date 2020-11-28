@@ -4,8 +4,12 @@ import './WeatherState.css';
 
 function WeatherState() {
     return (
-        <div className='weather-state'>
-            <i class="wi wi-night-sleet"></i>
+        <div className='weather'>
+            <div className="weather__icon">
+                <i class="wi wi-night-sleet"></i>
+            </div>
+
+            <div className="weather__temperature">5 °С</div>
         </div>
     )
 }
