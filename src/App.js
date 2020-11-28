@@ -28,7 +28,7 @@ function App() {
         <DateAndTime />
       </div>
 
-      <WeatherState />
+      <WeatherState temp={currentWeather?.main?.temp}/>
       <Wind />
     </div>
   );
