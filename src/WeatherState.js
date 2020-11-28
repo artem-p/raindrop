@@ -4,6 +4,7 @@ import './WeatherState.css';
 
 function WeatherState({ temp }) {
     return (
+        todo icons here https://gist.github.com/tbranyen/62d974681dea8ee0caa1
         <div className='weather'>
             <div className="weather__icon">
                 <i className="wi wi-night-sleet"></i>
