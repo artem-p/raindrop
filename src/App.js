@@ -1,6 +1,6 @@
 import './App.css';
 import './DateTime';
-import DateTime from './DateTime';
+import DateAndTime from './DateTime';
 import WeatherState from './WeatherState';
 import Wind from './Wind.js';
 
@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="app">
       <div className="datetime-container">
-        <DateTime />
+        <DateAndTime />
       </div>
 
       <WeatherState />
