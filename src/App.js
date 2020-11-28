@@ -29,7 +29,7 @@ function App() {
       </div>
 
       <WeatherState temp={currentWeather?.main?.temp}/>
-      <Wind />
+      <Wind dir={currentWeather?.wind?.deg} speed={currentWeather?.wind?.speed}/>
     </div>
   );
 }
