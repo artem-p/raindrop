@@ -16,8 +16,12 @@ function App() {
       const request = await api.get(requests.fetchCurrentWeather);
       setCurrentWeather(request.data);
     }
-
+    
     fetchCurrentWeather();
+
+    const requestInterval = setInterval(fetchCurrentWeather, 60000 * 5);
+    
+    return () => clearInterval(requestInterval);
   }, [])
 
   console.log(currentWeather);
