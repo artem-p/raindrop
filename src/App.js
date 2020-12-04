@@ -6,6 +6,7 @@ import WeatherState from './WeatherState';
 import Wind from './Wind.js';
 import api from './api';
 import requests from './requests';
+import Forecast from './Forecast';
 
 
 function App() {
