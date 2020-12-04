@@ -32,7 +32,10 @@ function App() {
       <DateAndTime />
 
       <WeatherState weatherCode={currentWeather?.weather ? currentWeather?.weather[0]?.id : null} temp={currentWeather?.main?.temp}/>
+
       <Wind dir={currentWeather?.wind?.deg} speed={currentWeather?.wind?.speed}/>
+
+      <Forecast />
     </div>
   );
 }
