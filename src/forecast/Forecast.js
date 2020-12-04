@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react';
+import api from '../api';
+import requests from '../requests';
 import './Forecast.css';
-import api from './api';
-import requests from './requests';
+import ForecastElement from './ForecastElement';
+
 
 function Forecast() {
     const [forecast, setForecast] = useState({});
@@ -24,7 +26,14 @@ function Forecast() {
 
     return (
         <div className='forecast'>
-            
+            <ForecastElement />
+            <ForecastElement />
+            <ForecastElement />
+            <ForecastElement />
+            <ForecastElement />
+            <ForecastElement />
+            <ForecastElement />
+            <ForecastElement />
         </div>
     )
 }
