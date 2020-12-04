@@ -26,14 +26,14 @@ function Forecast() {
 
     return (
         <div className='forecast'>
-            <ForecastElement />
-            <ForecastElement />
-            <ForecastElement />
-            <ForecastElement />
-            <ForecastElement />
-            <ForecastElement />
-            <ForecastElement />
-            <ForecastElement />
+            <ForecastElement temp={273.15}/>
+            <ForecastElement temp={273.15}/>
+            <ForecastElement temp={273.15}/>
+            <ForecastElement temp={273.15}/>
+            <ForecastElement temp={273.15}/>
+            <ForecastElement temp={273.15}/>
+            <ForecastElement temp={273.15}/>
+            <ForecastElement temp={273.15}/>
         </div>
     )
 }
