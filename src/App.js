@@ -29,13 +29,18 @@ function App() {
 
   return (
     <div className="app">
-      <DateAndTime />
+      <div className="app__top">
 
-      <WeatherState weatherCode={currentWeather?.weather ? currentWeather?.weather[0]?.id : null} temp={currentWeather?.main?.temp}/>
+        <DateAndTime />
 
-      <Wind dir={currentWeather?.wind?.deg} speed={currentWeather?.wind?.speed}/>
+        <WeatherState weatherCode={currentWeather?.weather ? currentWeather?.weather[0]?.id : null} temp={currentWeather?.main?.temp}/>
 
-      <Forecast />
+        <Wind dir={currentWeather?.wind?.deg} speed={currentWeather?.wind?.speed}/>
+      </div>
+
+      <div className="app__bottom">
+        <Forecast />
+      </div>
     </div>
   );
 }
