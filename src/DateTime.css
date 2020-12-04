@@ -1,3 +1,8 @@
+.datetime-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .datetime {
     padding: 20px;
     color: white;

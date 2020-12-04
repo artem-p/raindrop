@@ -17,9 +17,11 @@ function DateAndTime() {
 
 
     return (
-        <div className="datetime">
-            <h1 className="datetime__time">{date.toLocaleString(DateTime.TIME_SIMPLE)}</h1>
-            <h1 className="datetime__date">{date.toLocaleString(DateTime.DATE_MED_WITH_WEEKDAY)}</h1>
+        <div className="datetime-container">
+            <div className="datetime">
+                <h1 className="datetime__time">{date.toLocaleString(DateTime.TIME_SIMPLE)}</h1>
+                <h1 className="datetime__date">{date.toLocaleString(DateTime.DATE_MED_WITH_WEEKDAY)}</h1>
+            </div>
         </div>
     )
 }
