@@ -16,7 +16,6 @@ function WeatherState({ weatherCode, temp }) {
     const iconClass = iconPrefix + icon;
 
     return (
-        // todo icons here https://gist.github.com/tbranyen/62d974681dea8ee0caa1
         <div className='weather'>
             <div className="weather__icon">
                 <i className={iconClass}></i>
