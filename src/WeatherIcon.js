@@ -15,7 +15,7 @@ function WeatherIcon( {weatherCode} ) {
     const iconClass = iconPrefix + icon;
 
     return (
-        <div>
+        <div className="WeatherIcon">
             <i className={iconClass}></i>
         </div>
     )
