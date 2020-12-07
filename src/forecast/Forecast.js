@@ -23,17 +23,19 @@ function Forecast() {
     
       console.log(forecast);
     
+    const getForecasts = () => {
+      if (forecast && forecast.list && forecast.list.length > 0) {
+        const forecasts = forecast.list.slice(0, 7);
+        
+        return forecasts.map((forecastElement) => {
+          return <ForecastElement temp={forecastElement.main.temp}/>
+        })
+      }
+    }
 
     return (
         <div className='forecast'>
-            <ForecastElement temp={273.15}/>
-            <ForecastElement temp={273.15}/>
-            <ForecastElement temp={273.15}/>
-            <ForecastElement temp={273.15}/>
-            <ForecastElement temp={273.15}/>
-            <ForecastElement temp={273.15}/>
-            <ForecastElement temp={273.15}/>
-            <ForecastElement temp={273.15}/>
+          {getForecasts()}
         </div>
     )
 }
