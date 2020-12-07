@@ -1,22 +1,21 @@
 {
   "files": {
-    "main.css": "/raindrop/static/css/main.c893ad2b.chunk.css",
-    "main.js": "/raindrop/static/js/main.383a9749.chunk.js",
-    "main.js.map": "/raindrop/static/js/main.383a9749.chunk.js.map",
+    "main.css": "/raindrop/static/css/main.ea2b33f3.chunk.css",
+    "main.js": "/raindrop/static/js/main.8387c9bb.chunk.js",
+    "main.js.map": "/raindrop/static/js/main.8387c9bb.chunk.js.map",
     "runtime-main.js": "/raindrop/static/js/runtime-main.c9986119.js",
     "runtime-main.js.map": "/raindrop/static/js/runtime-main.c9986119.js.map",
-    "static/js/2.3dada1e1.chunk.js": "/raindrop/static/js/2.3dada1e1.chunk.js",
-    "static/js/2.3dada1e1.chunk.js.map": "/raindrop/static/js/2.3dada1e1.chunk.js.map",
+    "static/js/2.6f057d75.chunk.js": "/raindrop/static/js/2.6f057d75.chunk.js",
+    "static/js/2.6f057d75.chunk.js.map": "/raindrop/static/js/2.6f057d75.chunk.js.map",
     "index.html": "/raindrop/index.html",
-    "static/css/main.c893ad2b.chunk.css.map": "/raindrop/static/css/main.c893ad2b.chunk.css.map",
-    "static/js/2.3dada1e1.chunk.js.LICENSE.txt": "/raindrop/static/js/2.3dada1e1.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/raindrop/static/media/rain-stoppers-1920.d32b3978.jpg",
+    "static/css/main.ea2b33f3.chunk.css.map": "/raindrop/static/css/main.ea2b33f3.chunk.css.map",
+    "static/js/2.6f057d75.chunk.js.LICENSE.txt": "/raindrop/static/js/2.6f057d75.chunk.js.LICENSE.txt",
     "static/media/weather-icons-wind.min.css": "/raindrop/static/media/weathericons-regular-webfont.e218aee6.woff2"
   },
   "entrypoints": [
     "static/js/runtime-main.c9986119.js",
-    "static/js/2.3dada1e1.chunk.js",
-    "static/css/main.c893ad2b.chunk.css",
-    "static/js/main.383a9749.chunk.js"
+    "static/js/2.6f057d75.chunk.js",
+    "static/css/main.ea2b33f3.chunk.css",
+    "static/js/main.8387c9bb.chunk.js"
   ]
 }
