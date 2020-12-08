@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/raindrop/static/css/main.493db96f.chunk.css",
+    "main.css": "/raindrop/static/css/main.808e042d.chunk.css",
     "main.js": "/raindrop/static/js/main.10cba67e.chunk.js",
     "main.js.map": "/raindrop/static/js/main.10cba67e.chunk.js.map",
     "runtime-main.js": "/raindrop/static/js/runtime-main.c9986119.js",
@@ -8,14 +8,14 @@
     "static/js/2.027045bb.chunk.js": "/raindrop/static/js/2.027045bb.chunk.js",
     "static/js/2.027045bb.chunk.js.map": "/raindrop/static/js/2.027045bb.chunk.js.map",
     "index.html": "/raindrop/index.html",
-    "static/css/main.493db96f.chunk.css.map": "/raindrop/static/css/main.493db96f.chunk.css.map",
+    "static/css/main.808e042d.chunk.css.map": "/raindrop/static/css/main.808e042d.chunk.css.map",
     "static/js/2.027045bb.chunk.js.LICENSE.txt": "/raindrop/static/js/2.027045bb.chunk.js.LICENSE.txt",
     "static/media/weather-icons-wind.min.css": "/raindrop/static/media/weathericons-regular-webfont.e218aee6.woff2"
   },
   "entrypoints": [
     "static/js/runtime-main.c9986119.js",
     "static/js/2.027045bb.chunk.js",
-    "static/css/main.493db96f.chunk.css",
+    "static/css/main.808e042d.chunk.css",
     "static/js/main.10cba67e.chunk.js"
   ]
 }
