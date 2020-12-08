@@ -6,9 +6,13 @@
 }
 
 .forecastElement__icon {
+    font-size: 3em;
+}
+
+.forecastElement__time {
     font-size: 2em;
 }
 
 .forecastElement__temperature {
-
+    font-size: 2.5em;
 }
