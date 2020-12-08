@@ -28,7 +28,12 @@ function Forecast() {
         const forecasts = forecast.list.slice(0, 7);
         
         return forecasts.map((forecastElement) => {
-          return <ForecastElement key={forecastElement.dt} temp={forecastElement.main.temp} weatherCode={forecastElement?.weather[0]?.id}/>
+          return <ForecastElement 
+              key={forecastElement.dt}
+              time={forecastElement.dt} 
+              temp={forecastElement.main.temp} 
+              weatherCode={forecastElement?.weather[0]?.id}
+            />
         })
       }
     }
