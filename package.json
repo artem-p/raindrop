@@ -8,8 +8,10 @@
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.2.2",
     "axios": "^0.21.0",
+    "chart.js": "^2.9.4",
     "luxon": "^1.25.0",
     "react": "^17.0.1",
+    "react-chartjs-2": "^2.11.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.0",
     "web-vitals": "^0.2.4"

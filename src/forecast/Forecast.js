@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import api from '../api';
 import requests from '../requests';
 import './Forecast.css';
+import ForecastChart from './ForecastChart';
 import ForecastElement from './ForecastElement';
 
 
@@ -41,6 +42,8 @@ function Forecast() {
     return (
         <div className='forecast'>
           {getForecasts()}
+
+          <ForecastChart />
         </div>
     )
 }
