@@ -40,11 +40,11 @@ function Forecast() {
     }
 
     return (
-        <div className='forecast'>
-          {getForecasts()}
+        // <div className='forecast'>
+        //   {getForecasts()}
 
+        // </div>
           <ForecastChart />
-        </div>
     )
 }
 
