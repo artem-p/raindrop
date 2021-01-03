@@ -26,6 +26,9 @@ const data = {
         },
       ],
     },
+
+    responsive: true,
+    maintainAspectRatio: false
   }
 
 function ForecastChart() {
