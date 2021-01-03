@@ -3,11 +3,13 @@ import './ForecastChart.css';
 import { Line } from '@reactchartjs/react-chart.js'
 
 
+const dataArr = [2, 8, 3, -5, -2, -3];
+
 const data = {
     labels: ['1', '2', '3', '4', '5', '6'],
     datasets: [
       {
-        data: [2, 8, 3, -5, -2, -3],
+        data: dataArr,
         borderColor: 'white',
       },
     ],
@@ -28,7 +30,14 @@ const data = {
           },
 
           ticks: {
-            fontColor: 'white'
+            fontColor: 'white',
+            min: Math.min.apply(this, dataArr),
+            max: Math.max.apply(this, dataArr),
+            callback: function(value, index, values) {
+              if (index === values.length - 1) return Math.min.apply(this, dataArr);
+              else if (index === 0) return Math.max.apply(this, dataArr);
+              else return '';
+           },
           }
 
         },
