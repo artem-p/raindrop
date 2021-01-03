@@ -34,6 +34,7 @@ const data = {
             min: Math.min.apply(this, dataArr),
             max: Math.max.apply(this, dataArr),
             callback: function(value, index, values) {
+              if (value===0) return value;
               if (index === values.length - 1) return Math.min.apply(this, dataArr);
               else if (index === 0) return Math.max.apply(this, dataArr);
               else return '';
