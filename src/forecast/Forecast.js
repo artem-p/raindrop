@@ -22,7 +22,7 @@ function Forecast() {
         return () => clearInterval(requestInterval);
       }, [])
     
-      console.log(forecast);
+      // console.log(forecast);
     
     const getForecasts = () => {
       if (forecast && forecast.list && forecast.list.length > 0) {
@@ -44,7 +44,7 @@ function Forecast() {
         //   {getForecasts()}
 
         // </div>
-          <ForecastChart />
+          <ForecastChart forecast={forecast}/>
     )
 }
 
