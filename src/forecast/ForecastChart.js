@@ -7,28 +7,45 @@ const data = {
     labels: ['1', '2', '3', '4', '5', '6'],
     datasets: [
       {
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
-        fill: false,
-        backgroundColor: 'rgb(255, 99, 132)',
-        borderColor: 'rgba(255, 99, 132, 0.2)',
+        data: [2, 8, 3, -5, -2, -3],
+        borderColor: 'white',
       },
     ],
   }
   
   const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+    legend: {
+      display: false
+    },
+
     scales: {
       yAxes: [
         {
-          ticks: {
-            beginAtZero: true,
+          gridLines: {
+            display: false
           },
+
+          ticks: {
+            fontColor: 'white'
+          }
+
         },
       ],
-    },
 
-    responsive: true,
-    maintainAspectRatio: false
+      xAxes: [
+        {
+          gridLines: {
+            display: false
+          },
+
+          ticks: {
+            fontColor: 'white'
+          }
+        }
+      ]
+    },
   }
 
 function ForecastChart() {
