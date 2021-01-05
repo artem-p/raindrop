@@ -81,6 +81,7 @@ function ForecastChart({ forecast }) {
           type: 'time',
           time: {
             unit: 'hour',
+            tooltipFormat: 'lll'
           },
           gridLines: {
             display: false
