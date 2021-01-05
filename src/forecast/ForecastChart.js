@@ -3,7 +3,7 @@ import './ForecastChart.css';
 import { Line } from '@reactchartjs/react-chart.js';
 
 
-const dataArr = [2, 8, 3, -5, -2, -3];
+// const dataArr = [2, 8, 3, -5, -2, -3];
 
 const options = {
   responsive: true,
@@ -21,12 +21,12 @@ const options = {
 
         ticks: {
           fontColor: 'white',
-          min: Math.min.apply(this, dataArr),
-          max: Math.max.apply(this, dataArr),
+          // min: Math.min.apply(this, dataArr),
+          // max: Math.max.apply(this, dataArr),
           callback: function (value, index, values) {
             if (value === 0) return value;
-            if (index === values.length - 1) return Math.min.apply(this, dataArr);
-            else if (index === 0) return Math.max.apply(this, dataArr);
+            // if (index === values.length - 1) return Math.min.apply(this, dataArr);
+            // else if (index === 0) return Math.max.apply(this, dataArr);
             else return '';
           },
         }
@@ -36,6 +36,10 @@ const options = {
 
     xAxes: [
       {
+        type: 'time',
+        time: {
+          unit: 'hour',
+        },
         gridLines: {
           display: false
         },
@@ -57,7 +61,7 @@ function ForecastChart({ forecast }) {
     console.log(forecasts);
 
     dataArr = forecasts.map((forecastElement) => {
-      return {x: new Date(forecastElement.dt), y: forecastElement.main.temp}
+      return {x: new Date(forecastElement.dt * 1000), y: (forecastElement.main.temp - 273.15).toFixed(1)}
     })
 
     // return forecasts.map((forecastElement) => {
