@@ -79,10 +79,12 @@ function ForecastChart({ forecast }) {
       xAxes: [
         {
           type: 'time',
+          
           time: {
             unit: 'hour',
             tooltipFormat: 'lll'
           },
+
           gridLines: {
             display: false
           },
