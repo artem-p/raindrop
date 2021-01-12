@@ -37,7 +37,7 @@ function ForecastChart({ forecast }) {
 
 
   const data = {
-    // labels: ['1', '2', '3', '4', '5', '6'],
+    labels: ['1', '2', '3', '4', '5', '6', '7'],
     datasets: [
       {
         yAxisID: 'temp',
@@ -47,7 +47,7 @@ function ForecastChart({ forecast }) {
 
       {
         yAxisID: 'prec',
-        data: [1, 2, 3, 4, 5, 6, 7],
+        data: [10, 20, 30, 40, 50, 60, 70],
         type: 'bar',
         backgroundColor: 'white'
       }
@@ -73,13 +73,12 @@ function ForecastChart({ forecast }) {
             fontColor: 'white',
             // min: Math.min.apply(this, tempValues),
             // max: Math.max.apply(this, tempValues),
-            // callback: function (value, index, values) {
-            //   console.log(value);
-            //   if (value === 0) return value;
-            //   if (index === values.length - 1) return Math.min.apply(this, tempValues);
-            //   else if (index === 0) return Math.max.apply(this, tempValues);
-            //   else return '';
-            // },
+            callback: function (value, index, values) {
+              if (value === 0) return value;
+              if (index === values.length - 1) return Math.min.apply(this, tempValues);
+              else if (index === 0) return Math.max.apply(this, tempValues);
+              else return '';
+            },
           }
   
         },
@@ -99,12 +98,12 @@ function ForecastChart({ forecast }) {
   
       xAxes: [
         {
-          type: 'time',
+          // type: 'time',
           
-          time: {
-            unit: 'hour',
-            tooltipFormat: 'lll'
-          },
+          // time: {
+          //   unit: 'hour',
+          //   tooltipFormat: 'lll'
+          // },
 
           gridLines: {
             display: false
