@@ -6,7 +6,8 @@ import { Line } from '@reactchartjs/react-chart.js';
 // const dataArr = [2, 8, 3, -5, -2, -3];
 
 function ForecastChart({ forecast }) {
-  let dataArr = [];
+  let tempArr = [];
+  let precArr = [];
   let tempValues = [];
 
   if (forecast && forecast.list && forecast.list.length > 0) {
@@ -14,8 +15,12 @@ function ForecastChart({ forecast }) {
     
     console.log(forecasts);
 
-    dataArr = forecasts.map((forecastElement) => {
+    tempArr = forecasts.map((forecastElement) => {
       return {x: new Date(forecastElement.dt * 1000), y: (forecastElement.main.temp - 273.15).toFixed(1)}
+    })
+
+    precArr = forecasts.map((forecastElement) => {
+      return {x: new Date(forecastElement.dt * 1000), y: Math.random() * 100}
     })
 
     tempValues = forecasts.map((forecastElement) => {
@@ -37,19 +42,19 @@ function ForecastChart({ forecast }) {
 
 
   const data = {
-    labels: ['1', '2', '3', '4', '5', '6', '7'],
+    // labels: ['1', '2', '3', '4', '5', '6', '7'],
     datasets: [
       {
         yAxisID: 'temp',
-        data: dataArr,
+        data: tempArr,
         borderColor: 'white',
       },
 
       {
         yAxisID: 'prec',
-        data: [10, 20, 30, 40, 50, 60, 70],
+        data: precArr,
         type: 'bar',
-        backgroundColor: 'white'
+        backgroundColor: '#004e89'
       }
     ],
   }
@@ -98,12 +103,12 @@ function ForecastChart({ forecast }) {
   
       xAxes: [
         {
-          // type: 'time',
+          type: 'time',
           
-          // time: {
-          //   unit: 'hour',
-          //   tooltipFormat: 'lll'
-          // },
+          time: {
+            unit: 'hour',
+            tooltipFormat: 'lll'
+          },
 
           gridLines: {
             display: false
