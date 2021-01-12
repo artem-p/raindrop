@@ -40,9 +40,17 @@ function ForecastChart({ forecast }) {
     // labels: ['1', '2', '3', '4', '5', '6'],
     datasets: [
       {
+        yAxisID: 'temp',
         data: dataArr,
         borderColor: 'white',
       },
+
+      {
+        yAxisID: 'prec',
+        data: [1, 2, 3, 4, 5, 6, 7],
+        type: 'bar',
+        backgroundColor: 'white'
+      }
     ],
   }
 
@@ -56,6 +64,7 @@ function ForecastChart({ forecast }) {
     scales: {
       yAxes: [
         {
+          id: 'temp',
           gridLines: {
             display: false
           },
@@ -64,16 +73,28 @@ function ForecastChart({ forecast }) {
             fontColor: 'white',
             // min: Math.min.apply(this, tempValues),
             // max: Math.max.apply(this, tempValues),
-            callback: function (value, index, values) {
-              console.log(value);
-              if (value === 0) return value;
-              if (index === values.length - 1) return Math.min.apply(this, tempValues);
-              else if (index === 0) return Math.max.apply(this, tempValues);
-              else return '';
-            },
+            // callback: function (value, index, values) {
+            //   console.log(value);
+            //   if (value === 0) return value;
+            //   if (index === values.length - 1) return Math.min.apply(this, tempValues);
+            //   else if (index === 0) return Math.max.apply(this, tempValues);
+            //   else return '';
+            // },
           }
   
         },
+
+        {
+          id: 'prec',
+          position: 'right',
+          gridLines: {
+            display: false
+          },
+
+          ticks: {
+            fontColor: 'white'
+          }
+        }
       ],
   
       xAxes: [
