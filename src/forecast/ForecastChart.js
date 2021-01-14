@@ -11,6 +11,8 @@ function ForecastChart({ forecast }) {
   let weatherArr = [];
   let tempValues = [];
 
+  let cloudImage = new Image();
+  cloudImage.src = cloudIcon;
 
   if (forecast && forecast.list && forecast.list.length > 0) {
     const forecasts = forecast.list.slice(0, 7);
@@ -59,7 +61,7 @@ function ForecastChart({ forecast }) {
         data: weatherArr,
         type: 'scatter',
         backgroundColor: 'green',
-        pointStyle: [cloudIcon, cloudIcon, cloudIcon, cloudIcon, cloudIcon, cloudIcon, cloudIcon]
+        pointStyle: [cloudImage, cloudImage, cloudImage, cloudImage, cloudImage, cloudImage, cloudImage]
       }
     ],
   }
