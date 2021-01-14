@@ -8,7 +8,9 @@ import { Line } from '@reactchartjs/react-chart.js';
 function ForecastChart({ forecast }) {
   let tempArr = [];
   let precArr = [];
+  let weatherArr = [];
   let tempValues = [];
+
 
   if (forecast && forecast.list && forecast.list.length > 0) {
     const forecasts = forecast.list.slice(0, 7);
@@ -23,22 +25,17 @@ function ForecastChart({ forecast }) {
       return {x: new Date(forecastElement.dt * 1000), y: Math.random() * 100}
     })
 
+    // dummy chart for weather icons. Use bars with zero height and add icon on top of them
+    weatherArr = forecasts.map((forecastElement) => {
+      return {x: new Date(forecastElement.dt * 1000), y: 0}
+    })
+
+
     tempValues = forecasts.map((forecastElement) => {
       return (forecastElement.main.temp - 273.15).toFixed(1)
     })
 
-    // return forecasts.map((forecastElement) => {
-    //   return <ForecastElement 
-    //       key={forecastElement.dt}
-    //       time={forecastElement.dt} 
-    //       temp={forecastElement.main.temp} 
-    //       weatherCode={forecastElement?.weather[0]?.id}
-    //     />
-    // })
   }
-
-
-  console.log(tempValues);
 
 
   const data = {
@@ -55,6 +52,13 @@ function ForecastChart({ forecast }) {
         data: precArr,
         type: 'bar',
         backgroundColor: '#004e89'
+      },
+
+      {
+        yAxisID: 'weather',
+        data: weatherArr,
+        type: 'scatter',
+        backgroundColor: 'green'
       }
     ],
   }
@@ -98,6 +102,11 @@ function ForecastChart({ forecast }) {
           ticks: {
             fontColor: 'white'
           }
+        },
+
+        {
+          id: 'weather',
+          display: false,
         }
       ],
   
