@@ -1,7 +1,7 @@
 import React from 'react';
 import './ForecastChart.css';
 import { Line } from '@reactchartjs/react-chart.js';
-
+import cloudIcon from '../icons/svg/wi-cloud.svg';
 
 // const dataArr = [2, 8, 3, -5, -2, -3];
 
@@ -58,7 +58,8 @@ function ForecastChart({ forecast }) {
         yAxisID: 'weather',
         data: weatherArr,
         type: 'scatter',
-        backgroundColor: 'green'
+        backgroundColor: 'green',
+        pointStyle: [cloudIcon, cloudIcon, cloudIcon, cloudIcon, cloudIcon, cloudIcon, cloudIcon]
       }
     ],
   }
