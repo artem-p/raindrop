@@ -11,8 +11,9 @@ function ForecastChart({ forecast }) {
   let weatherArr = [];
   let tempValues = [];
 
-  let cloudImage = new Image();
+  let cloudImage = new Image(64, 64);
   cloudImage.src = cloudIcon;
+  
 
   if (forecast && forecast.list && forecast.list.length > 0) {
     const forecasts = forecast.list.slice(0, 7);
@@ -44,6 +45,14 @@ function ForecastChart({ forecast }) {
     // labels: ['1', '2', '3', '4', '5', '6', '7'],
     datasets: [
       {
+        yAxisID: 'weather',
+        data: weatherArr,
+        type: 'scatter',
+        backgroundColor: 'green',
+        pointStyle: [cloudImage, cloudImage, cloudImage, cloudImage, cloudImage, cloudImage, cloudImage]
+      },
+
+      {
         yAxisID: 'temp',
         data: tempArr,
         borderColor: 'white',
@@ -55,14 +64,6 @@ function ForecastChart({ forecast }) {
         type: 'bar',
         backgroundColor: '#004e89'
       },
-
-      {
-        yAxisID: 'weather',
-        data: weatherArr,
-        type: 'scatter',
-        backgroundColor: 'green',
-        pointStyle: [cloudImage, cloudImage, cloudImage, cloudImage, cloudImage, cloudImage, cloudImage]
-      }
     ],
   }
 
