@@ -2,6 +2,9 @@ import React from 'react';
 import './ForecastChart.css';
 import { Line } from '@reactchartjs/react-chart.js';
 import cloudIcon from '../icons/svg/wi-cloud.svg';
+import Chart from 'chart.js';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
+
 
 // const dataArr = [2, 8, 3, -5, -2, -3];
 
@@ -48,8 +51,12 @@ function ForecastChart({ forecast }) {
         yAxisID: 'weather',
         data: weatherArr,
         type: 'scatter',
-        backgroundColor: 'green',
-        pointStyle: [cloudImage, cloudImage, cloudImage, cloudImage, cloudImage, cloudImage, cloudImage]
+        backgroundColor: 'white',
+        pointStyle: [cloudImage, cloudImage, cloudImage, cloudImage, cloudImage, cloudImage, cloudImage],
+        datalabels: {
+          display: true,
+          color: 'white'
+        }
       },
 
       {
@@ -133,6 +140,12 @@ function ForecastChart({ forecast }) {
         }
       ]
     },
+
+    plugins: {
+      datalabels: {
+        display: false
+      }
+    }
   }
 
   return (
