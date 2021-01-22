@@ -55,7 +55,10 @@ function ForecastChart({ forecast }) {
         pointStyle: [cloudImage, cloudImage, cloudImage, cloudImage, cloudImage, cloudImage, cloudImage],
         datalabels: {
           display: true,
-          color: 'white'
+          color: 'white',
+          formatter: (value, context) => {
+            return 'label';
+          }
         }
       },
 
