@@ -56,8 +56,12 @@ function ForecastChart({ forecast }) {
         datalabels: {
           display: true,
           color: 'white',
+          font: {
+            family: 'WeatherIcons',
+            size: 20
+          },
           formatter: (value, context) => {
-            return 'label';
+            return '\uf0c3';
           }
         }
       },
