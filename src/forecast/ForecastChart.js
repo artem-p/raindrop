@@ -61,7 +61,8 @@ function ForecastChart({ forecast }) {
             size: 20
           },
           formatter: (value, context) => {
-            return '\uf0c3';
+            todo to owmToWi add icon codes from css
+            return '\uf000';
           }
         }
       },
