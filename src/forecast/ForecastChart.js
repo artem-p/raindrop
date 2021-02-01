@@ -4,6 +4,7 @@ import { Line } from '@reactchartjs/react-chart.js';
 import cloudIcon from '../icons/svg/wi-cloud.svg';
 import Chart from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
+import owmToWi from '../owmToWi';
 
 
 // const dataArr = [2, 8, 3, -5, -2, -3];
@@ -34,7 +35,7 @@ function ForecastChart({ forecast }) {
 
     // dummy chart for weather icons. Use bars with zero height and add icon on top of them
     weatherArr = forecasts.map((forecastElement) => {
-      return {x: new Date(forecastElement.dt * 1000), y: 0}
+      return {x: new Date(forecastElement.dt * 1000), y: forecastElement.weather[0]?.id}
     })
 
 
@@ -67,7 +68,9 @@ function ForecastChart({ forecast }) {
           formatter: (value, context) => {
             // todo to owmToWi add icon codes from css
             console.log(value);
-            return value?.y;
+            let iconCode = value.y ? owmToWi[value.y].icon_code : '';
+            console.log(iconCode);
+            return iconCode;
           }
         }
       },

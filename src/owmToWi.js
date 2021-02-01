@@ -213,7 +213,7 @@ export default
     "803": {
       "label": "broken clouds",
       "icon": "cloudy",
-      "icon_code": "\f012"
+      "icon_code": '\uf012'
     },
     "804": {
       "label": "overcast clouds",
