@@ -13,6 +13,7 @@ function ForecastChart({ forecast }) {
   let precArr = [];
   let weatherArr = [];
   let tempValues = [];
+  let weatherValues = [];
 
   let cloudImage = new Image(64, 64);
   cloudImage.src = cloudIcon;
@@ -33,14 +34,17 @@ function ForecastChart({ forecast }) {
 
     // dummy chart for weather icons. Use bars with zero height and add icon on top of them
     weatherArr = forecasts.map((forecastElement) => {
-      return {x: new Date(forecastElement.dt * 1000), y: forecastElement.weather[0]?.id}
+      return {x: new Date(forecastElement.dt * 1000), y: 0}
     })
 
 
     tempValues = forecasts.map((forecastElement) => {
       return (forecastElement.main.temp - 273.15).toFixed(1)
-    })
+    });
 
+    weatherValues = forecasts.map((forecastElement) => {
+      return forecastElement.weather[0]?.id
+    });
   }
 
 
@@ -62,6 +66,7 @@ function ForecastChart({ forecast }) {
           },
           formatter: (value, context) => {
             // todo to owmToWi add icon codes from css
+            console.log(value);
             return value?.y;
           }
         }
