@@ -212,7 +212,8 @@ export default
     },
     "803": {
       "label": "broken clouds",
-      "icon": "cloudy"
+      "icon": "cloudy",
+      "icon_code": "\f012"
     },
     "804": {
       "label": "overcast clouds",
