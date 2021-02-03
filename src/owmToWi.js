@@ -218,8 +218,9 @@ export default
     },
     "804": {
       "label": "overcast clouds",
-      "icon": "cloudy"
-    },
+      "icon": "cloudy",
+      "icon_code": '\uf013'
+      },
     "900": {
       "label": "tornado",
       "icon": "tornado"

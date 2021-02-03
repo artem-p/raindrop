@@ -35,7 +35,7 @@ function ForecastChart({ forecast }) {
 
     // dummy chart for weather icons. Use bars with zero height and add icon on top of them
     weatherArr = forecasts.map((forecastElement) => {
-      return {x: new Date(forecastElement.dt * 1000), y: forecastElement.weather[0]?.id}
+      return {x: new Date(forecastElement.dt * 1000), y: 0, iconCode: forecastElement.weather[0]?.id}
     })
 
 
@@ -43,9 +43,6 @@ function ForecastChart({ forecast }) {
       return (forecastElement.main.temp - 273.15).toFixed(1)
     });
 
-    weatherValues = forecasts.map((forecastElement) => {
-      return forecastElement.weather[0]?.id
-    });
   }
 
 
@@ -63,12 +60,12 @@ function ForecastChart({ forecast }) {
           color: 'white',
           font: {
             family: 'WeatherIcons',
-            size: 20
+            size: 30
           },
           formatter: (value, context) => {
             // todo to owmToWi add icon codes from css
             console.log(value);
-            let iconCode = value.y ? owmToWi[value.y].icon_code : '';
+            let iconCode = value.iconCode ? owmToWi[value.iconCode].icon_code : '';
             console.log(owmToWi[value.y]);
             return iconCode;
           }
