@@ -54,6 +54,7 @@ function ForecastChart({ forecast }) {
         data: weatherArr,
         type: 'scatter',
         backgroundColor: 'white',
+        pointRadius: 0,
         // pointStyle: [cloudImage, cloudImage, cloudImage, cloudImage, cloudImage, cloudImage, cloudImage],
         datalabels: {
           display: true,
