@@ -120,7 +120,8 @@ export default
     },
     "600": {
       "label": "light snow",
-      "icon": "snow"
+      "icon": "snow",
+      "icon_code": "\uf01b"
     },
     "601": {
       "label": "snow",

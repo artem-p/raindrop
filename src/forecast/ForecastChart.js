@@ -69,7 +69,7 @@ function ForecastChart({ forecast }) {
             // todo to owmToWi add icon codes from css
             console.log(value);
             let iconCode = value.y ? owmToWi[value.y].icon_code : '';
-            console.log(iconCode);
+            console.log(owmToWi[value.y]);
             return iconCode;
           }
         }
