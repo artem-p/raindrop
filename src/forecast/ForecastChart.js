@@ -14,7 +14,6 @@ function ForecastChart({ forecast }) {
   let precArr = [];
   let weatherArr = [];
   let tempValues = [];
-  let weatherValues = [];
 
   let cloudImage = new Image(64, 64);
   cloudImage.src = cloudIcon;
@@ -47,7 +46,6 @@ function ForecastChart({ forecast }) {
 
 
   const data = {
-    // labels: ['1', '2', '3', '4', '5', '6', '7'],
     datasets: [
       {
         yAxisID: 'weather',
@@ -55,7 +53,6 @@ function ForecastChart({ forecast }) {
         type: 'scatter',
         backgroundColor: 'white',
         pointRadius: 0,
-        // pointStyle: [cloudImage, cloudImage, cloudImage, cloudImage, cloudImage, cloudImage, cloudImage],
         datalabels: {
           display: true,
           color: 'white',
@@ -64,7 +61,6 @@ function ForecastChart({ forecast }) {
             size: 30
           },
           formatter: (value, context) => {
-            // todo to owmToWi add icon codes from css
             console.log(value);
             let iconCode = value.iconCode ? owmToWi[value.iconCode].icon_code : '';
             console.log(owmToWi[value.y]);
