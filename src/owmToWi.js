@@ -1,18 +1,23 @@
 // 20201129220526
 // https://gist.githubusercontent.com/tbranyen/62d974681dea8ee0caa1/raw/3405bfb2a76b7cbd90fde33d8536f0cd13706955/icons.json
+
+todo add more icons https://openweathermap.org/weather-conditions
 export default
 {
     "200": {
       "label": "thunderstorm with light rain",
-      "icon": "storm-showers"
+      "icon": "storm-showers",
+      "icon_code": "\uf010"
     },
     "201": {
       "label": "thunderstorm with rain",
-      "icon": "storm-showers"
+      "icon": "storm-showers",
+      "icon_code": "\uf010"
     },
     "202": {
       "label": "thunderstorm with heavy rain",
-      "icon": "storm-showers"
+      "icon": "storm-showers",
+      "icon_code": "\uf010"
     },
     "210": {
       "label": "light thunderstorm",
@@ -125,19 +130,23 @@ export default
     },
     "601": {
       "label": "snow",
-      "icon": "snow"
+      "icon": "snow",
+      "icon_code": "\uf01b"
     },
     "602": {
       "label": "heavy snow",
-      "icon": "snow"
+      "icon": "snow",
+      "icon_code": "\uf0b5"
     },
     "611": {
       "label": "sleet",
-      "icon": "sleet"
+      "icon": "sleet",
+      "icon_code": "\uf017"
     },
     "612": {
       "label": "shower sleet",
-      "icon": "sleet"
+      "icon": "sleet",
+      "icon_code": "\uf017"
     },
     "615": {
       "label": "light rain and snow",
