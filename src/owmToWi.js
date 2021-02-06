@@ -132,22 +132,22 @@ export default
     "511": {
       "label": "freezing rain",
       "icon": "rain-mix",
-      "icon_code": "\u"
+      "icon_code": "\uf017"
     },
     "520": {
       "label": "light intensity shower rain",
       "icon": "showers",
-      "icon_code": "\u"
+      "icon_code": "\uf01a"
     },
     "521": {
       "label": "shower rain",
       "icon": "showers",
-      "icon_code": "\u"
+      "icon_code": "\uf01a"
     },
     "522": {
       "label": "heavy intensity shower rain",
       "icon": "showers",
-      "icon_code": "\u"
+      "icon_code": "\uf01a"
     },
     "531": {
       "label": "ragged shower rain",
