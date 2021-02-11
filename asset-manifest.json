@@ -1,21 +1,23 @@
 {
   "files": {
-    "main.css": "/raindrop/static/css/main.808e042d.chunk.css",
-    "main.js": "/raindrop/static/js/main.10cba67e.chunk.js",
-    "main.js.map": "/raindrop/static/js/main.10cba67e.chunk.js.map",
+    "main.css": "/raindrop/static/css/main.37734757.chunk.css",
+    "main.js": "/raindrop/static/js/main.1ee9ad4b.chunk.js",
+    "main.js.map": "/raindrop/static/js/main.1ee9ad4b.chunk.js.map",
     "runtime-main.js": "/raindrop/static/js/runtime-main.c9986119.js",
     "runtime-main.js.map": "/raindrop/static/js/runtime-main.c9986119.js.map",
-    "static/js/2.027045bb.chunk.js": "/raindrop/static/js/2.027045bb.chunk.js",
-    "static/js/2.027045bb.chunk.js.map": "/raindrop/static/js/2.027045bb.chunk.js.map",
+    "static/js/2.f89c2723.chunk.js": "/raindrop/static/js/2.f89c2723.chunk.js",
+    "static/js/2.f89c2723.chunk.js.map": "/raindrop/static/js/2.f89c2723.chunk.js.map",
     "index.html": "/raindrop/index.html",
-    "static/css/main.808e042d.chunk.css.map": "/raindrop/static/css/main.808e042d.chunk.css.map",
-    "static/js/2.027045bb.chunk.js.LICENSE.txt": "/raindrop/static/js/2.027045bb.chunk.js.LICENSE.txt",
-    "static/media/weather-icons-wind.min.css": "/raindrop/static/media/weathericons-regular-webfont.e218aee6.woff2"
+    "static/css/main.37734757.chunk.css.map": "/raindrop/static/css/main.37734757.chunk.css.map",
+    "static/js/2.f89c2723.chunk.js.LICENSE.txt": "/raindrop/static/js/2.f89c2723.chunk.js.LICENSE.txt",
+    "static/media/weather-icons-wind.min.css": "/raindrop/static/media/weathericons-regular-webfont.e218aee6.woff2",
+    "static/media/ForecastChart.css": "/raindrop/static/media/weathericons-regular-webfont.371511dd.woff",
+    "static/media/wi-cloud.f7ed7c0e.svg": "/raindrop/static/media/wi-cloud.f7ed7c0e.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.c9986119.js",
-    "static/js/2.027045bb.chunk.js",
-    "static/css/main.808e042d.chunk.css",
-    "static/js/main.10cba67e.chunk.js"
+    "static/js/2.f89c2723.chunk.js",
+    "static/css/main.37734757.chunk.css",
+    "static/js/main.1ee9ad4b.chunk.js"
   ]
 }
