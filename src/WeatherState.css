@@ -9,6 +9,10 @@
     font-size: 12em;
 }
 
+.weather__text {
+    font-size: 1.2em;
+}
+
 .weather__temperature {
     margin-left: 30px;
     font-size: 6em;

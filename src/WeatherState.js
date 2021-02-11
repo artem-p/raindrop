@@ -3,12 +3,15 @@ import './icons/css/weather-icons.min.css';
 import './WeatherState.css';
 import WeatherIcon from './WeatherIcon';
 
-function WeatherState({ weatherCode, temp }) {
+function WeatherState({ weatherCode, weatherText, temp }) {
     
     return (
         <div className='weather'>
-            <div className="weather__icon">
-                <WeatherIcon className="weather__icon" weatherCode={weatherCode}/>
+            <div className="weather__description">
+                <div className="weather__icon">
+                    <WeatherIcon className="weather__icon" weatherCode={weatherCode}/>
+                </div>
+                <div className="weather__text">{weatherText}</div>
             </div>
             <div className="weather__temperature">{temp ? (temp - 273.15).toFixed(0) : 0} °С</div>
         </div>
