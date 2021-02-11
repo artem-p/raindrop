@@ -99,14 +99,15 @@ function ForecastChart({ forecast }) {
   
           ticks: {
             fontColor: 'white',
-            // min: Math.min.apply(this, tempValues),
-            // max: Math.max.apply(this, tempValues),
-            callback: function (value, index, values) {
-              if (value === 0) return value;
-              if (index === values.length - 1) return Math.min.apply(this, tempValues);
-              else if (index === 0) return Math.max.apply(this, tempValues);
-              else return '';
-            },
+            stepSize: 2,
+            // min: Math.min.apply(this, tempValues) -1,
+            // max: Math.max.apply(this, tempValues) + 1,
+            // callback: function (value, index, values) {
+            //   if (value === 0) return value;
+            //   if (index === values.length - 1) return Math.round(Math.min.apply(this, tempValues);
+            //   else if (index === 0) return Math.max.apply(this, tempValues);
+            //   else return '';
+            // },
           }
   
         },
