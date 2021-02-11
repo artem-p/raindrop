@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/raindrop/static/css/main.37734757.chunk.css",
-    "main.js": "/raindrop/static/js/main.1ee9ad4b.chunk.js",
-    "main.js.map": "/raindrop/static/js/main.1ee9ad4b.chunk.js.map",
+    "main.js": "/raindrop/static/js/main.82864821.chunk.js",
+    "main.js.map": "/raindrop/static/js/main.82864821.chunk.js.map",
     "runtime-main.js": "/raindrop/static/js/runtime-main.c9986119.js",
     "runtime-main.js.map": "/raindrop/static/js/runtime-main.c9986119.js.map",
     "static/js/2.f89c2723.chunk.js": "/raindrop/static/js/2.f89c2723.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.c9986119.js",
     "static/js/2.f89c2723.chunk.js",
     "static/css/main.37734757.chunk.css",
-    "static/js/main.1ee9ad4b.chunk.js"
+    "static/js/main.82864821.chunk.js"
   ]
 }
