@@ -22,7 +22,7 @@ function ForecastChart({ forecast }) {
   if (forecast && forecast.list && forecast.list.length > 0) {
     const forecasts = forecast.list.slice(0, 7);
     
-    console.log(forecasts);
+    // console.log(forecasts);
 
     tempArr = forecasts.map((forecastElement) => {
       return {x: new Date(forecastElement.dt * 1000), y: (forecastElement.main.temp - 273.15).toFixed(1)}
@@ -61,9 +61,7 @@ function ForecastChart({ forecast }) {
             size: 30
           },
           formatter: (value, context) => {
-            console.log(value);
             let iconCode = value.iconCode ? owmToWi[value.iconCode].icon_code : '';
-            console.log(owmToWi[value.y]);
             return iconCode;
           }
         }
