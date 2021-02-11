@@ -152,7 +152,7 @@ export default
     "531": {
       "label": "ragged shower rain",
       "icon": "showers",
-      "icon_code": "\u"
+      "icon_code": "\uf01d"
     },
     "600": {
       "label": "light snow",
@@ -182,52 +182,52 @@ export default
     "615": {
       "label": "light rain and snow",
       "icon": "rain-mix",
-      "icon_code": "\u"
+      "icon_code": "\uf017"
     },
     "616": {
       "label": "rain and snow",
       "icon": "rain-mix",
-      "icon_code": "\u"
+      "icon_code": "\uf017"
     },
     "620": {
       "label": "light shower snow",
       "icon": "rain-mix",
-      "icon_code": "\u"
+      "icon_code": "\uf017"
     },
     "621": {
       "label": "shower snow",
       "icon": "rain-mix",
-      "icon_code": "\u"
+      "icon_code": "\uf01b"
     },
     "622": {
       "label": "heavy shower snow",
       "icon": "rain-mix",
-      "icon_code": "\u"
+      "icon_code": "\uf01b"
     },
     "701": {
       "label": "mist",
       "icon": "sprinkle",
-      "icon_code": "\u"
+      "icon_code": "\uf014"
     },
     "711": {
       "label": "smoke",
       "icon": "smoke",
-      "icon_code": "\u"
+      "icon_code": "\uf062"
     },
     "721": {
       "label": "haze",
       "icon": "day-haze",
-      "icon_code": "\u"
+      "icon_code": "\uf0b6"
     },
     "731": {
       "label": "sand, dust whirls",
       "icon": "cloudy-gusts",
-      "icon_code": "\u"
+      "icon_code": "\uf063"
     },
     "741": {
       "label": "fog",
       "icon": "fog",
-      "icon_code": "\u"
+      "icon_code": "\uf014"
     },
     "751": {
       "label": "sand",
@@ -237,37 +237,37 @@ export default
     "761": {
       "label": "dust",
       "icon": "dust",
-      "icon_code": "\u"
+      "icon_code": "\uf063"
     },
     "762": {
       "label": "volcanic ash",
       "icon": "smog",
-      "icon_code": "\"
+      "icon_code": "\uf063"
     },
     "771": {
       "label": "squalls",
       "icon": "day-windy",
-      "icon_code": "\"
+      "icon_code": "\uf011"
     },
     "781": {
       "label": "tornado",
       "icon": "tornado",
-      "icon_code": "\"
+      "icon_code": "\uf056"
     },
     "800": {
       "label": "clear sky",
       "icon": "day-sunny",
-      "icon_code": "\"
+      "icon_code": "\uf00d"
     },
     "801": {
       "label": "few clouds",
       "icon": "cloudy",
-      "icon_code": "\"
+      "icon_code": "\uf011"
     },
     "802": {
       "label": "scattered clouds",
       "icon": "cloudy",
-      "icon_code": "\"
+      "icon_code": "\uf011"
     },
     "803": {
       "label": "broken clouds",
@@ -282,7 +282,7 @@ export default
     "900": {
       "label": "tornado",
       "icon": "tornado",
-      "icon_code": "\"
+      "icon_code": "\uf056"
     },
     "901": {
       "label": "tropical storm",
