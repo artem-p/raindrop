@@ -136,7 +136,8 @@ function ForecastChart({ forecast }) {
           
           time: {
             unit: 'hour',
-            tooltipFormat: 'lll'
+            tooltipFormat: 'lll',
+            unitStepSize: 3
           },
 
           gridLines: {
@@ -144,7 +145,7 @@ function ForecastChart({ forecast }) {
           },
   
           ticks: {
-            fontColor: 'white'
+            fontColor: 'white',
           }
         }
       ]
