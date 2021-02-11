@@ -232,7 +232,7 @@ export default
     "751": {
       "label": "sand",
       "icon": "cloudy-gusts",
-      "icon_code": "\u"
+      "icon_code": "\uf063"
     },
     "761": {
       "label": "dust",
@@ -287,91 +287,91 @@ export default
     "901": {
       "label": "tropical storm",
       "icon": "hurricane",
-      "icon_code": "\"
+      "icon_code": "\uf01d"
     },
     "902": {
       "label": "hurricane",
       "icon": "hurricane",
-      "icon_code": "\"
+      "icon_code": "\uf073"
     },
     "903": {
       "label": "cold",
       "icon": "snowflake-cold",
-      "icon_code": "\"
+      "icon_code": "\uf076"
     },
     "904": {
       "label": "hot",
       "icon": "hot",
-      "icon_code": "\"
+      "icon_code": "\uf072"
     },
     "905": {
       "label": "windy",
       "icon": "windy",
-      "icon_code": "\"
+      "icon_code": "\uf021"
     },
     "906": {
       "label": "hail",
       "icon": "hail",
-      "icon_code": "\"
+      "icon_code": "\uf015"
     },
     "951": {
       "label": "calm",
       "icon": "sunny",
-      "icon_code": "\"
+      "icon_code": "\uf00d"
     },
     "952": {
       "label": "light breeze",
       "icon": "cloudy-gusts",
-      "icon_code": "\"
+      "icon_code": "\uf063"
     },
     "953": {
       "label": "gentle breeze",
       "icon": "cloudy-gusts",
-      "icon_code": "\"
+      "icon_code": "\uf063"
     },
     "954": {
       "label": "moderate breeze",
       "icon": "cloudy-gusts",
-      "icon_code": "\"
+      "icon_code": "\uf063"
     },
     "955": {
       "label": "fresh breeze",
       "icon": "cloudy-gusts",
-      "icon_code": "\"
+      "icon_code": "\uf063"
     },
     "956": {
       "label": "strong breeze",
       "icon": "cloudy-gusts",
-      "icon_code": "\"
+      "icon_code": "\uf063"
     },
     "957": {
       "label": "high wind, near gale",
       "icon": "cloudy-gusts",
-      "icon_code": "\"
+      "icon_code": "\uf050"
     },
     "958": {
       "label": "gale",
       "icon": "cloudy-gusts",
-      "icon_code": "\"
+      "icon_code": "\uf063"
     },
     "959": {
       "label": "severe gale",
       "icon": "cloudy-gusts",
-      "icon_code": "\"
+      "icon_code": "\uf063"
     },
     "960": {
       "label": "storm",
       "icon": "thunderstorm",
-      "icon_code": "\"
+      "icon_code": "\uf016"
     },
     "961": {
       "label": "violent storm",
       "icon": "thunderstorm",
-      "icon_code": "\"
+      "icon_code": "\uf016"
     },
     "962": {
       "label": "hurricane",
       "icon": "cloudy-gusts",
-      "icon_code": "\"
+      "icon_code": "\uf063"
     }
   }
