@@ -100,6 +100,7 @@ function ForecastChart({ forecast }) {
           ticks: {
             fontColor: 'white',
             stepSize: 2,
+            fontSize: 16
             // min: Math.min.apply(this, tempValues) -1,
             // max: Math.max.apply(this, tempValues) + 1,
             // callback: function (value, index, values) {
@@ -146,6 +147,7 @@ function ForecastChart({ forecast }) {
   
           ticks: {
             fontColor: 'white',
+            fontSize: 16
           }
         }
       ]
