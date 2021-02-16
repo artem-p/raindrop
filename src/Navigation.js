@@ -4,6 +4,8 @@ import './Navigation.css';
 
 function Navigation() {
     return (
+        todo to hamburger menu
+        http://negomi.github.io/react-burger-menu/
         <div className="navigation">
             <Navbar bg='dark' variant='dark'>
                 <Nav className="mr-auto">
