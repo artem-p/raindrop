@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import './DateTime';
+import Navigation from './Navigation';
 import DateAndTime from './DateTime';
 import WeatherState from './WeatherState';
 import Wind from './Wind.js';
@@ -29,23 +30,28 @@ function App() {
 
   return (
     <div className="app">
-      <div className="app__top">
+      <Navigation />
 
-        <DateAndTime />
+      <div className="content">
+        <div className="content__top">
 
-        <WeatherState 
-          weatherCode={currentWeather?.weather ? currentWeather?.weather[0]?.id : null}
-          weatherText={currentWeather?.weather ? currentWeather?.weather[0]?.description : ""} 
-          temp={currentWeather?.main?.temp}
-        />
+          <DateAndTime />
 
-        <Wind dir={currentWeather?.wind?.deg} speed={currentWeather?.wind?.speed}/>
-      </div>
+          <WeatherState 
+            weatherCode={currentWeather?.weather ? currentWeather?.weather[0]?.id : null}
+            weatherText={currentWeather?.weather ? currentWeather?.weather[0]?.description : ""} 
+            temp={currentWeather?.main?.temp}
+          />
 
-      <div className="app__bottom">
-        <Forecast />
+          <Wind dir={currentWeather?.wind?.deg} speed={currentWeather?.wind?.speed}/>
+        </div>
+
+        <div className="content__bottom">
+          <Forecast />
+        </div>
       </div>
     </div>
+
   );
 }
 
