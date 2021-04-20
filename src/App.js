@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import Navigation from './Navigation';
 import DateAndTime from './DateTime';
 import WeatherState from './WeatherState';
 import Wind from './Wind.js';
@@ -30,8 +29,6 @@ function App() {
 
   return (
     <div className="app">
-      <Navigation />
-
       <div className="content">
         <div className="content__top">
 
