@@ -12,6 +12,7 @@ function Forecast() {
     useEffect(() => {
         async function fetchForecast() {
           const request = await api.get(requests.fetchForecast);
+          console.log(request.data);
           setForecast(request.data);
         }
         

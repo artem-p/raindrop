@@ -3,13 +3,13 @@ import './icons/css/weather-icons.min.css';
 import './WeatherState.css';
 import WeatherIcon from './WeatherIcon';
 
-function WeatherState({ weatherCode, weatherText, temp }) {
+function WeatherState({ weatherCode, weatherText, temp, isDay }) {
     
     return (
         <div className='weather'>
             <div className="weather__description">
                 <div className="weather__icon">
-                    <WeatherIcon className="weather__icon" weatherCode={weatherCode}/>
+                    <WeatherIcon className="weather__icon" weatherCode={weatherCode} isDay={isDay}/>
                 </div>
                 <div className="weather__text">{weatherText}</div>
             </div>
