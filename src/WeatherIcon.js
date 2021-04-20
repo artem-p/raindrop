@@ -5,8 +5,13 @@ import owmToWi from './owmToWi';
 
 function WeatherIcon( {weatherCode, isDay} ) {
     // isDay =  false - night, 1 - true
-    const iconPrefix = "wi wi-";
+    let iconPrefix = "wi wi-";
     console.log(isDay);
+    if (isDay) {
+        iconPrefix += 'day-';
+    } else {
+        iconPrefix += 'night-';
+    }
     let icon = weatherCode ? owmToWi[weatherCode].icon : '';
     
     // if (!(weatherCode > 699 && weatherCode < 800) && !(weatherCode > 899 && weatherCode < 1000)) {

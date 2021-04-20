@@ -7,42 +7,58 @@ export default
     "200": {
       "label": "thunderstorm with light rain",
       "icon": "storm-showers",
-      "icon_code": "\uf010"
+      "icon_code": "\uf010",
+      "icon_night": "night-alt-storm-showers",
+      "icon_code_night": "\uf02c"
     },
     "201": {
       "label": "thunderstorm with rain",
       "icon": "storm-showers",
-      "icon_code": "\uf010"
+      "icon_code": "\uf010",
+      "icon_night": "",
+      "icon_code_night": ""
     },
     "202": {
       "label": "thunderstorm with heavy rain",
       "icon": "storm-showers",
-      "icon_code": "\uf010"
+      "icon_code": "\uf010",
+      "icon_night": "",
+      "icon_code_night": ""
     },
     "210": {
       "label": "light thunderstorm",
       "icon": "storm-showers",
-      "icon_code": "\uf016"
+      "icon_code": "\uf016",
+      "icon_night": "",
+      "icon_code_night": ""
     },
     "211": {
       "label": "thunderstorm",
       "icon": "thunderstorm",
-      "icon_code": "\uf016"
+      "icon_code": "\uf016",
+      "icon_night": "",
+      "icon_code_night": ""
     },
     "212": {
       "label": "heavy thunderstorm",
       "icon": "thunderstorm",
-      "icon_code": "\uf016"
+      "icon_code": "\uf016",
+      "icon_night": "",
+      "icon_code_night": ""
     },
     "221": {
       "label": "ragged thunderstorm",
       "icon": "thunderstorm",
-      "icon_code": "\uf016"
+      "icon_code": "\uf016",
+      "icon_night": "",
+      "icon_code_night": ""
     },
     "230": {
       "label": "thunderstorm with light drizzle",
       "icon": "storm-showers",
-      "icon_code": "\uf01e"
+      "icon_code": "\uf01e",
+      "icon_night": "",
+      "icon_code_night": ""
     },
     "231": {
       "label": "thunderstorm with drizzle",
