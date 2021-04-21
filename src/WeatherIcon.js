@@ -11,10 +11,13 @@ function WeatherIcon( {weatherCode, isDay} ) {
     let icon = '';
     
     if (weatherCode) {
-        if (isDay) {
-            icon = owmToWi[weatherCode].icon;
-        } else {
-            icon = owmToWi[weatherCode].icon_night;
+        icon = owmToWi[weatherCode].icon;
+
+        // for some icons use night alternative
+        if ([800, 801, 802].includes(weatherCode)) { //clear, few clouds, scattered clouds
+            if (!isDay) {
+                icon = owmToWi[weatherCode].icon_night;
+            }
         }
     }
 
