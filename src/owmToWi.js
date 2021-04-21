@@ -273,7 +273,7 @@ export default
     "800": {
       "label": "clear sky",
       "icon": "day-sunny",
-      "icon_night": "night-clear"
+      "icon_night": "night-clear",
       "icon_code": "\uf00d",
       "icon_code_night": "\uf02e",
     },
