@@ -273,23 +273,33 @@ export default
     "800": {
       "label": "clear sky",
       "icon": "day-sunny",
-      "icon_code": "\uf00d"
+      "icon_night": "night-clear"
+      "icon_code": "\uf00d",
+      "icon_code_night": "\uf02e",
     },
+
     "801": {
       "label": "few clouds",
-      "icon": "cloudy",
-      "icon_code": "\uf011"
+      "icon": "day-cloudy",
+      "icon_code": "\uf011",
+      "icon_night": "night-alt-cloudy",
+      "icon_code_night": "\uf086"
     },
+
     "802": {
       "label": "scattered clouds",
       "icon": "cloudy",
-      "icon_code": "\uf011"
+      "icon_code": "\uf011",
+      "icon_night": "night-alt-cloudy",
+      "icon_code_night": "\uf086"
     },
+
     "803": {
       "label": "broken clouds",
       "icon": "cloudy",
       "icon_code": '\uf012'
     },
+    
     "804": {
       "label": "overcast clouds",
       "icon": "cloudy",
