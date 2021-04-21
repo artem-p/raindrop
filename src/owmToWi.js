@@ -297,7 +297,7 @@ export default
     "803": {
       "label": "broken clouds",
       "icon": "cloudy",
-      "icon_code": '\uf012'
+      "icon_code": '\uf013'
     },
     
     "804": {
