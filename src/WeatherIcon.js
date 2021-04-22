@@ -6,7 +6,6 @@ import owmToWi from './owmToWi';
 function WeatherIcon( {weatherCode, isDay} ) {
     // isDay =  false - night, 1 - true
     let iconPrefix = "wi wi-";
-    console.log(isDay);
 
     let icon = '';
     

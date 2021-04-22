@@ -1,4 +1,3 @@
-// 20201129220526
 // https://gist.githubusercontent.com/tbranyen/62d974681dea8ee0caa1/raw/3405bfb2a76b7cbd90fde33d8536f0cd13706955/icons.json
 
 // todo add more icons https://openweathermap.org/weather-conditions
@@ -123,27 +122,27 @@ export default
     "500": {
       "label": "light rain",
       "icon": "rain",
-      "icon_code": "\uf01c"
+      "icon_code": "\uf019"
     },
     "501": {
       "label": "moderate rain",
       "icon": "rain",
-      "icon_code": "\uf019"
+      "icon_code": "\uf01a"
     },
     "502": {
       "label": "heavy intensity rain",
       "icon": "rain",
-      "icon_code": "\uf019"
+      "icon_code": "\uf01a"
     },
     "503": {
       "label": "very heavy rain",
       "icon": "rain",
-      "icon_code": "\uf019"
+      "icon_code": "\uf01a"
     },
     "504": {
       "label": "extreme rain",
       "icon": "rain",
-      "icon_code": "\uf019"
+      "icon_code": "\uf01a"
     },
     "511": {
       "label": "freezing rain",
@@ -281,7 +280,7 @@ export default
     "801": {
       "label": "few clouds",
       "icon": "day-cloudy",
-      "icon_code": "\uf011",
+      "icon_code": "\uf002",
       "icon_night": "night-alt-cloudy",
       "icon_code_night": "\uf086"
     },
@@ -289,7 +288,7 @@ export default
     "802": {
       "label": "scattered clouds",
       "icon": "cloudy",
-      "icon_code": "\uf011",
+      "icon_code": "\uf002",
       "icon_night": "night-alt-cloudy",
       "icon_code_night": "\uf086"
     },

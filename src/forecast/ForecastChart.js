@@ -61,6 +61,7 @@ function ForecastChart({ forecast }) {
             size: 30
           },
           formatter: (value, context) => {
+            console.log(value.iconCode);
             let iconCode = value.iconCode ? owmToWi[value.iconCode].icon_code : '';
             return iconCode;
           }
