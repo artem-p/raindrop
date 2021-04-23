@@ -13,7 +13,8 @@ function ForecastChart({ forecast }) {
   let tempArr = [];
   let precArr = [];
   let weatherArr = [];
-  let tempValues = [];
+  // let tempValues = [];
+  let precValues = [];
 
   let cloudImage = new Image(64, 64);
   cloudImage.src = cloudIcon;
@@ -28,6 +29,13 @@ function ForecastChart({ forecast }) {
       return {x: new Date(forecastElement.dt * 1000), y: (forecastElement.main.temp - 273.15).toFixed(1)}
     })
 
+    precValues = forecasts.map((forecastElement) => {
+      let rainAmount = forecastElement.rain ? forecastElement.rain['3h'] : 0;
+      let snowAmount = forecastElement.snow ? forecastElement.snow['3h'] : 0;
+
+      return rainAmount + snowAmount;
+    })
+    
     precArr = forecasts.map((forecastElement) => {
       let rainAmount = forecastElement.rain ? forecastElement.rain['3h'] : 0;
       let snowAmount = forecastElement.snow ? forecastElement.snow['3h'] : 0;
@@ -42,9 +50,9 @@ function ForecastChart({ forecast }) {
     })
 
 
-    tempValues = forecasts.map((forecastElement) => {
-      return (forecastElement.main.temp - 273.15).toFixed(1)
-    });
+    // tempValues = forecasts.map((forecastElement) => {
+    //   return (forecastElement.main.temp - 273.15).toFixed(1)
+    // });
 
   }
 
@@ -86,6 +94,8 @@ function ForecastChart({ forecast }) {
     ],
   }
 
+  let precMax = Math.max(1, Math.max(...precValues)); // prec upper bound at least 1
+
   const options = {
     responsive: true,
     maintainAspectRatio: false,
@@ -124,7 +134,9 @@ function ForecastChart({ forecast }) {
             display: false
           },
 
+          
           ticks: {
+            max: precMax,
             fontColor: 'white'
           }
         },
