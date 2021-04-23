@@ -73,12 +73,12 @@ function ForecastChart({ forecast }) {
         borderColor: 'white',
       },
 
-      // {
-      //   yAxisID: 'prec',
-      //   data: precArr,
-      //   type: 'bar',
-      //   backgroundColor: '#004e89'
-      // },
+      {
+        yAxisID: 'prec',
+        data: precArr,
+        type: 'bar',
+        backgroundColor: '#004e89'
+      },
     ],
   }
 
@@ -113,17 +113,17 @@ function ForecastChart({ forecast }) {
   
         },
 
-        // {
-        //   id: 'prec',
-        //   position: 'right',
-        //   gridLines: {
-        //     display: false
-        //   },
+        {
+          id: 'prec',
+          position: 'right',
+          gridLines: {
+            display: false
+          },
 
-        //   ticks: {
-        //     fontColor: 'white'
-        //   }
-        // },
+          ticks: {
+            fontColor: 'white'
+          }
+        },
 
         {
           id: 'weather',
