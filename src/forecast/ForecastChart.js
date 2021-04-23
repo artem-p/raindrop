@@ -29,7 +29,11 @@ function ForecastChart({ forecast }) {
     })
 
     precArr = forecasts.map((forecastElement) => {
-      return {x: new Date(forecastElement.dt * 1000), y: Math.random() * 100}
+      let rainAmount = forecastElement.rain ? forecastElement.rain['3h'] : 0;
+      let snowAmount = forecastElement.snow ? forecastElement.snow['3h'] : 0;
+
+      let prec = rainAmount + snowAmount;
+      return {x: new Date(forecastElement.dt * 1000), y: prec}
     })
 
     // dummy chart for weather icons. Use bars with zero height and add icon on top of them
