@@ -38,6 +38,7 @@ function App() {
             weatherCode={currentWeather?.weather ? currentWeather?.weather[0]?.id : null}
             weatherText={currentWeather?.weather ? currentWeather?.weather[0]?.description : ""} 
             temp={currentWeather?.main?.temp}
+            feelsLike={currentWeather?.main?.feels_like}
             isDay={currentWeather?.sys?.sunrise <= currentWeather?.dt && currentWeather?.dt < currentWeather?.sys?.sunset}
           />
 
