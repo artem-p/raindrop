@@ -46,7 +46,7 @@ function ForecastChart({ forecast }) {
 
     // dummy chart for weather icons. Use bars with zero height and add icon on top of them
     weatherArr = forecasts.map((forecastElement) => {
-      let owmIconCode = getWiIconCode(forecastElement.weather[0]?.id)
+      let owmIconCode = getWiIconCode(forecastElement.weather[0]?.id);
       return {x: new Date(forecastElement.dt * 1000), y: 0, owmIconCode}
     })
 
@@ -74,7 +74,8 @@ function ForecastChart({ forecast }) {
             size: 30
           },
           formatter: (value, context) => {
-            let iconCode = value.iconCode ? owmToWi[value.iconCode].icon_code : '';
+            console.log(value);
+            let iconCode = value.owmIconCode ? value.owmIconCode : '';
             return iconCode;
           }
         }
