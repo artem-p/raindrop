@@ -4,7 +4,7 @@ import { Line } from '@reactchartjs/react-chart.js';
 import cloudIcon from '../icons/svg/wi-cloud.svg';
 import Chart from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
-import owmToWi from '../owmToWi';
+import owmToWi, {getWiIconCode} from '../owmToWi';
 
 
 // const dataArr = [2, 8, 3, -5, -2, -3];
