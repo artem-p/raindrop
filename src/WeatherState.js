@@ -13,10 +13,11 @@ function WeatherState({ weatherCode, weatherText, temp, feelsLike, isDay }) {
                 </div>
                 <div className="weather__text">{weatherText}</div>
             </div>
-            <div className="weather__temperature">{temp ? (temp - 273.15).toFixed(0) : ""} 
-                                                    {' '}({feelsLike ? (feelsLike - 273.15).toFixed(0) : ""}) 
-                                                    °С
-                                                    </div>
+
+            <div className="temperature">
+                <div className="temperature__measured">{temp ? (temp - 273.15).toFixed(0) : ""} {' '} °С</div>
+                <div className="temperature__feelslike">Feels like {feelsLike ? (feelsLike - 273.15).toFixed(0) : ""}{' '}°С</div>
+            </div>
         </div>
     )
 }

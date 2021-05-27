@@ -13,7 +13,14 @@
     font-size: 2em;
 }
 
-.weather__temperature {
+.temperature {
     margin-left: 30px;
+}
+
+.temperature__measured {
     font-size: 6em;
+}
+
+.temperature__feelslike {
+    font-size: 2em;
 }
