@@ -13,7 +13,7 @@ function Wind({dir, speed}) {
             </div>
 
             <div className="wind__speed">
-                {speed} м/с
+                {speed.toFixed(0)} м/с
             </div>
         </div>
     )
