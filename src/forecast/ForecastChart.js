@@ -46,7 +46,7 @@ function ForecastChart({ forecast }) {
 
     // dummy chart for weather icons. Use bars with zero height and add icon on top of them
     weatherArr = forecasts.map((forecastElement) => {
-      let owmIconCode = getWiIconCode(forecastElement.weather[0]?.id);
+      let owmIconCode = getWiIconCode(forecastElement.weather[0]?.id, forecastElement.sys?.pod);
       return {x: new Date(forecastElement.dt * 1000), y: 0, owmIconCode}
     })
 
