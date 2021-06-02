@@ -21,7 +21,7 @@ function ForecastChart({ forecast }) {
   
 
   if (forecast && forecast.list && forecast.list.length > 0) {
-    const forecasts = forecast.list.slice(0, 7);
+    const forecasts = forecast.list.slice(0, 9);
     
     // console.log(forecasts);
 
