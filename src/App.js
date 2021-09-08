@@ -33,14 +33,16 @@ function App() {
         <div className="content__top">
 
           <DateAndTime />
-
-          <WeatherState 
-            weatherCode={currentWeather?.weather ? currentWeather?.weather[0]?.id : null}
-            weatherText={currentWeather?.weather ? currentWeather?.weather[0]?.description : ""} 
-            temp={currentWeather?.main?.temp}
-            feelsLike={currentWeather?.main?.feels_like}
-            isDay={currentWeather?.sys?.sunrise <= currentWeather?.dt && currentWeather?.dt < currentWeather?.sys?.sunset}
-          />
+          
+          <div className="weather__state">
+            <WeatherState 
+              weatherCode={currentWeather?.weather ? currentWeather?.weather[0]?.id : null}
+              weatherText={currentWeather?.weather ? currentWeather?.weather[0]?.description : ""} 
+              temp={currentWeather?.main?.temp}
+              feelsLike={currentWeather?.main?.feels_like}
+              isDay={currentWeather?.sys?.sunrise <= currentWeather?.dt && currentWeather?.dt < currentWeather?.sys?.sunset}
+            />
+          </div>
 
           <Wind dir={currentWeather?.wind?.deg} speed={currentWeather?.wind?.speed}/>
         </div>
