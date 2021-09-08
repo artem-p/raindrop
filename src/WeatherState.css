@@ -1,16 +1,37 @@
 .weather {
     color: white;
+    display: grid;
+    /* justify-content: center; */
+    /* align-items: baseline; */
+    /* flex-direction: column; */
+
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+
+
+    /* temporary property for visualization */
+    /* height: 150px; */
+}
+
+/* .weather__upper {
     display: flex;
     justify-content: center;
-    align-items: baseline;
 }
+
+.weather__lower {
+    display: flex;
+    justify-content: center;
+} */
 
 .weather__icon {
     font-size: 12em;
+    display: flex;
+    justify-content: center;
 }
 
 .weather__text {
     font-size: 2em;
+    text-align: center;
 }
 
 .temperature {
@@ -19,8 +40,10 @@
 
 .temperature__measured {
     font-size: 6em;
+    text-align: center;
 }
 
 .temperature__feelslike {
     font-size: 2em;
+    text-align: center;
 }
