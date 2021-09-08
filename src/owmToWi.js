@@ -403,6 +403,14 @@ let owmToWi =
 
 export default owmToWi;
 
-export function getWiIconCode(owmIconCode) {
-    return owmToWi[owmIconCode].icon_code;
+export function getWiIconCode(owmIconCode, pod) {
+  // pod - part of day (d or n)
+  if (pod && pod == 'n') {
+    if (owmToWi[owmIconCode].icon_code_night) {
+      return owmToWi[owmIconCode].icon_code_night;
+    }
+  }
+
+  // day icon by default
+  return owmToWi[owmIconCode].icon_code;
 }
