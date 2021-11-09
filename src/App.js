@@ -24,8 +24,10 @@ function App() {
         
         navigator.geolocation.getCurrentPosition((position) => {
           setLocationStatus(null);
-            setLat(position.coords.latitude);
-            setLon(position.coords.longitude);
+          const lat = position.coords.latitude;
+          const lon = position.coords.longitude;
+          setLat(lat);
+          setLon(lon);
         }, () => {
           setLocationStatus('Unable to retrieve your location');
         });
@@ -39,20 +41,20 @@ function App() {
 
 
   
-  useEffect(() => {
-    async function fetchCurrentWeather() {
-      const request = await api.get(requests.fetchCurrentWeather(lat, lon));
-      setCurrentWeather(request.data);
-    }
-    
-    fetchCurrentWeather();
+  async function fetchCurrentWeather(lat, lon) {
+    const request = await api.get(requests.fetchCurrentWeather(lat, lon));
+    setCurrentWeather(request.data);
+  }
 
-    const requestInterval = setInterval(fetchCurrentWeather, 60000 * 5);
+
+  useEffect(() => {
+    fetchCurrentWeather(lat, lon);
+
+    const requestInterval = setInterval(fetchCurrentWeather, 60000 * 5, lat, lon);
     
     return () => clearInterval(requestInterval);
-  }, [])
+  }, [lat, lon])
 
-  console.log(currentWeather);
 
   return (
     <div className="app">
