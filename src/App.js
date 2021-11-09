@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import DateAndTime from './DateTime';
+import Header from './Header';
 import WeatherState from './WeatherState';
 import Wind from './Wind.js';
 import api from './api';
@@ -32,7 +32,7 @@ function App() {
       <div className="content">
         <div className="content__top">
 
-          <DateAndTime />
+          <Header />
           
           <div className="weather__state">
             <WeatherState 

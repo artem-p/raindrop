@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import { DateTime } from 'luxon';
-import './DateTime.css';
+import './Header.css';
+import Location from './Location';
 
 
-function DateAndTime() {
+function Header() {
     const [date, setDate] = useState(new DateTime.local());
  
     useEffect(() => {
@@ -17,7 +18,10 @@ function DateAndTime() {
 
 
     return (
-        <div className="datetime-container">
+        <div className="header-container">
+            <div className="location-container">
+                <Location />
+            </div>
             <div className="datetime">
                 <h1 className="datetime__time">{date.toLocaleString(DateTime.TIME_SIMPLE)}</h1>
                 <h1 className="datetime__date">{date.toLocaleString(DateTime.DATE_MED_WITH_WEEKDAY)}</h1>
@@ -26,4 +30,4 @@ function DateAndTime() {
     )
 }
 
-export default DateAndTime
+export default Header
