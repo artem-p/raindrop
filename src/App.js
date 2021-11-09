@@ -11,10 +11,37 @@ import Forecast from './forecast/Forecast';
 
 function App() {
   const [currentWeather, setCurrentWeather] = useState({});
+  const [lat, setLat] = useState(59.9311);
+  const [lon, setLon] = useState(30.3609);
+  const [locationStatus, setLocationStatus] = useState(null);
 
+  
+  const getLocation = () => {
+    if (!navigator.geolocation) {
+      setLocationStatus('Geolocation is not supported by your browser');
+    } else {
+      setLocationStatus('Locating...');
+        
+        navigator.geolocation.getCurrentPosition((position) => {
+          setLocationStatus(null);
+            setLat(position.coords.latitude);
+            setLon(position.coords.longitude);
+        }, () => {
+          setLocationStatus('Unable to retrieve your location');
+        });
+    }
+  }
+
+  
+  const handleOnClickLocation = () => {
+    getLocation()
+  }
+
+
+  
   useEffect(() => {
     async function fetchCurrentWeather() {
-      const request = await api.get(requests.fetchCurrentWeather);
+      const request = await api.get(requests.fetchCurrentWeather(lat, lon));
       setCurrentWeather(request.data);
     }
     
@@ -32,7 +59,7 @@ function App() {
       <div className="content">
         <div className="content__top">
 
-          <Header />
+          <Header handleLocation={handleOnClickLocation} status={locationStatus} lat={lat} lon={lon} />
           
           <div className="weather__state">
             <WeatherState 

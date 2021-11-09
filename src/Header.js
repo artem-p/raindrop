@@ -4,7 +4,7 @@ import './Header.css';
 import Location from './Location';
 
 
-function Header() {
+function Header({handleLocation, status, lat, lon}) {
     const [date, setDate] = useState(new DateTime.local());
  
     useEffect(() => {
@@ -20,7 +20,7 @@ function Header() {
     return (
         <div className="header-container">
             <div className="location-container">
-                <Location />
+                <Location handleLocation={handleLocation} status={status} lat={lat} lon={lon}/>
             </div>
             <div className="datetime">
                 <h1 className="datetime__time">{date.toLocaleString(DateTime.TIME_SIMPLE)}</h1>
