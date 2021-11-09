@@ -1,5 +1,10 @@
 .location {
     color: white;
-    font-size: 3em;
     padding: 20px;
 }
+
+.location-button {
+    cursor: pointer;
+    font-size: 3em;
+}
+
