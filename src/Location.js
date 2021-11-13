@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import './Location.css';
 import { BiCurrentLocation } from 'react-icons/bi';
 
-function Location({handleLocation, status, lat, lon}) {
+function Location({handleLocation, status, lat, lon, name}) {
     
 
     
@@ -17,6 +17,7 @@ function Location({handleLocation, status, lat, lon}) {
                 {status && <p>{status}</p>}
                 {lat && <span>{lat}</span>}
                 {lon && <span>, {lon}</span>}
+                {name && <p>{name}</p>}
             </div>
         </div>
     )

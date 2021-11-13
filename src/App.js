@@ -61,7 +61,8 @@ function App() {
       <div className="content">
         <div className="content__top">
 
-          <Header handleLocation={handleOnClickLocation} status={locationStatus} lat={lat} lon={lon} />
+          <Header handleLocation={handleOnClickLocation} status={locationStatus} lat={lat} lon={lon} 
+            name={currentWeather?.name}/>
           
           <div className="weather__state">
             <WeatherState 
