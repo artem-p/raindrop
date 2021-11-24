@@ -6,13 +6,12 @@ import ForecastChart from './ForecastChart';
 import ForecastElement from './ForecastElement';
 
 
-function Forecast() {
+function Forecast({lat, lon}) {
     const [forecast, setForecast] = useState({});
 
     useEffect(() => {
         async function fetchForecast() {
-          const request = await api.get(requests.fetchForecast);
-          console.log(request.data);
+          const request = await api.get(requests.fetchForecast(lat, lon));
           setForecast(request.data);
         }
         
@@ -21,9 +20,8 @@ function Forecast() {
         const requestInterval = setInterval(fetchForecast, 60000 * 5);
         
         return () => clearInterval(requestInterval);
-      }, [])
+      }, [lat, lon])
     
-      // console.log(forecast);
     
     const getForecasts = () => {
       if (forecast && forecast.list && forecast.list.length > 0) {

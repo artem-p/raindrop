@@ -78,7 +78,7 @@ function App() {
         </div>
 
         <div className="content__bottom">
-          <Forecast />
+          <Forecast lat={lat} lon={lon}/>
         </div>
       </div>
     </div>
