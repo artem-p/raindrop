@@ -1,5 +1,4 @@
 import React from 'react';
-import './WeatherIcon.css';
 import owmToWi from './owmToWi';
 
 
