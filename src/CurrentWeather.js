@@ -6,7 +6,7 @@ import WeatherIcon from './WeatherIcon';
 function CurrentWeather({ weatherCode, weatherText, temp, feelsLike, isDay }) {
     
     return (
-        <div className='weather'>
+        <div className='weather-card current-weather'>
             {/* <div className="weather__description">
                 <div className="weather__icon">
                     <WeatherIcon className="weather__icon" weatherCode={weatherCode} isDay={isDay}/>

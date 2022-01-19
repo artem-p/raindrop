@@ -14,22 +14,29 @@
   color: rgba(244,244,245,.8);  
 }
 
+.weather-card {
+  background: #051A33;
+  border-radius: 5px;
+}
+
+
+
 .content {
-  height: 100vh;
+  /* height: 100vh; */
   /* background-color: #0077b6; */
   /* display: flex; */
   /* flex-direction: column; */
   /* justify-content: space-between; */
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
 }
 
 .center {
-  display: flex;
+  /* display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-around; */
 }
 
 .weather__state {
   /* max-width: 60%; */
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
