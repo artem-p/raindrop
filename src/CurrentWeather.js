@@ -1,9 +1,9 @@
 import React from 'react'
 import './icons/css/weather-icons.min.css';
-import './WeatherState.css';
+import './CurrentWeather.css';
 import WeatherIcon from './WeatherIcon';
 
-function WeatherState({ weatherCode, weatherText, temp, feelsLike, isDay }) {
+function CurrentWeather({ weatherCode, weatherText, temp, feelsLike, isDay }) {
     
     return (
         <div className='weather'>
@@ -31,4 +31,4 @@ function WeatherState({ weatherCode, weatherText, temp, feelsLike, isDay }) {
     )
 }
 
-export default WeatherState
+export default CurrentWeather;

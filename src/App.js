@@ -2,12 +2,13 @@ import { useState, useEffect } from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Header from './Header';
-import WeatherState from './WeatherState';
-import Wind from './Wind.js';
+import CurrentWeather from './CurrentWeather';
+// import Wind from './Wind.js';
 import api from './api';
 import requests from './requests';
 import Forecast from './forecast/Forecast';
 import DailyForecast from './daily-forecast/DailyForecast';
+import { BiCurrentLocation } from 'react-icons/bi';
 
 
 function App() {
@@ -56,6 +57,23 @@ function App() {
     return () => clearInterval(requestInterval);
   }, [lat, lon])
 
+  return (
+    <div className="app">
+      <header>
+        <Header handleLocation={handleOnClickLocation} status={locationStatus} lat={lat} lon={lon} 
+              name={currentWeather?.name}/>
+      </header>
+      <main>
+        <CurrentWeather 
+          weatherCode={currentWeather?.weather ? currentWeather?.weather[0]?.id : null}
+          weatherText={currentWeather?.weather ? currentWeather?.weather[0]?.description : ""} 
+          temp={currentWeather?.main?.temp}
+          feelsLike={currentWeather?.main?.feels_like}
+          isDay={currentWeather?.sys?.sunrise <= currentWeather?.dt && currentWeather?.dt < currentWeather?.sys?.sunset}
+        />
+      </main>
+    </div>
+  )
 
   return (
     <div className="app">
@@ -68,16 +86,16 @@ function App() {
           <div className="center">
             <div>
               <div className="weather__state">
-                <WeatherState 
+                {/* <WeatherState 
                   weatherCode={currentWeather?.weather ? currentWeather?.weather[0]?.id : null}
                   weatherText={currentWeather?.weather ? currentWeather?.weather[0]?.description : ""} 
                   temp={currentWeather?.main?.temp}
                   feelsLike={currentWeather?.main?.feels_like}
                   isDay={currentWeather?.sys?.sunrise <= currentWeather?.dt && currentWeather?.dt < currentWeather?.sys?.sunset}
-                />
+                /> */}
               </div>
 
-                <Wind dir={currentWeather?.wind?.deg} speed={currentWeather?.wind?.speed}/>
+                {/* <Wind dir={currentWeather?.wind?.deg} speed={currentWeather?.wind?.speed}/> */}
             </div>
 
             <div>
