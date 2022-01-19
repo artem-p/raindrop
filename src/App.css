@@ -2,15 +2,16 @@
   /* background: radial-gradient(farthest-side ellipse at 10% 0,#333867 20%,#17193b);
   background-image: radial-gradient(farthest-side at 10% 0px, rgb(51, 56, 103) 20%, rgb(23, 25, 59)); */
 
-  background-color: #22313a;
+  /* background-color: #22313a;
   background-color: #131633;
   background-color: #121e2d;
   background-color: #577590;
   background-color: #355070;
   background-color: rgb(31, 41, 64);
   background-color: #3d5a80;
-  color: white !important;  
-  color: rgba(244,244,245,.8) !important;  
+  background-color: #031023; */
+  background: linear-gradient(rgb(3, 16, 39) 0%, rgb(2, 16, 29) 100%);
+  color: rgba(244,244,245,.8);  
 }
 
 .content {

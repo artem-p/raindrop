@@ -18,7 +18,7 @@ function Header({handleLocation, status, lat, lon, name}) {
 
 
     return (
-        <div className="header-container">
+        <header className="header-container">
             <div className="location-container">
                 <Location handleLocation={handleLocation} status={status} lat={lat} lon={lon} name={name}/>
             </div>
@@ -26,7 +26,7 @@ function Header({handleLocation, status, lat, lon, name}) {
                 <h1 className="datetime__time">{date.toLocaleString(DateTime.TIME_SIMPLE)}</h1>
                 <h1 className="datetime__date">{date.toLocaleString(DateTime.DATE_MED_WITH_WEEKDAY)}</h1>
             </div>
-        </div>
+        </header>
     )
 }
 
