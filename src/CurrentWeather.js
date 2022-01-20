@@ -1,32 +1,77 @@
-import React from 'react'
-import './icons/css/weather-icons.min.css';
+import React, {useState, useEffect} from 'react';
+import requests from './requests';
+import api from './api';
+import {Container, Row, Col} from 'react-bootstrap';
 import './CurrentWeather.css';
-import WeatherIcon from './WeatherIcon';
+import OwmWeatherIcon from './OwmWeatherIcon';
+import { kelvinToCelcius } from './common';
+import Wind from './Wind';
 
-function CurrentWeather({ weatherCode, weatherText, temp, feelsLike, isDay }) {
+
+function CurrentWeather({lat, lon}) {
+    const [currentWeather, setCurrentWeather] = useState({});
+
+    async function fetchCurrentWeather(lat, lon) {
+        const request = await api.get(requests.fetchCurrentWeather(lat, lon));
+        setCurrentWeather(request.data);
+    }
+
+
+    useEffect(() => {
+        fetchCurrentWeather(lat, lon);
+
+        const requestInterval = setInterval(fetchCurrentWeather, 60000 * 5, lat, lon);
     
+        return () => clearInterval(requestInterval);
+    }, [lat, lon]);
+    
+
+    const stationName = currentWeather?.name ? currentWeather?.name : "Загрузка...";
+    const weatherText = currentWeather?.weather ? currentWeather?.weather[0]?.description : "";
+    const weatherCode = currentWeather?.weather ? currentWeather?.weather[0]?.id : "";
+    const temp = kelvinToCelcius(currentWeather?.main?.temp);
+    const feelsLike = kelvinToCelcius(currentWeather?.main?.feels_like);
+    const wind = currentWeather?.wind;
+
     return (
-        <div className='weather-card current-weather'>
-            {/* <div className="weather__description">
-                <div className="weather__icon">
-                    <WeatherIcon className="weather__icon" weatherCode={weatherCode} isDay={isDay}/>
-                </div>
-                <div className="weather__text">{weatherText}</div>
-            </div>
+        <div className='owm-weather'>
+            <Container fluid>
+                <Row>
+                    <Col>
+                        <Row>
+                            <div className="station-name">
+                                {stationName}
+                            </div>
+                        </Row>
 
-            <div className="temperature">
-                <div className="temperature__measured">{temp ? (temp - 273.15).toFixed(0) : ""} {' '} °С</div>
-                <div className="temperature__feelslike">Feels like {feelsLike ? (feelsLike - 273.15).toFixed(0) : ""}{' '}°С</div>
-            </div> */}
+                        <Row>
+                            <Col>
+                                <div className="weather-icon">
+                                    <OwmWeatherIcon weatherCode={weatherCode}/>
+                                </div>
+                            </Col>
 
-                <div className="weather__icon">
-                    <WeatherIcon className="weather__icon" weatherCode={weatherCode} isDay={isDay}/>
-                </div>
+                            <Col>
+                                <div className="temperature__measured">
+                                    {temp}{' '} <sup>°</sup>
+                                </div>
+                            </Col>
+                        </Row>
 
-                <div className="temperature__measured">{temp ? (temp - 273.15).toFixed(0) : ""} {' '} °С</div>
-                <div className="weather__text">{weatherText}</div>
+                        <Row>
+                            <Col>
+                                <div className="weather-text">
+                                    <h6>{weatherText}</h6>
+                                </div>
+                            </Col>
 
-                <div className="temperature__feelslike">Feels like {feelsLike ? (feelsLike - 273.15).toFixed(0) : ""}{' '}°С</div>
+                            <Col>
+                                <Wind wind={wind}/>
+                            </Col>
+                        </Row>
+                    </Col>
+                </Row>
+            </Container>
         </div>
     )
 }

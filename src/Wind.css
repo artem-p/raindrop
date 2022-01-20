@@ -1,14 +1,15 @@
 .wind {
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
+    font-size: 2rem;
 }
 
-.wind__icon {
-    font-size: 4em;
+.wind  {
+    line-height: 0;
 }
 
-.wind__speed {
-    font-size: 4em;
-    margin-left: 20px;
+.wind i {
+    color: rgb(161, 185, 206);;
+}
+
+.wind span {
+    color: rgb(58, 134, 202);
 }

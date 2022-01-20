@@ -1,22 +1,20 @@
-import React from 'react'
+import React from 'react';
 import './Wind.css';
-import './icons/css/weather-icons.min.css';
-import './icons/css/weather-icons-wind.min.css';
+import './weather-icons/css/weather-icons.min.css';
+import './weather-icons/css/weather-icons-wind.min.css';
 
-function Wind({dir, speed}) {
 
+function Wind({wind}) {
+    const speed = wind?.speed ? wind?.speed?.toFixed(0) : 0;
+    const dir = wind?.deg ? wind?.deg : 0;
+
+    const iconClass = `wi wi-wind from-${dir}-deg`
 
     return (
         <div className='wind'>
-            <div className="wind__icon">
-                <i className={`wi wi-wind from-${dir}-deg`}></i>
-            </div>
-
-            <div className="wind__speed">
-                {speed?.toFixed(0)} м/с
-            </div>
+            <i className={iconClass}></i>{' '}<span>{speed} м/c</span>
         </div>
     )
 }
 
-export default Wind
+export default Wind;
