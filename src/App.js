@@ -3,6 +3,8 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Header from './Header';
 import CurrentWeather from './CurrentWeather';
+import Owm3hForecast from './forecast/Owm3hForecast';
+
 // import Wind from './Wind.js';
 // import Forecast from './forecast/Forecast';
 // import DailyForecast from './daily-forecast/DailyForecast';
@@ -60,7 +62,9 @@ function App() {
         <Header handleLocation={handleOnClickLocation} status={locationStatus} lat={lat} lon={lon} />
       </header>
       <main>
-        <CurrentWeather lat={lat} lon={lon}/>
+        <CurrentWeather lat={lat} lon={lon} />
+
+        <Owm3hForecast lat={lat} lon={lon} />
       </main>
     </div>
   )

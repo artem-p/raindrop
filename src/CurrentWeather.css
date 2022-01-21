@@ -1,6 +1,7 @@
 .owm-current-weather {
     width: 70%;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .station-name {

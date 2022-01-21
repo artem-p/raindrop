@@ -1,0 +1,20 @@
+.forecast-element {
+    margin-right: 10px;
+    text-align: center;
+}
+
+.forecast-element_icon {
+    color: rgb(187, 222, 251);
+    font-size: 4rem;
+}
+
+.forecast-element_time {
+    font-weight: 600;
+    color: rgb(69, 129, 197);
+    font-size: 1.25rem;
+}
+
+.forecast-element_temperature {
+    font-size: 1.125rem;
+    color: rgb(74, 111, 161);
+}
