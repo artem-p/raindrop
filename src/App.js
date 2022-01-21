@@ -4,6 +4,7 @@ import './App.css';
 import Header from './Header';
 import CurrentWeather from './CurrentWeather';
 import Owm3hForecast from './forecast/Owm3hForecast';
+import OwmDailyForecast from './daily-forecast/OwmDailyForecast';
 
 // import Wind from './Wind.js';
 // import Forecast from './forecast/Forecast';
@@ -65,6 +66,8 @@ function App() {
         <CurrentWeather lat={lat} lon={lon} />
 
         <Owm3hForecast lat={lat} lon={lon} />
+
+        <OwmDailyForecast lat={lat} lon={lon} />
       </main>
     </div>
   )

@@ -1,0 +1,9 @@
+.owm-daily-forecast {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.owm-daily-forecast .forecast-elements {
+    display: flex;
+}
