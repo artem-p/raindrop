@@ -6,4 +6,5 @@
 
 .owm-3h-forecast .forecast-elements {
     display: flex;
+    justify-content: space-around;
 }

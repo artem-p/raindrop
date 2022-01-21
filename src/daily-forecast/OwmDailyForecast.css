@@ -6,4 +6,5 @@
 
 .owm-daily-forecast .forecast-elements {
     display: flex;
+    justify-content: center;
 }

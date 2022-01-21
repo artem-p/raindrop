@@ -10,5 +10,9 @@
 
 
 .datetime__time {
-    font-size: 3.6em !important;
+    font-size: 3rem;
+}
+
+.datetime__date {
+    font-size: 1.6rem;
 }
