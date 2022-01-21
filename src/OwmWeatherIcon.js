@@ -16,7 +16,7 @@ function OwmWeatherIcon({weatherCode, isNight}) {
             // для некоторых значков используем ночные альтернативы.
             // для большинства достаточно нейтральных, так как в дневных используется солнце, а по факту его может не быть
             if ([800, 801, 802].includes(weatherCode)) { //clear, few clouds, scattered clouds
-                icon = '-night-' + iconCode;
+                icon = '-night-' + weatherCode;
             }
          }
 

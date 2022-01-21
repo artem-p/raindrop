@@ -34,14 +34,16 @@ function CurrentWeather({lat, lon}) {
     const wind = currentWeather?.wind;
 
     return (
-        <div className='owm-weather'>
+        <div className='weather-card owm-current-weather'>
             <Container fluid>
                 <Row>
                     <Col>
                         <Row>
-                            <div className="station-name">
-                                {stationName}
-                            </div>
+                            <Col>
+                                <div className="station-name">
+                                    {stationName}
+                                </div>
+                            </Col>
                         </Row>
 
                         <Row>

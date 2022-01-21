@@ -1,8 +1,34 @@
-.current-weather {
+.owm-current-weather {
     width: 70%;
     margin: 0 auto;
 }
 
+.station-name {
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: rgb(57, 107, 174);
+}
+
+.weather-text h6 {
+    font-size: 1.375rem;
+    color: rgb(123, 152, 178);
+}
+
+.weather-icon {
+    color: #BBDEFB;
+    font-size: 6rem;
+}
+
+.temperature__measured {
+    font-size: 7rem;
+    color: rgb(74, 111, 161);
+    line-height: 1;
+    font-weight: 200;
+}
+
+.temperature__measured sup {
+    line-height: 0;
+}
 
 .weather {
     /* display: grid; */
