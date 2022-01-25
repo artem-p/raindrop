@@ -6,6 +6,9 @@ import CurrentWeather from './CurrentWeather';
 import Owm3hForecast from './forecast/Owm3hForecast';
 import OwmDailyForecast from './daily-forecast/OwmDailyForecast';
 
+// todo MatGeocoder has bunch of dependencies. Write your own.
+import MatGeocoder from 'react-mui-mapbox-geocoder'
+
 // import Wind from './Wind.js';
 // import Forecast from './forecast/Forecast';
 // import DailyForecast from './daily-forecast/DailyForecast';
@@ -13,6 +16,7 @@ import OwmDailyForecast from './daily-forecast/OwmDailyForecast';
 
 
 function App() {
+  const MAPBOX_TOKEN = "pk.eyJ1IjoiYXJ0ZW1wdWdhY2hldiIsImEiOiJja3l1NWJwZ3owM2IxMnd0NDUydDZqazUyIn0.b1G2XUsJEhO49s7vTH2q1Q";
   const [lat, setLat] = useState(59.9311);
   const [lon, setLon] = useState(30.3609);
   const [locationStatus, setLocationStatus] = useState(null);
@@ -60,6 +64,12 @@ function App() {
   return (
     <div className="app">
       <header>
+        <MatGeocoder
+          inputPlaceholder="Search Address"
+          accessToken={MAPBOX_TOKEN}
+          onSelect={() => {}}
+          showLoader={true}
+        />
         <Header handleLocation={handleOnClickLocation} status={locationStatus} lat={lat} lon={lon} />
       </header>
       <main>

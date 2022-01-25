@@ -4,6 +4,11 @@
   "private": true,
   "homepage": "http://artem-p.github.io/raindrop",
   "dependencies": {
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@mapbox/react-geocoder": "^2.5.0",
+    "@mui/icons-material": "^5.3.1",
+    "@mui/material": "^5.3.1",
     "@reactchartjs/react-chart.js": "^1.0.0-rc.3",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
@@ -17,6 +22,7 @@
     "react-bootstrap": "^1.4.3",
     "react-dom": "^17.0.1",
     "react-icons": "^4.3.1",
+    "react-mui-mapbox-geocoder": "^2.0.1",
     "react-scripts": "4.0.0",
     "web-vitals": "^0.2.4"
   },
