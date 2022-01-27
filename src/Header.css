@@ -4,6 +4,17 @@
     justify-content: space-between;
 }
 
+.search-box {
+    padding: 20px;
+    min-width: 50%;
+}
+
+
+/* Fix mui grid for search box. For some reason it displays with cancel button at half width*/
+.search-box .css-1xh3t33-MuiGrid-root {
+    flex-grow: 0 !important;
+}
+
 .datetime {
     padding: 20px;
 }
