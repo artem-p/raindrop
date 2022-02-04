@@ -8,7 +8,7 @@ import { kelvinToCelcius } from './common';
 import Wind from './Wind';
 
 
-function CurrentWeather({lat, lon}) {
+function CurrentWeather({lat, lon, place}) {
     const [currentWeather, setCurrentWeather] = useState({});
 
     async function fetchCurrentWeather(lat, lon) {
@@ -41,7 +41,7 @@ function CurrentWeather({lat, lon}) {
                         <Row>
                             <Col>
                                 <div className="station-name">
-                                    {stationName}
+                                    {place}{' '}{stationName}
                                 </div>
                             </Col>
                         </Row>

@@ -8,7 +8,7 @@ import MatGeocoder from 'react-mui-mapbox-geocoder'
 
 
 
-function Header({handleLocation, status, lat, lon, name}) {
+function Header({handleLocation, handleSelectPlace, status, lat, lon, name}) {
     const MAPBOX_TOKEN = "pk.eyJ1IjoiYXJ0ZW1wdWdhY2hldiIsImEiOiJja3l1NWJwZ3owM2IxMnd0NDUydDZqazUyIn0.b1G2XUsJEhO49s7vTH2q1Q";
     const [date, setDate] = useState(new DateTime.local());
  
@@ -32,7 +32,7 @@ function Header({handleLocation, status, lat, lon, name}) {
                 <MatGeocoder
                     inputPlaceholder="Search Address"
                     accessToken={MAPBOX_TOKEN}
-                    onSelect={() => {}}
+                    onSelect={handleSelectPlace}
                     showLoader={true}
                     />
             </div>

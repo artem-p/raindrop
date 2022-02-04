@@ -17,6 +17,7 @@ function App() {
   const [lat, setLat] = useState(59.9311);
   const [lon, setLon] = useState(30.3609);
   const [locationStatus, setLocationStatus] = useState(null);
+  const [place, setPlace] = useState('');
 
   
   const getLocation = () => {
@@ -39,7 +40,15 @@ function App() {
 
   
   const handleOnClickLocation = () => {
+    setPlace('');
     getLocation()
+  }
+
+  
+  const handleSelectPlace = (searchResult) => {
+    setLat(searchResult?.center[1]);
+    setLon(searchResult?.center[0]);
+    setPlace(searchResult?.text);
   }
 
 
@@ -61,10 +70,10 @@ function App() {
   return (
     <div className="app">
       <header>
-        <Header handleLocation={handleOnClickLocation} status={locationStatus} lat={lat} lon={lon} />
+        <Header handleLocation={handleOnClickLocation} handleSelectPlace={handleSelectPlace} status={locationStatus} lat={lat} lon={lon} />
       </header>
       <main>
-        <CurrentWeather lat={lat} lon={lon} />
+        <CurrentWeather lat={lat} lon={lon} place={place}/>
 
         <Owm3hForecast lat={lat} lon={lon} />
 
