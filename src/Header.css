@@ -14,7 +14,7 @@
 
 
 /* Fix mui grid for search box. For some reason it displays with cancel button at half width*/
-.search-box .css-1xh3t33-MuiGrid-root {
+.search-box .MuiGrid-item:nth-child(2) {
     flex-grow: 0 !important;
 }
 
