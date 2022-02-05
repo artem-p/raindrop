@@ -30,7 +30,7 @@ function Header({handleLocation, handleSelectPlace, status, lat, lon, name}) {
 
             <div className="search-box">
                 <MatGeocoder
-                    inputPlaceholder="Search Address"
+                    inputPlaceholder="Search for location"
                     accessToken={MAPBOX_TOKEN}
                     onSelect={handleSelectPlace}
                     showLoader={true}
