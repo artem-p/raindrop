@@ -18,6 +18,15 @@
     flex-grow: 0 !important;
 }
 
+.search-box .MuiPaper-root {
+    background-color: #051A33 !important;
+}
+
+.search-box .MuiSvgIcon-root, .search-box .MuiInputBase-input {
+    color: white !important;
+}
+
+
 .datetime {
     padding: 20px;
 }
