@@ -23,9 +23,13 @@
 }
 
 .search-box .MuiSvgIcon-root, .search-box .MuiInputBase-input {
-    color: white !important;
+    color: rgb(95, 139, 191) !important;
 }
 
+.search-box .react-autosuggest__suggestions-container {
+    background-color: #0F2744 !important;
+    color: rgb(32, 121, 201) !important;
+}
 
 .datetime {
     padding: 20px;
