@@ -23,6 +23,7 @@
     "react-dom": "^17.0.1",
     "react-icons": "^4.3.1",
     "react-mui-mapbox-geocoder": "^2.0.1",
+    "react-router-dom": "^6.2.1",
     "react-scripts": "4.0.0",
     "web-vitals": "^0.2.4"
   },
