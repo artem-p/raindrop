@@ -1,5 +1,5 @@
 import React from 'react';
-import './weather-icons/css/weather-icons.min.css';
+import './css/weather-icons.min.css';
 
 
 function OwmWeatherIcon({weatherCode, isNight}) {

@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import { Link } from 'react-router-dom';
+
 import './App.css';
-import Header from './Header';
-import CurrentWeather from './CurrentWeather';
+import Header from './dashboard/Header';
+import CurrentWeather from './dashboard/CurrentWeather';
 import Owm3hForecast from './forecast/Owm3hForecast';
 import OwmDailyForecast from './daily-forecast/OwmDailyForecast';
 
@@ -70,6 +72,10 @@ function App() {
   return (
     <div className="app">
       <header>
+        <nav>
+          <Link to='/dashboard'>Dashboard</Link>
+          <Link to='/map'>Map</Link>
+        </nav>
         <Header handleLocation={handleOnClickLocation} handleSelectPlace={handleSelectPlace} status={locationStatus} lat={lat} lon={lon} />
       </header>
       <main>

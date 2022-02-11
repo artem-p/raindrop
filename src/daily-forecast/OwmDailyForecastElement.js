@@ -1,7 +1,7 @@
 import React from 'react';
 import { DateTime } from 'luxon';
 import './OwmDailyForecastElement.css';
-import OwmWeatherIcon from '../OwmWeatherIcon';
+import OwmWeatherIcon from '../weather-icons/OwmWeatherIcon';
 
 
 function OwmDailyForecastElement({ time, minTemp, maxTemp, weatherCode }) {

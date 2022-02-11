@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react';
-import requests from './requests';
-import api from './api';
+import requests from '../requests';
+import api from '../api';
 import {Container, Row, Col} from 'react-bootstrap';
 import './CurrentWeather.css';
-import OwmWeatherIcon from './OwmWeatherIcon';
-import { kelvinToCelcius } from './common';
+import OwmWeatherIcon from '../weather-icons/OwmWeatherIcon';
+import { kelvinToCelcius } from '../common';
 import Wind from './Wind';
 
 
