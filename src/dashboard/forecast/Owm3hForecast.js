@@ -1,16 +1,15 @@
 import React, {useState, useEffect} from 'react';
-import api from '../api';
-import requests from '../requests';
-import './OwmDailyForecast.css';
-import OwmDailyForecastElement from './OwmDailyForecastElement';
-import { kelvinToCelcius } from '../common';
+import api from '../../api';
+import requests from '../../requests';
+import './Owm3hForecast.css';
+import OwmForecastElement from './OwmForecastElement';
 
 
-function OwmDailyForecast({lat, lon}) {
+function Owm3hForecast({lat, lon}) {
     const [forecast, setForecast] = useState({});
 
     async function fetchForecast(lat, lon) {
-        const request = await api.get(requests.fetchDailyForecast(lat, lon));
+        const request = await api.get(requests.fetchForecast(lat, lon));
         setForecast(request.data);
     }
 
@@ -25,15 +24,14 @@ function OwmDailyForecast({lat, lon}) {
     
     
     const getForecasts = () => {
-        if (forecast && forecast.daily && forecast.daily.length > 0) {
-          const forecasts = forecast.daily.slice(0, 5);
+        if (forecast && forecast.list && forecast.list.length > 0) {
+          const forecasts = forecast.list.slice(0, 8);
           
           return forecasts.map((forecastElement) => {
-            return <OwmDailyForecastElement 
+            return <OwmForecastElement 
                 key={forecastElement.dt}
                 time={forecastElement.dt} 
-                minTemp={kelvinToCelcius(forecastElement.temp.min)}
-                maxTemp={kelvinToCelcius(forecastElement.temp.max)} 
+                temp={forecastElement.main.temp} 
                 weatherCode={forecastElement?.weather[0]?.id}
               />
           })
@@ -42,9 +40,9 @@ function OwmDailyForecast({lat, lon}) {
 
     
     return (
-        <div className='weather-card owm-daily-forecast'>
-            <h5 className='header'>Прогноз на 5 дней</h5>
-
+        <div className='weather-card owm-3h-forecast'>
+            <h5 className='header'>Прогноз на 24 ч</h5>
+            
             <div className="forecast-elements">
                 {getForecasts()}
             </div>
@@ -52,4 +50,5 @@ function OwmDailyForecast({lat, lon}) {
     )
 }
 
-export default OwmDailyForecast;
+
+export default Owm3hForecast;
