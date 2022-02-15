@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import { Link } from 'react-router-dom';
+import { Outlet, Link } from 'react-router-dom';
 
 import './App.css';
 import Header from './dashboard/Header';
@@ -76,6 +76,7 @@ function App() {
           <Link to='/dashboard'>Dashboard</Link>
           <Link to='/map'>Map</Link>
         </nav>
+        <Outlet />
         <Header handleLocation={handleOnClickLocation} handleSelectPlace={handleSelectPlace} status={locationStatus} lat={lat} lon={lon} />
       </header>
       <main>
