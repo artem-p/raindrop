@@ -8,8 +8,8 @@ function App() {
     <div className="app">
       <header>
         <nav>
-          <Link to='/dashboard'>Dashboard</Link>
-          <Link to='/map'>Map</Link>
+          <Link to='/raindrop/dashboard'>Dashboard</Link>
+          <Link to='/raindrop/map'>Map</Link>
         </nav>
       </header>
       <main>
