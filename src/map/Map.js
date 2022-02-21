@@ -17,7 +17,7 @@ function Map() {
     if (map.current) return; // initialize map only once
       map.current = new mapboxgl.Map({
       container: mapContainer.current,
-      style: 'mapbox://styles/mapbox/streets-v11',
+      style: 'mapbox://styles/mapbox/satellite-streets-v11',
       center: [long, lat],
       zoom: zoom
     });
