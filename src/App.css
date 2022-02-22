@@ -21,6 +21,12 @@ body {
   margin-bottom: 10px;
 }
 
+.nav {
+  position: absolute;
+  top: 0;
+  z-index: 100;
+}
+
 
 
 .content {

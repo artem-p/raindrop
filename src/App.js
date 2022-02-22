@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="app">
       <header>
-        <nav>
+        <nav className='nav'>
           <Link to='/raindrop/dashboard'>Dashboard</Link>
           <Link to='/raindrop/map'>Map</Link>
         </nav>
