@@ -19,7 +19,7 @@ function Map() {
     
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
-      style: 'mapbox://styles/mapbox/streets-v11',
+      style: 'mapbox://styles/mapbox/satellite-streets-v11',
       center: [long, lat],
       zoom: zoom
     });
@@ -30,7 +30,7 @@ function Map() {
         "type": "raster",
         "source": {
           "type": "raster",
-          "tiles": ["https://tile.openweathermap.org/map/precipitation_new/{z}/{x}/{y}.png?appid=" + OWM_API_KEY],
+          "tiles": ["https://tilecache.rainviewer.com/v2/radar/1645798800/512/{z}/{x}/{y}/1/1_0.png"],
           "tileSize": 256
         },
         "minzoom": 0,
