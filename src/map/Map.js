@@ -12,17 +12,34 @@ function Map() {
   const [long, setLong] = useState(30);
   const [lat, setLat] = useState(59.9);
   const [zoom, setZoom] = useState(6);
+  const [timestamps, setTimestamps] = useState([]);
 
   
   useEffect(() => {
+    fetch(requests.fetchRadarData)
+      .then(response => response.json())
+      .then(data => {
+        if (data?.radar?.past) {
+          setTimestamps(data.radar.past);
+        }    
+      });
+  }, []);
+
+
+  useEffect(() => {
     if (map.current) return; // initialize map only once
-    
+
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/satellite-streets-v11',
       center: [long, lat],
       zoom: zoom
     });
+  });
+
+  
+  useEffect(() => {
+    if (!timestamps) return;
 
     map.current.on('load', function(){
       map.current.addLayer({
@@ -44,15 +61,7 @@ function Map() {
       )
     });
 
-    
-    fetch(requests.fetchRadarData)
-      .then(response => response.json())
-      .then(data => {
-        if (data?.radar?.past) {
-          let radarLast = data.radar.past[data.radar.past.length - 1];
-        }    
-      });
-  });
+  }, [timestamps]);
 
   return <div id='map'>
       <div ref={mapContainer} className="map-container" />
