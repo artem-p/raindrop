@@ -39,7 +39,9 @@ function Map() {
 
   
   useEffect(() => {
-    if (!timestamps) return;
+    if (!timestamps || timestamps.length === 0) return;
+
+    let lastRadarPath = timestamps[timestamps.length - 1].path;
 
     map.current.on('load', function(){
       map.current.addLayer({
@@ -47,7 +49,7 @@ function Map() {
         "type": "raster",
         "source": {
           "type": "raster",
-          "tiles": ["https://tilecache.rainviewer.com/v2/radar/1645798800/512/{z}/{x}/{y}/1/1_0.png"],
+          "tiles": [`https://tilecache.rainviewer.com/${lastRadarPath}/512/{z}/{x}/{y}/1/1_0.png`],
           "tileSize": 256
         },
         "minzoom": 0,
