@@ -2,8 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 import './Map.css';
-import { OWM_API_KEY } from '../requests';
-console.log(OWM_API_KEY);
+import requests from '../requests';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYXJ0ZW1wdWdhY2hldiIsImEiOiJja3l1NWJwZ3owM2IxMnd0NDUydDZqazUyIn0.b1G2XUsJEhO49s7vTH2q1Q';
 
@@ -14,6 +13,7 @@ function Map() {
   const [lat, setLat] = useState(59.9);
   const [zoom, setZoom] = useState(6);
 
+  
   useEffect(() => {
     if (map.current) return; // initialize map only once
     
@@ -43,6 +43,15 @@ function Map() {
         1
       )
     });
+
+    
+    fetch(requests.fetchRadarData)
+      .then(response => response.json())
+      .then(data => {
+        if (data?.radar?.past) {
+          let radarLast = data.radar.past[data.radar.past.length - 1];
+        }    
+      });
   });
 
   return <div id='map'>
