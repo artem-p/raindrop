@@ -1,3 +1,9 @@
 .map-container {
     height: 100vh;
 }
+
+.bottom-controls {
+    position: absolute;
+    bottom: 20px;
+    z-index: 100;
+}

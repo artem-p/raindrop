@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
+import Slider from '@mui/material/Slider';
 import './Map.css';
 import requests from '../requests';
 
@@ -65,9 +66,15 @@ function Map() {
 
   }, [timestamps]);
 
-  return <div id='map'>
-      <div ref={mapContainer} className="map-container" />
-  </div>;
+  return <div>
+          <div id='map'>
+            <div ref={mapContainer} className="map-container" />
+          </div>
+
+          <div className='bottom-controls'>
+            <Slider />
+          </div>
+        </div>;
 }
 
 export default Map;
