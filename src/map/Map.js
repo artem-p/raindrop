@@ -14,7 +14,7 @@ function Map() {
   const [lat, setLat] = useState(59.9);
   const [zoom, setZoom] = useState(6);
   const [timestamps, setTimestamps] = useState([]);
-  const [sliderValue, setSliderValue] = useState(12);
+  const [sliderValue, setSliderValue] = useState(0);
 
   
   useEffect(() => {
@@ -22,7 +22,13 @@ function Map() {
       .then(response => response.json())
       .then(data => {
         if (data?.radar?.past) {
-          setTimestamps(data.radar.past);
+          const timestamps = data.radar.past;
+          
+          setTimestamps(timestamps);
+          
+          if (timestamps.length > 0) {
+            setSliderValue(timestamps[timestamps.length - 1].time)
+          }
         }    
       });
   }, []);
@@ -72,6 +78,13 @@ function Map() {
     setSliderValue(newValue);
   }
 
+  const getSliderMin = () => {
+    return timestamps ? timestamps?.length > 0 ? timestamps[0].time : 0 : 0;
+  }
+
+  const getSliderMax = () => {
+    return timestamps ? timestamps?.length > 0 ? timestamps[timestamps.length - 1].time : 0 : 0;
+  }
   
   return <div>
           <div id='map'>
@@ -79,7 +92,7 @@ function Map() {
           </div>
 
           <div className='bottom-controls'>
-            <Slider value={sliderValue} onChange={handleSliderChange} marks={true} min={1} max={12} step={1}/>
+            <Slider value={sliderValue} defaultValue={getSliderMax()} onChange={handleSliderChange} marks={true} min={getSliderMin()} max={getSliderMax()} step={600}/>
           </div>
         </div>;
 }
