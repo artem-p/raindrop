@@ -3,7 +3,10 @@
 }
 
 .bottom-controls {
+    width: 30%;
     position: absolute;
     bottom: 20px;
+    left: 50%;
     z-index: 100;
+    transform: translate(-50%, 0);
 }

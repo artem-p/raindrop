@@ -72,7 +72,7 @@ function Map() {
           </div>
 
           <div className='bottom-controls'>
-            <Slider />
+            <Slider value={100} />
           </div>
         </div>;
 }
