@@ -14,6 +14,7 @@ function Map() {
   const [lat, setLat] = useState(59.9);
   const [zoom, setZoom] = useState(6);
   const [timestamps, setTimestamps] = useState([]);
+  const [sliderValue, setSliderValue] = useState(12);
 
   
   useEffect(() => {
@@ -66,13 +67,19 @@ function Map() {
 
   }, [timestamps]);
 
+  
+  const handleSliderChange = (event, newValue) => {
+    setSliderValue(newValue);
+  }
+
+  
   return <div>
           <div id='map'>
             <div ref={mapContainer} className="map-container" />
           </div>
 
           <div className='bottom-controls'>
-            <Slider value={100} />
+            <Slider value={sliderValue} onChange={handleSliderChange} marks={true} min={1} max={12} step={1}/>
           </div>
         </div>;
 }
