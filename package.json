@@ -21,6 +21,7 @@
     "luxon": "^1.25.0",
     "mapbox-gl": "^2.7.0",
     "react": "^17.0.1",
+    "react-app-polyfill": "^3.0.0",
     "react-bootstrap": "^1.4.3",
     "react-dom": "^17.0.1",
     "react-icons": "^4.3.1",
