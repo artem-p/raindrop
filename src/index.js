@@ -13,12 +13,8 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route exact path='/raindrop' element={<Navigate to="/raindrop/dashboard" />} />
-          
-        <Route path="/raindrop" element={<App />}>
-          <Route path="dashboard" element={<Dashboard />} />
-          <Route path="map" element={<Map />} />
-        </Route>
+        <Route path="/raindrop" element={<Dashboard />} />
+        <Route path="/raindrop/map" element={<Map />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
