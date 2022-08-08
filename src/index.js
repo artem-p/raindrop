@@ -13,8 +13,8 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/raindrop" element={<Dashboard />} />
-        <Route path="/raindrop/map" element={<Map />} />
+        <Route path="/" element={<Dashboard />} />
+        {/* <Route path="/raindrop/map" element={<Map />} /> */}
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

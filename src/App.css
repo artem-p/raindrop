@@ -10,8 +10,8 @@ body {
   background-color: rgb(31, 41, 64);
   background-color: #3d5a80;
   background-color: #031023; */
-  background: linear-gradient(rgb(3, 16, 39) 0%, rgb(2, 16, 29) 100%);
-  color: rgba(244,244,245,.8);  
+  /* background: linear-gradient(rgb(3, 16, 39) 0%, rgb(2, 16, 29) 100%);
+  color: rgba(244,244,245,.8);   */
 }
 
 .weather-card {

@@ -2,8 +2,10 @@
   "name": "raindrop",
   "version": "0.1.0",
   "private": true,
-  "//": "delete when disable github pages and delete all raindrop in paths in router and links",
-  "homepage": "http://artem-p.github.io/raindrop",
+
+  "//": "homepage delete when disable github pages and delete all raindrop in paths in router and links",
+  "//": "http://artem-p.github.io/raindrop",
+  
   "dependencies": {
     "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.8.1",
