@@ -1,7 +1,7 @@
 import React from 'react';
 import './Wind.css';
-import '../weather-icons/css/weather-icons.min.css';
-import '../weather-icons/css/weather-icons-wind.min.css';
+import '../weather-icons-owm/css/weather-icons.min.css';
+import '../weather-icons-owm/css/weather-icons-wind.min.css';
 
 
 function Wind({wind}) {

@@ -3,7 +3,7 @@ import requests from '../requests';
 import api from '../api';
 import {Container, Row, Col} from 'react-bootstrap';
 import './CurrentWeather.css';
-import OwmWeatherIcon from '../weather-icons/OwmWeatherIcon';
+import OwmWeatherIcon from '../weather-icons-owm/OwmWeatherIcon';
 import { kelvinToCelcius } from '../common';
 import Wind from './Wind';
 
