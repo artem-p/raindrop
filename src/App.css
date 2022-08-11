@@ -12,6 +12,7 @@ body {
   background-color: #031023; */
   /* background: linear-gradient(rgb(3, 16, 39) 0%, rgb(2, 16, 29) 100%);
   color: rgba(244,244,245,.8);   */
+  background-color: #f9f9f9;
 }
 
 .weather-card {

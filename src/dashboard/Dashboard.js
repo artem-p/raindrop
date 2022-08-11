@@ -1,10 +1,14 @@
 import React from 'react'
 import './Dashboard.css'
+import CurrentWeather from './CurrentWeather'
 
 
 function Dashboard() {
   return (
-    <div>Dashboard</div>
+    <div class="dashboard">
+      <CurrentWeather />
+    </div>
+    
   )
 }
 
