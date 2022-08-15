@@ -4,7 +4,7 @@ import fair_day from '../weather-icons-metno/svg/fair_day.svg'
 
 import './CurrentWeather.css'
 
-function CurrentWeather() {
+function CurrentWeather({lat, lon}) {
   return (
     <Card>
         <Card.Body>

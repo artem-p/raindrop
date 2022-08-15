@@ -4,4 +4,8 @@ const owmApi = axios.create({
     baseURL: "https://api.openweathermap.org/data/2.5",
 });
 
-export default owmApi;
+const metNoApi = axios.create({
+    baseURL: 'https://api.met.no/weatherapi',
+})
+
+export {owmApi, metNoApi};
