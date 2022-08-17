@@ -1,10 +1,30 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Card from 'react-bootstrap/Card'
 import fair_day from '../weather-icons-metno/svg/fair_day.svg'
+import { owmRequests } from '../requests'
+import { owmApi } from '../api'
 
 import './CurrentWeather.css'
 
-function CurrentWeather({lat, lon}) {
+// todo fetch current weather from owm
+// get met no icon by owm code
+
+function CurrentWeather({lat, lon, place}) {
+  const [currentWeather, setCurrentWeather] = useState({});
+
+  async function fetchCurrentWeather(lat, lon) {
+      const request = await owmApi.get(owmRequests.fetchCurrentWeather(lat, lon));
+      setCurrentWeather(request.data);
+  }
+
+  useEffect(() => {
+      fetchCurrentWeather(lat, lon);
+
+      const requestInterval = setInterval(fetchCurrentWeather, 60000 * 5, lat, lon);
+  
+      return () => clearInterval(requestInterval);
+  }, [lat, lon]);
+
   return (
     <Card>
         <Card.Body>

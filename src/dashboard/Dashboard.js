@@ -8,7 +8,7 @@ function Dashboard() {
   
 
   return (
-    <div class="dashboard">
+    <div className="dashboard">
       <CurrentWeather />
     </div>
     
