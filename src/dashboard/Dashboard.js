@@ -9,7 +9,7 @@ function Dashboard() {
 
   return (
     <div className="dashboard">
-      <CurrentWeather />
+      <CurrentWeather lat={Math.random() * 90} lon={Math.random() * 180} />
     </div>
     
   )
