@@ -11,7 +11,6 @@ function Dashboard() {
     <div className="dashboard">
       <CurrentWeather lat={Math.random() * 90} lon={Math.random() * 180} />
     </div>
-    
   )
 }
 

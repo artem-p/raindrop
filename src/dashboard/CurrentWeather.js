@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Card from 'react-bootstrap/Card'
 import {Container, Row, Col} from 'react-bootstrap';
+import WiTemperature from 'react-icons/wi'
 import fair_day from '../weather-icons-metno/svg/fair_day.svg'
 import { owmRequests } from '../requests'
 import { owmApi } from '../api'
@@ -37,47 +38,24 @@ function CurrentWeather({lat, lon, place}) {
   return (
     <Card>
         <Card.Body>
-            <Card.Title>Current Conditions</Card.Title>
-            <Container fluid>
-                <Row>
-                    <Col>
-                        <Row>
-                            <Col>
-                                <div className="station-name">
-                                    {place}{' '}{stationName}
-                                </div>
-                            </Col>
-                        </Row>
+            <Card.Title>Current Conditions: <strong>{weatherText}</strong></Card.Title>
+            <div class="current-weather">
+              <img src={fair_day} className='weather-icon'></img>
+              {/* <div className="weather-icon">
+                  <OwmWeatherIcon weatherCode={weatherCode}/>
+              </div> */}
 
-                        <Row>
-                            <Col>
-                                <div className="weather-icon">
-                                    {/* <OwmWeatherIcon weatherCode={weatherCode}/> */}
-                                </div>
-                            </Col>
+              <div className="temperature">
+                  <div class="temperature__measured">
+                    {temp}{' '} <sup>°</sup>
+                  </div>
+              </div>
 
-                            <Col>
-                                <div className="temperature__measured">
-                                    {temp}{' '} <sup>°</sup>
-                                </div>
-                            </Col>
-                        </Row>
-
-                        <Row>
-                            <Col>
-                                <div className="weather-text">
-                                    <h6>{weatherText}</h6>
-                                </div>
-                            </Col>
-
-                            <Col>
-                                {/* <Wind wind={wind}/> */}
-                            </Col>
-                        </Row>
-                    </Col>
-                </Row>
-            </Container>
-            <img src={fair_day} className='weather-icon'></img>
+              {/* <div className="weather-text">
+                  <h6>{weatherText}</h6>
+              </div> */}
+              {/* <Wind wind={wind}/> */}
+            </div>
         </Card.Body>
     </Card>
   )

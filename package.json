@@ -2,10 +2,7 @@
   "name": "raindrop",
   "version": "0.1.0",
   "private": true,
-
-  "//": "homepage delete when disable github pages and delete all raindrop in paths in router and links",
   "//": "http://artem-p.github.io/raindrop",
-  
   "dependencies": {
     "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.8.1",
@@ -26,7 +23,7 @@
     "react-app-polyfill": "^3.0.0",
     "react-bootstrap": "^1.4.3",
     "react-dom": "^17.0.1",
-    "react-icons": "^4.3.1",
+    "react-icons": "^4.4.0",
     "react-mui-mapbox-geocoder": "^2.0.1",
     "react-router-dom": "^6.2.1",
     "react-scripts": "4.0.0",
