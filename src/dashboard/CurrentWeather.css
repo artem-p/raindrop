@@ -4,8 +4,21 @@
     align-items:flex-end
 }
 
+.current-weather > * {
+    margin-left: 20px;
+}
+
+.temperature {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
 .temperature__measured {
     font-size: 2rem;
+}
+
+.temperature__feelslike {
     margin-left: 20px;
 }
 

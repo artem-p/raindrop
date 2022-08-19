@@ -49,6 +49,10 @@ function CurrentWeather({lat, lon, place}) {
                   <div class="temperature__measured">
                     {temp}{' '} <sup>°</sup>
                   </div>
+
+                  <div class="temperature__feelslike">
+                    {`Feels like ${feelsLike} `} <sup>°</sup>
+                  </div>
               </div>
 
               {/* <div className="weather-text">
