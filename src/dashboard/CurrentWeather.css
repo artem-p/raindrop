@@ -14,12 +14,22 @@
     align-items: baseline;
 }
 
-.temperature__measured {
+.temperature__icon, .precipitation__icon {
     font-size: 2rem;
+}
+
+.temperature__measured {
+    font-size: 3rem;
 }
 
 .temperature__feelslike {
     margin-left: 20px;
+}
+
+.precipitation {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
 }
 
 .weather-icon {

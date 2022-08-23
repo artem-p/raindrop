@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Card from 'react-bootstrap/Card'
 import { Container, Row, Col } from 'react-bootstrap';
-import { WiThermometer } from 'react-icons/wi'
+import { WiThermometer, WiUmbrella } from 'react-icons/wi'
 import fair_day from '../weather-icons-metno/svg/fair_day.svg'
 import { owmRequests } from '../requests'
 import { owmApi } from '../api'
@@ -56,6 +56,16 @@ function CurrentWeather({lat, lon, place}) {
 
                 <div class="temperature__feelslike">
                   {`Feels like ${feelsLike} `} <sup>°</sup>
+                </div>
+              </div>
+
+              <div class="precipitation">
+                <div class="precipitation__icon">
+                  <WiUmbrella />
+                </div>
+
+                <div class="precipitation__int">
+                  0 мм
                 </div>
               </div>
 
