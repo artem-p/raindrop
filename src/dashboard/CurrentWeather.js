@@ -41,37 +41,27 @@ function CurrentWeather({lat, lon, place}) {
             <Card.Title>Current Conditions: <strong>{weatherText}</strong></Card.Title>
             <div class="current-weather">
               <img src={fair_day} className='weather-icon'></img>
-              {/* <div className="weather-icon">
-                  <OwmWeatherIcon weatherCode={weatherCode}/>
-              </div> */}
 
-              <div className="temperature">
-                <div class="temperature__icon">
-                  <WiThermometer />
-                </div>
-                
-                <div class="temperature__measured">
-                  {temp}{' '} <sup>°</sup>
-                </div>
-
-                <div class="temperature__feelslike">
-                  {`Feels like ${feelsLike} `} <sup>°</sup>
-                </div>
+              <div class="temperature__icon">
+                <WiThermometer />
+              </div>
+              
+              <div class="temperature__measured">
+                {temp}
               </div>
 
-              <div class="precipitation">
-                <div class="precipitation__icon">
-                  <WiUmbrella />
-                </div>
-
-                <div class="precipitation__int">
-                  0 мм
-                </div>
+              <div class="temperature__feelslike">
+                {`Feels like ${feelsLike} `} <sup>°</sup>
               </div>
 
-              {/* <div className="weather-text">
-                  <h6>{weatherText}</h6>
-              </div> */}
+              <div class="precipitation__icon">
+                <WiUmbrella />
+              </div>
+
+              <div class="precipitation__int">
+                0 мм
+              </div>
+
               {/* <Wind wind={wind}/> */}
             </div>
         </Card.Body>

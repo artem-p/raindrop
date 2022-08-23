@@ -6,30 +6,23 @@
 
 .current-weather > * {
     margin-left: 20px;
-}
-
-.temperature {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
+    line-height: 1;
 }
 
 .temperature__icon, .precipitation__icon {
     font-size: 2rem;
+    align-self: flex-end;
 }
 
 .temperature__measured {
-    font-size: 3rem;
+    font-size: 2.5rem;
+    align-self: flex-end;
 }
 
 .temperature__feelslike {
     margin-left: 20px;
-}
-
-.precipitation {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
+    align-self: flex-end;
+    line-height: 1.5rem;
 }
 
 .weather-icon {
