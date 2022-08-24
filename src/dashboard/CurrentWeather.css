@@ -35,9 +35,11 @@
 }
 
 .precipitation__icon {
-    align-self: flex-end;
+    line-height: 1.4;
 }
+
 
 .precipitation__int {
     align-self: flex-end;
+    margin-left: 10px;
 }
