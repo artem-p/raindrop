@@ -42,25 +42,31 @@ function CurrentWeather({lat, lon, place}) {
             <div class="current-weather">
               <img src={fair_day} className='weather-icon'></img>
 
+
+              <div class="temperature">
               <div class="temperature__icon">
                 <WiThermometer />
               </div>
-              
-              <div class="temperature__measured">
-                {temp}
+
+                <div class="temperature__measured">
+                  {temp}
+                </div>
+
+                <div class="temperature__feelslike">
+                  {`Feels like ${feelsLike} `} <sup>°</sup>
+                </div>
+              </div>              
+
+              <div class="precipitation">
+                <div class="precipitation__icon">
+                  <WiUmbrella />
+                </div>
+
+                <div class="precipitation__int">
+                  0 мм
+                </div>
               </div>
 
-              <div class="temperature__feelslike">
-                {`Feels like ${feelsLike} `} <sup>°</sup>
-              </div>
-
-              <div class="precipitation__icon">
-                <WiUmbrella />
-              </div>
-
-              <div class="precipitation__int">
-                0 мм
-              </div>
 
               {/* <Wind wind={wind}/> */}
             </div>
