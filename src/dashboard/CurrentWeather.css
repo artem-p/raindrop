@@ -9,7 +9,7 @@
     width: 64px;
 }
 
-.temperature__icon, .precipitation__icon {
+.temperature__icon, .precipitation__icon, .wind__image {
     font-size: 2rem;
     align-self: flex-end;
     line-height: 1;
@@ -53,4 +53,20 @@
     align-self: flex-end;
 }
 
+.wind__speed {
+    margin-left: 10px;
+    font-size: 2rem;
+    align-items: flex-end;
+    line-height: 1;
+}
 
+.wind__gust {
+    margin-left: 5px;
+}
+
+.wind__dir {
+    margin-left: 10px;
+    font-size: 2rem;
+    align-self: flex-end;
+    line-height: 1;
+}

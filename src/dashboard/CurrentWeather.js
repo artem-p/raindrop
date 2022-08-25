@@ -72,7 +72,7 @@ function CurrentWeather({lat, lon, place}) {
                 <div class="wind">
                   <div class="wind__image"> <BiWind /> </div>
                   <div class="wind__speed"> {wind?.speed?.toFixed(0)} </div>
-                  <div class="wind__gust"> ({wind?.gust?.toFixed(0)}) </div>
+                  <div class="wind__gust"> ({wind?.gust?.toFixed(0)}) m/s</div>
                   <div class="wind__dir"> <WindIcon wind={wind}/> </div>
                 </div>
               </div>
