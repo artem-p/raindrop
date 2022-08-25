@@ -8,6 +8,7 @@ import fair_day from '../weather-icons-metno/svg/fair_day.svg'
 import { owmRequests } from '../requests'
 import { owmApi } from '../api'
 import { kelvinToCelcius } from '../common';
+import WindIcon from './WindIcon'
 import './CurrentWeather.css'
 
 // todo fetch current weather from owm
@@ -69,10 +70,10 @@ function CurrentWeather({lat, lon, place}) {
                 </div>
 
                 <div class="wind">
-                  <div class="wind__icon"> <BiWind /> </div>
+                  <div class="wind__image"> <BiWind /> </div>
                   <div class="wind__speed"> {wind?.speed?.toFixed(0)} </div>
                   <div class="wind__gust"> ({wind?.gust?.toFixed(0)}) </div>
-                  <div class="wind__dir"></div>
+                  <div class="wind__dir"> <WindIcon wind={wind}/> </div>
                 </div>
               </div>
 
