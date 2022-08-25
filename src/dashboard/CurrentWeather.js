@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import Card from 'react-bootstrap/Card'
 import { Container, Row, Col } from 'react-bootstrap';
-import { WiThermometer } from 'react-icons/wi'
+import { WiThermometer, WiWind } from 'react-icons/wi'
 import { FiUmbrella } from 'react-icons/fi'
+import { BiWind } from 'react-icons/bi'
 import fair_day from '../weather-icons-metno/svg/fair_day.svg'
 import { owmRequests } from '../requests'
 import { owmApi } from '../api'
@@ -64,10 +65,16 @@ function CurrentWeather({lat, lon, place}) {
                 </div>
 
                 <div class="precipitation__int">
-                  0 мм
+                  {} mm
+                </div>
+
+                <div class="wind">
+                  <div class="wind__icon"> <BiWind /> </div>
+                  <div class="wind__speed"> {wind?.speed?.toFixed(0)} </div>
+                  <div class="wind__gust"> ({wind?.gust?.toFixed(0)}) </div>
+                  <div class="wind__dir"></div>
                 </div>
               </div>
-
 
               {/* <Wind wind={wind}/> */}
             </div>

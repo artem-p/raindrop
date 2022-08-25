@@ -43,3 +43,14 @@
     align-self: flex-end;
     margin-left: 10px;
 }
+
+.wind {
+    display: flex;
+    margin-left: 30px;
+}
+
+.wind > * {
+    align-self: flex-end;
+}
+
+
