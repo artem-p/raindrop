@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import Card from 'react-bootstrap/Card'
-import { Container, Row, Col } from 'react-bootstrap';
 import { WiThermometer, WiWind } from 'react-icons/wi'
 import { FiUmbrella } from 'react-icons/fi'
 import { BiWind } from 'react-icons/bi'
