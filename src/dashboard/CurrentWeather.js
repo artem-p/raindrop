@@ -30,7 +30,6 @@ function CurrentWeather({lat, lon, place}) {
       return () => clearInterval(requestInterval);
   }, [lat, lon]);
 
-  
   const stationName = currentWeather?.name ? currentWeather?.name : "Загрузка...";
   const weatherText = currentWeather?.weather ? currentWeather?.weather[0]?.description : "";
   const weatherCode = currentWeather?.weather ? currentWeather?.weather[0]?.id : "";
@@ -38,46 +37,49 @@ function CurrentWeather({lat, lon, place}) {
   const feelsLike = kelvinToCelcius(currentWeather?.main?.feels_like);
   const wind = currentWeather?.wind;
 
+  let prec = 0;
+  if (currentWeather?.rain) prec = currentWeather?.rain['1h']
+  if (currentWeather?.snow) prec = currentWeather?.snow['1h']
+
   return (
     <Card>
         <Card.Body>
             <Card.Title>Current Conditions: <strong>{weatherText}</strong></Card.Title>
-            <div class="current-weather">
+            <div className="current-weather">
               <img src={fair_day} className='weather-icon'></img>
 
 
-              <div class="temperature">
-              <div class="temperature__icon">
+              <div className="temperature">
+              <div className="temperature__icon">
                 <WiThermometer />
               </div>
 
-                <div class="temperature__measured">
+                <div className="temperature__measured">
                   {temp}
                 </div>
 
-                <div class="temperature__feelslike">
+                <div className="temperature__feelslike">
                   {`Feels like ${feelsLike} `} <sup>°</sup>
                 </div>
               </div>              
 
-              <div class="precipitation">
-                <div class="precipitation__icon">
+              <div className="precipitation">
+                <div className="precipitation__icon">
                   <FiUmbrella />
                 </div>
 
-                <div class="precipitation__int">
-                  {} mm
+                <div className="precipitation__int">
+                  {prec.toFixed(1)} mm
                 </div>
 
-                <div class="wind">
-                  <div class="wind__image"> <BiWind /> </div>
-                  <div class="wind__speed"> {wind?.speed?.toFixed(0)} </div>
-                  <div class="wind__gust"> ({wind?.gust?.toFixed(0)}) m/s</div>
-                  <div class="wind__dir"> <WindIcon wind={wind}/> </div>
+                <div className="wind">
+                  <div className="wind__image"> <BiWind /> </div>
+                  <div className="wind__speed"> {wind?.speed?.toFixed(0)} </div>
+                  <div className="wind__gust"> ({wind?.gust?.toFixed(0)}) m/s</div>
+                  <div className="wind__dir"> <WindIcon wind={wind}/> </div>
                 </div>
               </div>
 
-              {/* <Wind wind={wind}/> */}
             </div>
         </Card.Body>
     </Card>
