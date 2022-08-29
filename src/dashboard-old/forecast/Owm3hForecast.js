@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import api from '../../api';
-import requests from '../../requests';
+// import requests from '../../requests';
 import './Owm3hForecast.css';
 import OwmForecastElement from './OwmForecastElement';
 
@@ -9,8 +9,8 @@ function Owm3hForecast({lat, lon}) {
     const [forecast, setForecast] = useState({});
 
     async function fetchForecast(lat, lon) {
-        const request = await api.get(requests.fetchForecast(lat, lon));
-        setForecast(request.data);
+        // const request = await api.get(requests.fetchForecast(lat, lon));
+        // setForecast(request.data);
     }
 
 

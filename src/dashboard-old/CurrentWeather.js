@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import requests from '../requests';
+// import requests from '../requests';
 import api from '../api';
 import {Container, Row, Col} from 'react-bootstrap';
 import './CurrentWeather.css';
@@ -12,8 +12,8 @@ function CurrentWeather({lat, lon, place}) {
     const [currentWeather, setCurrentWeather] = useState({});
 
     async function fetchCurrentWeather(lat, lon) {
-        const request = await api.get(requests.fetchCurrentWeather(lat, lon));
-        setCurrentWeather(request.data);
+        // const request = await api.get(requests.fetchCurrentWeather(lat, lon));
+        // setCurrentWeather(request.data);
     }
 
 

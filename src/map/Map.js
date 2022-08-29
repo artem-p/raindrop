@@ -3,7 +3,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 import Slider from '@mui/material/Slider';
 import './Map.css';
-import { owmRequests } from '../requests';
+// import { owmRequests } from '../requests';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYXJ0ZW1wdWdhY2hldiIsImEiOiJja3l1NWJwZ3owM2IxMnd0NDUydDZqazUyIn0.b1G2XUsJEhO49s7vTH2q1Q';
 
@@ -17,21 +17,21 @@ function Map() {
   const [sliderValue, setSliderValue] = useState(0);
 
   
-  useEffect(() => {
-    fetch(owmRequests.fetchRadarData)
-      .then(response => response.json())
-      .then(data => {
-        if (data?.radar?.past) {
-          const timestamps = data.radar.past;
+  // useEffect(() => {
+  //   fetch(owmRequests.fetchRadarData)
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       if (data?.radar?.past) {
+  //         const timestamps = data.radar.past;
           
-          setTimestamps(timestamps);
+  //         setTimestamps(timestamps);
           
-          if (timestamps.length > 0) {
-            setSliderValue(timestamps[timestamps.length - 1].time)
-          }
-        }    
-      });
-  }, []);
+  //         if (timestamps.length > 0) {
+  //           setSliderValue(timestamps[timestamps.length - 1].time)
+  //         }
+  //       }    
+  //     });
+  // }, []);
 
 
   useEffect(() => {

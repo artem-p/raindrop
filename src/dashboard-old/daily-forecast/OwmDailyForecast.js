@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import api from '../../api';
-import requests from '../../requests';
+// import requests from '../../requests';
 import './OwmDailyForecast.css';
 import OwmDailyForecastElement from './OwmDailyForecastElement';
 import { kelvinToCelcius } from '../../common';
@@ -10,8 +10,8 @@ function OwmDailyForecast({lat, lon}) {
     const [forecast, setForecast] = useState({});
 
     async function fetchForecast(lat, lon) {
-        const request = await api.get(requests.fetchDailyForecast(lat, lon));
-        setForecast(request.data);
+        // const request = await api.get(requests.fetchDailyForecast(lat, lon));
+        // setForecast(request.data);
     }
 
 

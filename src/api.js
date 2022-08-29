@@ -10,4 +10,11 @@ const metNoApi = axios.create({
     baseURL: 'https://api.met.no/weatherapi',
 })
 
-export {owmApi, metNoApi, OWM_API_KEY};
+const owmRequests = {
+    fetchCurrentWeather: (lat, lon) => owmApi.get(`weather?lat=${lat}&lon=${lon}&appid=${OWM_API_KEY}`),
+    fetchForecast: (lat, lon) => {return `forecast?lat=${lat}&lon=${lon}&appid=${OWM_API_KEY}`},
+    fetchDailyForecast: (lat, lon) => {return `onecall?lat=${lat}&lon=${lon}&exclude=current,hourly,alerts&appid=${OWM_API_KEY}`},
+}
+
+
+export {owmRequests};

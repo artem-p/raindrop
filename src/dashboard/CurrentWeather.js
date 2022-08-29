@@ -4,8 +4,7 @@ import { WiThermometer, WiWind } from 'react-icons/wi'
 import { FiUmbrella } from 'react-icons/fi'
 import { BiWind } from 'react-icons/bi'
 import fair_day from '../weather-icons-metno/svg/fair_day.svg'
-import { owmRequests } from '../requests'
-import { owmApi } from '../api'
+import { owmRequests } from '../api'
 import { kelvinToCelcius } from '../common';
 import WindIcon from './WindIcon'
 import './CurrentWeather.css'
@@ -17,7 +16,7 @@ function CurrentWeather({lat, lon, place}) {
   const [currentWeather, setCurrentWeather] = useState({});
 
   async function fetchCurrentWeather(lat, lon) {
-      const request = await owmApi.get(owmRequests.fetchCurrentWeather(lat, lon));
+      const request = await owmRequests.fetchCurrentWeather(lat, lon);
       setCurrentWeather(request.data);
   }
 
