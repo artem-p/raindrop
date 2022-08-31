@@ -25,4 +25,4 @@ const yrRequests = {
 }
 
 
-export {owmRequests};
+export {owmRequests, yrRequests};

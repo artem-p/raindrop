@@ -1,7 +1,7 @@
 import React from 'react'
 import './Dashboard.css'
 import CurrentWeather from './CurrentWeather'
-import Forecast from './Forecast'
+import Forecast from './forecast/Forecast'
 
 
 function Dashboard() {
