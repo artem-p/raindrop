@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import Card from 'react-bootstrap/Card'
+import DailyForecast from './daily/DailyForecast'
+
 import { yrRequests } from '../../api'
+
 
 import './Forecast.css'
 
@@ -36,6 +39,7 @@ function Forecast({lat, lon}) {
         <Card.Body>
             <Card.Title>
               Forecast for 5 days
+              <DailyForecast forecast={forecast?.dayIntervals}/>
             </Card.Title>
         </Card.Body>
     </Card>
