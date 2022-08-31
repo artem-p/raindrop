@@ -5,9 +5,9 @@ import './DailyForecast.css'
 
 
 function ForecastElement(singleForecast) {
-    const time = singleForecast?.start
-    const maxTemp = singleForecast?.temperature?.max
-    const minTemp = singleForecast?.temperature?.min
+    const time = singleForecast?.end
+    const maxTemp = singleForecast?.temperature?.max?.toFixed(0)
+    const minTemp = singleForecast?.temperature?.min?.toFixed(0)
 
     return (
         <div className="forecast-element" key={time}>
