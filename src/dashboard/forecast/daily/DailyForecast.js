@@ -1,5 +1,7 @@
 import React from 'react'
 import { DateTime } from 'luxon';
+import fair_day from '../../../weather-icons-metno/svg/fair_day.svg'
+
 
 import './DailyForecast.css'
 
@@ -12,7 +14,7 @@ function ForecastElement(singleForecast) {
     return (
         <div className="forecast-element" key={time}>
             <div className="forecast-element__icon">
-                
+              <img src={fair_day} className='weather-icon'></img>
             </div>
 
             <div className="forecast-element__time">
