@@ -1,4 +1,13 @@
 .forecast {
     display: flex;
     flex-direction: row;
+    margin-top: 10px;
+}
+
+.forecast-element:not(:first-child) {
+    margin-left: 30px;
+}
+
+.forecast-element__time {
+    text-align: center;
 }

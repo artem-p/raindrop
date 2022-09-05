@@ -29,6 +29,7 @@ function ForecastElement(singleForecast) {
 
 function DailyForecast({forecast}) {
     if (Array.isArray(forecast)) {
+        forecast = forecast.slice(0, 6)
         return (
             <div className='forecast'>
                 {forecast.map(ForecastElement)}

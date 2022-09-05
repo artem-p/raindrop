@@ -32,7 +32,6 @@ function Forecast({lat, lon}) {
     return () => clearInterval(requestInterval);
   }, [lat, lon]);
 
-  console.log(forecast?.dayIntervals)
   
   return (
     <Card className='forecast-card'>
