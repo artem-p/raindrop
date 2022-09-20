@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card'
 import { WiThermometer, WiWind } from 'react-icons/wi'
 import { FiUmbrella } from 'react-icons/fi'
 import { BiWind } from 'react-icons/bi'
-import fair_day from '../weather-icons-metno/svg/fair_day.svg'
+import YrNoIcon from '../weather-icons-yrno/svg/YrNoIcon'
 import { owmRequests } from '../api'
 import { kelvinToCelcius } from '../common';
 import WindIcon from './WindIcon'
@@ -44,8 +44,7 @@ function CurrentWeather({lat, lon, place}) {
         <Card.Body>
             <Card.Title>Current Conditions: <strong>{weatherText}</strong></Card.Title>
             <div className="current-weather">
-              <img src={fair_day} className='weather-icon'></img>
-
+              <YrNoIcon />
 
               <div className="temperature">
               <div className="temperature__icon">
