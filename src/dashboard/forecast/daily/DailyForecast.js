@@ -1,6 +1,6 @@
 import React from 'react'
 import { DateTime } from 'luxon';
-import YrIcon from '../../../weather-icons-yrno/svg/YrIcon';
+import YrIcon from '../../../weather-icons-yrno/YrIcon';
 
 import './DailyForecast.css'
 
