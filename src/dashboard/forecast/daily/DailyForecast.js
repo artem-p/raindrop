@@ -1,6 +1,6 @@
 import React from 'react'
 import { DateTime } from 'luxon';
-import YrNoIcon from '../../../weather-icons-yrno/svg/YrNoIcon';
+import YrIcon from '../../../weather-icons-yrno/svg/YrIcon';
 
 import './DailyForecast.css'
 
@@ -13,7 +13,7 @@ function ForecastElement(singleForecast) {
     return (
         <div className="forecast-element" key={time}>
             <div className="forecast-element__icon">
-              <YrNoIcon />
+              <YrIcon />
             </div>
 
             <div className="forecast-element__time">
