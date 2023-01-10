@@ -6,8 +6,9 @@ import React from 'react'
 
 // https://medium.com/@erickhoury/react-dynamically-importing-svgs-and-render-as-react-component-b764b6475896
 
-const yrReqSvgs = require.context( './svg', true, /\.svg$/ )
+let yrReqSvgs = require.context( './svg', true, /\.svg$/ )
 const yrSvgPaths = yrReqSvgs.keys()
+console.log(yrSvgPaths)
 
 const yrSvgs = yrReqSvgs
 .keys ()
@@ -22,9 +23,25 @@ const fair_day = yrSvgs['./fair_day.svg']
 
 console.log(fair_day)
 
+
+// 
+
+yrReqSvgs = require.context('!@svgr/webpack!./svg', true, /\.svg$/)
+
+const icons = yrReqSvgs.keys().reduce((images, path) => {
+  const key = path.substring(path.lastIndexOf('/') + 1, path.lastIndexOf('.'))
+  images[key] = yrReqSvgs(path).default
+  return images
+}, {})
+
+console.log(icons)
+
+const ClearSkyDay = icons['clearsky_day']
+
 function YrIcon({iconCode}) {
   return (
-    <img src={fair_day} className='weather-icon'></img>
+    // <img src={fair_day.default} className='weather-icon'></img>
+    <ClearSkyDay className='weather-icon' />
   )
 }
 
