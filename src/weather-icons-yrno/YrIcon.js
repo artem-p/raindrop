@@ -36,12 +36,14 @@ const icons = yrReqSvgs.keys().reduce((images, path) => {
 
 console.log(icons)
 
-const ClearSkyDay = icons['clearsky_day']
+// todo remove tryouts
+// todo pass icon name
+const Icon = icons['clearsky_day']
 
 function YrIcon({iconCode}) {
   return (
     // <img src={fair_day.default} className='weather-icon'></img>
-    <ClearSkyDay className='weather-icon' />
+    <Icon className='weather-icon' />
   )
 }
 
