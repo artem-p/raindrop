@@ -9,11 +9,12 @@ function ForecastElement(singleForecast) {
     const time = singleForecast?.end
     const maxTemp = singleForecast?.temperature?.max?.toFixed(0)
     const minTemp = singleForecast?.temperature?.min?.toFixed(0)
+    const weatherSymbol = singleForecast?.twentyFourHourSymbol
 
     return (
         <div className="forecast-element" key={time}>
             <div className="forecast-element__icon">
-              <YrIcon />
+              <YrIcon weatherSymbol={weatherSymbol}/>
             </div>
 
             <div className="forecast-element__time">
