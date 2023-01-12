@@ -9,7 +9,7 @@ import { kelvinToCelcius } from '../common';
 import WindIcon from './WindIcon'
 import './CurrentWeather.css'
 
-// get met no icon by owm code
+// todo get met no icon by owm code
 
 function CurrentWeather({lat, lon, place}) {
   const [currentWeather, setCurrentWeather] = useState({});
