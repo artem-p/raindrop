@@ -4,6 +4,7 @@ import { WiThermometer, WiWind } from 'react-icons/wi'
 import { FiUmbrella } from 'react-icons/fi'
 import { BiWind } from 'react-icons/bi'
 import YrIcon from '../weather-icons-yrno/YrIcon'
+import OwmYrIcon from '../weather-icons-yrno/OwmYrIcon'
 import { owmRequests } from '../api'
 import { kelvinToCelcius } from '../common';
 import WindIcon from './WindIcon'
@@ -43,7 +44,7 @@ function CurrentWeather({lat, lon, place}) {
         <Card.Body>
             <Card.Title>Current Conditions: <strong>{weatherText}</strong></Card.Title>
             <div className="current-weather">
-              <YrIcon />
+              <OwmYrIcon owmCode={weatherCode}/>
 
               <div className="temperature">
               <div className="temperature__icon">
