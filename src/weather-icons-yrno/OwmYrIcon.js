@@ -13,8 +13,16 @@ function OwmYrIcon({owmCode}) {
     switch(owmCode) {
         case 200:
             yrCode = 'lightrainandthunder'
-        default:
-            yrCode = 'clearsky_day'
+        case 201:
+            yrCode = 'rainandthunder'
+        case 202:
+            yrCode = 'heavyrainandthunder'
+        case 210:
+            yrCode = 'lightrainandthunder'
+        case 211:
+            yrCode = 'rainandthunder'
+        case 212:
+            yrCode = 'heavyrainandthunder'
     }
 
     return (
