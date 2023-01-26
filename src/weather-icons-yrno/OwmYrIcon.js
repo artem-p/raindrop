@@ -1,6 +1,13 @@
 import React from 'react'
 import YrIcon from './YrIcon'
 
+// todo 
+// https://stackoverflow.com/questions/38332094/how-can-i-mock-webpacks-require-context-in-jest
+// https://dev.to/ansonh/simplest-way-to-install-babel-plugins-in-create-react-app-7i5
+
+const TestSum = (first, second) => {
+    return first + second
+}
 
 function OwmYrIcon({owmCode}) {
     // return yr icon by owm weather code
@@ -30,4 +37,4 @@ function OwmYrIcon({owmCode}) {
     )
 }
 
-export default OwmYrIcon
+export {OwmYrIcon, TestSum}
