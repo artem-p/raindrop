@@ -4,7 +4,7 @@ import { WiThermometer, WiWind } from 'react-icons/wi'
 import { FiUmbrella } from 'react-icons/fi'
 import { BiWind } from 'react-icons/bi'
 import YrIcon from '../weather-icons-yrno/YrIcon'
-import OwmYrIcon from '../weather-icons-yrno/OwmYrIcon'
+import {OwmYrIcon} from '../weather-icons-yrno/OwmYrIcon'
 import { owmRequests } from '../api'
 import { kelvinToCelcius } from '../common';
 import WindIcon from './WindIcon'
