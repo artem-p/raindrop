@@ -3,6 +3,9 @@ import YrIcon from './YrIcon'
 
 
 function OwmYrIcon({owmCode}) {
+    //  todo day night icons
+    //  isDay={currentWeather?.sys?.sunrise <= currentWeather?.dt && currentWeather?.dt < currentWeather?.sys?.sunset}
+
     // return yr icon by owm weather code
     
     // owm codes https://openweathermap.org/weather-conditions
@@ -17,6 +20,7 @@ function OwmYrIcon({owmCode}) {
         210: 'lightrainandthunder',
         211: 'rainandthunder',
         212: 'heavyrainandthunder',
+        221: 'heavyrainshowersandthunder_day'
     }
 
     if (owmCode in owmYrDict) {

@@ -31,6 +31,12 @@ it("renders icon", () => {
     
     expect(icon).toBeInTheDocument()
     expect(icon).toHaveAttribute('src', 'lightrainandthunder.svg')
+
+    render(<OwmYrIcon owmCode={221}/> );
+    icon = screen.getAllByRole("img")[1]
+    
+    expect(icon).toBeInTheDocument()
+    expect(icon).toHaveAttribute('src', 'heavyrainshowersandthunder_day.svg')
 });
 
 
