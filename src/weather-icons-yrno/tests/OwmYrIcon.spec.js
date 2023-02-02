@@ -1,7 +1,8 @@
-import { TestSum, OwmYrIcon } from "../OwmYrIcon"
+import { OwmYrIcon } from "../OwmYrIcon"
 
 import React from "react";
-import { render, screen } from '@testing-library/react';
+import { queryByRole, render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom'
 
 //  https://www.digitalocean.com/community/tutorials/how-to-test-a-react-app-with-jest-and-react-testing-library
 //  https://robertmarshall.dev/blog/test-images-in-react-with-jest/
@@ -26,12 +27,15 @@ import { render, screen } from '@testing-library/react';
 
 it("renders icon", () => {
     render(<OwmYrIcon owmCode={200}/> );
-    const icon = screen.getByRole("img")
-    console.log(icon)
+    let icon = screen.getByRole("img")
+    
+    expect(icon).toBeInTheDocument()
+    expect(icon).toHaveAttribute('src', 'lightrainandthunder.svg')
 });
 
 
-it('sums numbers', () => {
-    expect(TestSum(1, 2)).toEqual(3)
-    expect(TestSum(2, 2)).toEqual(4)
+it("doesn't renders icon with null code", () => {
+    const {queryByRole} = render (<OwmYrIcon owmCode={null} />)
+
+    expect(queryByRole(/img/)).toBeNull()
 })

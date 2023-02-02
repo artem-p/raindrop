@@ -2,10 +2,6 @@ import React from 'react'
 import YrIcon from './YrIcon'
 
 
-const TestSum = (first, second) => {
-    return first + second
-}
-
 function OwmYrIcon({owmCode}) {
     // return yr icon by owm weather code
     
@@ -14,19 +10,17 @@ function OwmYrIcon({owmCode}) {
 
     let yrCode = '';
 
-    switch(owmCode) {
-        case 200:
-            yrCode = 'lightrainandthunder'
-        case 201:
-            yrCode = 'rainandthunder'
-        case 202:
-            yrCode = 'heavyrainandthunder'
-        case 210:
-            yrCode = 'lightrainandthunder'
-        case 211:
-            yrCode = 'rainandthunder'
-        case 212:
-            yrCode = 'heavyrainandthunder'
+    const owmYrDict = {
+        200: 'lightrainandthunder',
+        201: 'rainandthunder',
+        202: 'heavyrainandthunder',
+        210: 'lightrainandthunder',
+        211: 'rainandthunder',
+        212: 'heavyrainandthunder',
+    }
+
+    if (owmCode in owmYrDict) {
+        yrCode = owmYrDict[owmCode]
     }
 
     return (
@@ -36,4 +30,4 @@ function OwmYrIcon({owmCode}) {
     )
 }
 
-export {OwmYrIcon, TestSum}
+export {OwmYrIcon}
