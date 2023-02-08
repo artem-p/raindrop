@@ -2,7 +2,7 @@ import React from 'react'
 import YrIcon from './YrIcon'
 
 
-function OwmYrIcon({owmCode}) {
+function OwmYrIcon({owmCode, isDay}) {
     //  todo day night icons
     //  isDay={currentWeather?.sys?.sunrise <= currentWeather?.dt && currentWeather?.dt < currentWeather?.sys?.sunset}
 
@@ -14,17 +14,20 @@ function OwmYrIcon({owmCode}) {
     let yrCode = '';
 
     const owmYrDict = {
-        200: 'lightrainandthunder',
-        201: 'rainandthunder',
-        202: 'heavyrainandthunder',
-        210: 'lightrainandthunder',
-        211: 'rainandthunder',
-        212: 'heavyrainandthunder',
-        221: 'heavyrainshowersandthunder_day'
+        // owmCode: ['yrDayIcon', yrNightIcon']
+        200: ['lightrainandthunder', 'lightrainandthunder'],
+        201: ['rainandthunder', 'rainandthunder'],
+        202: ['heavyrainandthunder', 'heavyrainandthunder'],
+        210: ['lightrainandthunder', 'lightrainandthunder'],
+        211: ['rainandthunder', 'rainandthunder'],
+        212: ['heavyrainandthunder', 'heavyrainandthunder'],
+        221: ['heavyrainshowersandthunder_day', 'heavyrainshowersandthunder_night']
     }
 
     if (owmCode in owmYrDict) {
-        yrCode = owmYrDict[owmCode]
+        const yrCodes = owmYrDict[owmCode]
+
+        yrCode = isDay ? yrCodes[0] : yrCodes[1]
     }
 
     return (
