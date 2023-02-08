@@ -3,8 +3,10 @@ import YrIcon from './YrIcon'
 
 
 function OwmYrIcon({owmCode, isDay}) {
-    //  todo day night icons
-    //  isDay={currentWeather?.sys?.sunrise <= currentWeather?.dt && currentWeather?.dt < currentWeather?.sys?.sunset}
+    //  todo clouds and no clouds icons
+    //  currentWeather?.clouds?.all
+    //  'showers' icons - sun. without showers - cloudy.
+    //  partly cloudy, clearsky || fairday
 
     // return yr icon by owm weather code
     
