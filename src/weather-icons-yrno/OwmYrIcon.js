@@ -1,17 +1,11 @@
 import React from 'react'
 import YrIcon from './YrIcon'
 
-// todo generate icon imports https://github.com/smartprocure/directory-metagen
 
-// mock require context - better don't use it at all 
-// https://stackoverflow.com/questions/38332094/how-can-i-mock-webpacks-require-context-in-jest
-// https://dev.to/ansonh/simplest-way-to-install-babel-plugins-in-create-react-app-7i5
+function OwmYrIcon({owmCode, isDay}) {
+    //  todo day night icons
+    //  isDay={currentWeather?.sys?.sunrise <= currentWeather?.dt && currentWeather?.dt < currentWeather?.sys?.sunset}
 
-const TestSum = (first, second) => {
-    return first + second
-}
-
-function OwmYrIcon({owmCode}) {
     // return yr icon by owm weather code
     
     // owm codes https://openweathermap.org/weather-conditions
@@ -19,24 +13,28 @@ function OwmYrIcon({owmCode}) {
 
     let yrCode = '';
 
-    switch(owmCode) {
-        case 200:
-            yrCode = 'lightrainandthunder'
-        case 201:
-            yrCode = 'rainandthunder'
-        case 202:
-            yrCode = 'heavyrainandthunder'
-        case 210:
-            yrCode = 'lightrainandthunder'
-        case 211:
-            yrCode = 'rainandthunder'
-        case 212:
-            yrCode = 'heavyrainandthunder'
+    const owmYrDict = {
+        // owmCode: ['yrDayIcon', yrNightIcon']
+        200: ['lightrainandthunder', 'lightrainandthunder'],
+        201: ['rainandthunder', 'rainandthunder'],
+        202: ['heavyrainandthunder', 'heavyrainandthunder'],
+        210: ['lightrainandthunder', 'lightrainandthunder'],
+        211: ['rainandthunder', 'rainandthunder'],
+        212: ['heavyrainandthunder', 'heavyrainandthunder'],
+        221: ['heavyrainshowersandthunder_day', 'heavyrainshowersandthunder_night']
+    }
+
+    if (owmCode in owmYrDict) {
+        const yrCodes = owmYrDict[owmCode]
+
+        yrCode = isDay ? yrCodes[0] : yrCodes[1]
     }
 
     return (
-        <YrIcon weatherSymbol={yrCode}/>
+        <div>
+            {yrCode && <YrIcon weatherSymbol={yrCode}/>}
+        </div>
     )
 }
 
-export {OwmYrIcon, TestSum}
+export {OwmYrIcon}

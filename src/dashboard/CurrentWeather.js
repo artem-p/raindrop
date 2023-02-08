@@ -35,6 +35,8 @@ function CurrentWeather({lat, lon, place}) {
   const feelsLike = kelvinToCelcius(currentWeather?.main?.feels_like);
   const wind = currentWeather?.wind;
 
+  const isDay=currentWeather?.sys?.sunrise <= currentWeather?.dt && currentWeather?.dt < currentWeather?.sys?.sunset
+
   let prec = 0;
   if (currentWeather?.rain) prec = currentWeather?.rain['1h']
   if (currentWeather?.snow) prec = currentWeather?.snow['1h']
@@ -44,7 +46,7 @@ function CurrentWeather({lat, lon, place}) {
         <Card.Body>
             <Card.Title>Current Conditions: <strong>{weatherText}</strong></Card.Title>
             <div className="current-weather">
-              <OwmYrIcon owmCode={weatherCode}/>
+              <OwmYrIcon owmCode={weatherCode} isDay={isDay}/>
 
               <div className="temperature">
               <div className="temperature__icon">

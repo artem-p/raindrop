@@ -12,8 +12,6 @@ import icons from './svg/__all'
 
 
 function YrIcon({weatherSymbol}) {
-  console.log(icons)
-
   const iconPath = icons[weatherSymbol] || null
 
   return iconPath ? <img src={iconPath} className='weather-icon' /> : <></>
