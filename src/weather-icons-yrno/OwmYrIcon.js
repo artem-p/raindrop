@@ -2,11 +2,11 @@ import React from 'react'
 import YrIcon from './YrIcon'
 
 
-function OwmYrIcon({owmCode, isDay}) {
+function OwmYrIcon({owmCode, isDay, cloudiness}) {
     //  todo clouds and no clouds icons
     //  currentWeather?.clouds?.all
     //  'showers' icons - sun. without showers - cloudy.
-    //  partly cloudy, clearsky || fairday
+    //  clearksy, fair, cloudy, partly cloudy
 
     // return yr icon by owm weather code
     
@@ -16,14 +16,18 @@ function OwmYrIcon({owmCode, isDay}) {
     let yrCode = '';
 
     const owmYrDict = {
-        // owmCode: ['yrDayIcon', yrNightIcon']
-        200: ['lightrainandthunder', 'lightrainandthunder'],
-        201: ['rainandthunder', 'rainandthunder'],
-        202: ['heavyrainandthunder', 'heavyrainandthunder'],
-        210: ['lightrainandthunder', 'lightrainandthunder'],
-        211: ['rainandthunder', 'rainandthunder'],
-        212: ['heavyrainandthunder', 'heavyrainandthunder'],
-        221: ['heavyrainshowersandthunder_day', 'heavyrainshowersandthunder_night']
+        // owmCode: ['cloud (neutral) Icon', 'clear icon']
+
+        200: ['lightrainandthunder', 'lightrainshowersandthunder'],
+        201: ['rainandthunder', 'rainshowersandthunder'],
+        202: ['heavyrainandthunder', 'heavysnowshowersandthunder' ],
+        210: ['lightrainandthunder', 'lightrainshowersandthunder'],
+        211: ['rainandthunder', 'rainshowersandthunder'],
+        212: ['heavyrainandthunder', 'heavyrainshowersandthunder'],
+        221: ['heavyrainandthunder', 'heavyrainshowersandthunder'],     //  ? ragged thunderstorm
+        230: ['lightrainandthunder', 'lightrainshowersandthunder'],     //  thunderstorm with light drizzle
+        231: ['lightrainandthunder', 'lightrainshowersandthunder'],     //  thunderstorm with drizzle
+        232: ['lightrainandthunder', 'lightrainshowersandthunder'],     //  thunderstorm with heavy drizzle
     }
 
     if (owmCode in owmYrDict) {
