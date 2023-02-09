@@ -4,7 +4,7 @@ import YrIcon from './YrIcon'
 
 function OwmYrIcon({owmCode, isDay, cloudiness}) {
     //  todo clouds and no clouds icons
-    //  currentWeather?.clouds?.all
+    
     //  'showers' icons - sun. without showers - cloudy.
     //  clearksy, fair, cloudy, partly cloudy
 
@@ -29,6 +29,9 @@ function OwmYrIcon({owmCode, isDay, cloudiness}) {
         231: ['lightrainandthunder', 'lightrainshowersandthunder'],     //  thunderstorm with drizzle
         232: ['lightrainandthunder', 'lightrainshowersandthunder'],     //  thunderstorm with heavy drizzle
     }
+
+    //  todo cloudiness < 80 use first icon
+    //  > =80 use second icon and add day/night
 
     if (owmCode in owmYrDict) {
         const yrCodes = owmYrDict[owmCode]
