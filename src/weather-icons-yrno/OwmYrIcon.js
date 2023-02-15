@@ -13,6 +13,8 @@ function OwmYrIcon({owmCode, isDay, cloudiness}) {
     // yr codes https://api.met.no/weatherapi/weathericon/2.0/documentation
     let yrCode = '';
 
+    const DRIZZLE_ICONS = ['lightrain', 'lightrainshowers']     
+
     const owmYrDict = {
         // owmCode: ['cloud (neutral) Icon', 'clear icon']
         200: ['lightrainandthunder', 'lightrainshowersandthunder'],
@@ -25,6 +27,23 @@ function OwmYrIcon({owmCode, isDay, cloudiness}) {
         230: ['lightrainandthunder', 'lightrainshowersandthunder'],     //  thunderstorm with light drizzle
         231: ['lightrainandthunder', 'lightrainshowersandthunder'],     //  thunderstorm with drizzle
         232: ['lightrainandthunder', 'lightrainshowersandthunder'],     //  thunderstorm with heavy drizzle
+
+        //  all drizzle as light rain
+        300: DRIZZLE_ICONS,
+        301: DRIZZLE_ICONS,
+        302: DRIZZLE_ICONS,
+        310: DRIZZLE_ICONS,
+        311: DRIZZLE_ICONS,
+        312: DRIZZLE_ICONS,
+        313: DRIZZLE_ICONS,
+        314: DRIZZLE_ICONS,
+        321: DRIZZLE_ICONS,
+
+        500: ['lightrain', 'lightrainshowers'],
+        501: ['rain', 'rainshowers'],
+        502: ['heavyrain', 'heavyrainshowers'],
+        503: ['heavyrain', 'heavyrainshowers'],
+        504: ['heavyrain', 'heavyrainshowers'],
     }
 
     if (owmCode in owmYrDict) {
