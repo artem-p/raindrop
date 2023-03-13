@@ -32,11 +32,19 @@ it("renders icon", () => {
     expect(icon).toBeInTheDocument()
     expect(icon).toHaveAttribute('src', 'lightrainandthunder.svg')
 
+    
     render(<OwmYrIcon owmCode={221} isDay={true} cloudiness={35}/> );
     icon = screen.getAllByRole("img")[1]
     
     expect(icon).toBeInTheDocument()
     expect(icon).toHaveAttribute('src', 'rainshowersandthunder_day.svg')
+
+
+    render(<OwmYrIcon owmCode={800} isDay={true} cloudiness={35}/> );
+    icon = screen.getAllByRole("img")[2]
+    
+    expect(icon).toBeInTheDocument()
+    expect(icon).toHaveAttribute('src', 'clearsky_day.svg')
 });
 
 

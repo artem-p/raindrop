@@ -93,13 +93,14 @@ function OwmYrIcon({owmCode, isDay, cloudiness}) {
         }
 
         // some icons always neutral regardless of cloudiness
-        if (700 <= owmCode && owmCode <= 799 || owmCode == 804) {
+        if (700 <= owmCode && owmCode <= 799 || owmCode === 804) {
             yrCode = yrCodes[0]
         }
 
         // some icons always have day/night variants
         if (800 <= owmCode && owmCode <= 803) {
-            yrCode = yrCodes[1]
+            const iconName = yrCodes[1]
+            yrCode = iconName + (isDay ? '_day' : '_night')
         }
     }
 
