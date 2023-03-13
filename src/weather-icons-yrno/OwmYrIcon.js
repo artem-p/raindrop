@@ -55,6 +55,12 @@ function OwmYrIcon({owmCode, isDay, cloudiness}) {
         602: ['heavysnow', 'heavysnowshowers'],
         611: ['sleet', 'sleetshowers'],
         612: ['lightsleet', 'lightsleetshowers'],
+        613: ['sleet', 'sleetshowers'],
+        615: ['lightsleet', 'lightsleetshowers'],
+        616: ['sleet', 'sleetshowers'],
+        620: ['lightsnow', 'lightsnowshowers'],
+        621: ['snow', 'snowshowers'],
+        622: ['heavysnow', 'heavysnowshowers'],
     }
 
     if (owmCode in owmYrDict) {
