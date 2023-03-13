@@ -61,6 +61,23 @@ function OwmYrIcon({owmCode, isDay, cloudiness}) {
         620: ['lightsnow', 'lightsnowshowers'],
         621: ['snow', 'snowshowers'],
         622: ['heavysnow', 'heavysnowshowers'],
+
+        701: ['fog', 'fog'],
+        721: ['fog', 'fog'],
+        731: ['fog', 'fog'],
+        741: ['fog', 'fog'],
+        751: ['fog', 'fog'],
+        761: ['fog', 'fog'],
+        762: ['fog', 'fog'],
+        771: ['fog', 'fog'],
+        781: ['fog', 'fog'],
+        
+        800: ['clearsky_day', 'clearsky'],
+
+        801: ['fair_day', 'fair'],
+        802: ['fair_day', 'fair'],
+        803: ['fair_day', 'fair'],
+        804: ['cloudy', 'cloudy']
     }
 
     if (owmCode in owmYrDict) {
@@ -73,6 +90,16 @@ function OwmYrIcon({owmCode, isDay, cloudiness}) {
             // use day/night icons
             const iconName = yrCodes[1]
             yrCode = iconName + (isDay ? '_day' : '_night')
+        }
+
+        // some icons always neutral regardless of cloudiness
+        if (700 <= owmCode && owmCode <= 799 || owmCode == 804) {
+            yrCode = yrCodes[0]
+        }
+
+        // some icons always have day/night variants
+        if (800 <= owmCode && owmCode <= 803) {
+            yrCode = yrCodes[1]
         }
     }
 
