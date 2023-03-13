@@ -40,13 +40,15 @@ function CurrentWeather({lat, lon, place}) {
   let prec = 0;
   if (currentWeather?.rain) prec = currentWeather?.rain['1h']
   if (currentWeather?.snow) prec = currentWeather?.snow['1h']
+  
+  const cloudiness = currentWeather?.clouds?.all
 
   return (
     <Card>
         <Card.Body>
             <Card.Title>Current Conditions: <strong>{weatherText}</strong></Card.Title>
             <div className="current-weather">
-              <OwmYrIcon owmCode={weatherCode} isDay={isDay}/>
+              <OwmYrIcon owmCode={weatherCode} isDay={isDay} cloudiness={cloudiness}/>
 
               <div className="temperature">
               <div className="temperature__icon">

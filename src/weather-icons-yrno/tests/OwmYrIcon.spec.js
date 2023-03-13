@@ -26,17 +26,25 @@ import '@testing-library/jest-dom'
 
 
 it("renders icon", () => {
-    render(<OwmYrIcon owmCode={200} isDay={false}/> );
+    render(<OwmYrIcon owmCode={200} isDay={false} cloudiness={85} /> );
     let icon = screen.getByRole("img")
     
     expect(icon).toBeInTheDocument()
     expect(icon).toHaveAttribute('src', 'lightrainandthunder.svg')
 
-    render(<OwmYrIcon owmCode={221} isDay={true}/> );
+    
+    render(<OwmYrIcon owmCode={221} isDay={true} cloudiness={35}/> );
     icon = screen.getAllByRole("img")[1]
     
     expect(icon).toBeInTheDocument()
-    expect(icon).toHaveAttribute('src', 'heavyrainshowersandthunder_day.svg')
+    expect(icon).toHaveAttribute('src', 'rainshowersandthunder_day.svg')
+
+
+    render(<OwmYrIcon owmCode={800} isDay={true} cloudiness={35}/> );
+    icon = screen.getAllByRole("img")[2]
+    
+    expect(icon).toBeInTheDocument()
+    expect(icon).toHaveAttribute('src', 'clearsky_day.svg')
 });
 
 
