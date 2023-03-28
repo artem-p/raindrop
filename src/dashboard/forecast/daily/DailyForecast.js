@@ -28,6 +28,8 @@ function ForecastElement(singleForecast) {
 
 
 function DailyForecast({forecast}) {
+    // todo yr forecast instead of owm
+
     if (Array.isArray(forecast)) {
         forecast = forecast.slice(0, 6)
         return (

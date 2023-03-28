@@ -12,8 +12,6 @@ function Dashboard() {
   const lat= Math.random() * 180 - 90
   const lon = Math.random() * 360 - 180
 
-  // todo fetch forecast here
-
   const [forecast, setForecast] = useState({})
 
   async function fetchForecast(lat, lon) {
@@ -33,7 +31,7 @@ function Dashboard() {
   return (
     <div className="dashboard">
       <CurrentWeather lat={lat} lon={lon} />
-      {/* <DailyForecast forecast={forecast} /> */}
+      <DailyForecast forecast={forecast} />
       <Forecast forecast={forecast} />
     </div>
   )
