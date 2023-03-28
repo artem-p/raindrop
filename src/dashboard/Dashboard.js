@@ -27,7 +27,7 @@ function Dashboard() {
     const requestInterval = setInterval(fetchForecast, 60000 * 10, lat, lon);
 
     return () => clearInterval(requestInterval);
-  }, [lat, lon]); 
+  }, []); 
 
 
   return (

@@ -6,7 +6,7 @@ import './Forecast.css'
 
 
 
-function Forecast({lat, lon}) {
+function Forecast({forecast}) {
   //  todo
   //  2 вкладки - обзор и график
   //  обзор как на фореке по дням. Значок и температура мин макс
