@@ -3,38 +3,38 @@ import { DateTime } from 'luxon';
 import Card from 'react-bootstrap/Card';
 import YrIcon from '../../weather-icons-yrno/YrIcon';
 
-import './DailyForecast.css'
+import './HourlyForecast.css'
 
 
-function ForecastElement(singleForecast) {
+function HourlyForecastElement(singleForecast) {
     const time = singleForecast?.end
     const maxTemp = singleForecast?.temperature?.max?.toFixed(0)
     const minTemp = singleForecast?.temperature?.min?.toFixed(0)
     const weatherSymbol = singleForecast?.twentyFourHourSymbol
 
     return (
-        <div className="forecast-element" key={time}>
-            <div className="forecast-element__icon">
+        <div className="hourly-forecast-element" key={time}>
+            <div className="hourly-forecast-element__icon">
               <YrIcon weatherSymbol={weatherSymbol}/>
             </div>
 
-            <div className="forecast-element__time">
+            <div className="hourly-forecast-element__time">
                 {DateTime.fromISO(time).toLocaleString({weekday: 'short'})}
             </div>
 
-            <div className="forecast-element__temperature">{maxTemp}<sup>°</sup> / {minTemp}<sup>°</sup></div>
+            <div className="hourly-forecast-element__temperature">{maxTemp}<sup>°</sup> / {minTemp}<sup>°</sup></div>
         </div>
     )
 }
 
 
-function DailyForecastContent({forecast}) {
+function HourlyForecastContent({forecast}) {
 
     if (Array.isArray(forecast)) {
         forecast = forecast.slice(0, 6)
         return (
-            <div className='forecast'>
-                {forecast.map(ForecastElement)}
+            <div className='hourly-forecast'>
+                {forecast.map(HourlyForecastElement)}
             </div>
         )
     } else {
@@ -45,13 +45,15 @@ function DailyForecastContent({forecast}) {
   
 }
 
-function DailyForecast({forecast}) {
+function HourlyForecast({forecast}) {
+    //  todo real hourly forecast here
+    
     return (
-        <Card className='forecast-card'>
+        <Card className='hourly-forecast-card'>
             <Card.Body>
                 <Card.Title>
                 Forecast for 5 days
-                <DailyForecastContent forecast={forecast?.dayIntervals}/>
+                <HourlyForecastContent forecast={forecast?.dayIntervals}/>
                 </Card.Title>
             </Card.Body>
         </Card>
@@ -59,4 +61,4 @@ function DailyForecast({forecast}) {
 }
   
 
-export default DailyForecast
+export default HourlyForecast
