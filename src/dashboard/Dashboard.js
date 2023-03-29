@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import './Dashboard.css'
 import CurrentWeather from './CurrentWeather'
-import Forecast from './forecast/Forecast'
-import DailyForecast from './forecast/daily/DailyForecast'
+import DailyForecast from './daily-forecast/DailyForecast'
 
 import { yrRequests } from '../api'
 
@@ -31,8 +30,8 @@ function Dashboard() {
   return (
     <div className="dashboard">
       <CurrentWeather lat={lat} lon={lon} />
+      {/* <DailyForecast forecast={forecast} /> */}
       <DailyForecast forecast={forecast} />
-      <Forecast forecast={forecast} />
     </div>
   )
 }
