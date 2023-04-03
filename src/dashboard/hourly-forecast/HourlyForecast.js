@@ -7,11 +7,11 @@ import './HourlyForecast.css'
 
 
 function HourlyForecastElement(singleForecast) {
-    const time = singleForecast?.end
-    const maxTemp = singleForecast?.temperature?.max?.toFixed(0)
-    const minTemp = singleForecast?.temperature?.min?.toFixed(0)
-    const weatherSymbol = singleForecast?.twentyFourHourSymbol
+    const time = singleForecast?.start
+    const temp = singleForecast?.temperature?.value?.toFixed(0)
+    const weatherSymbol = singleForecast?.symbolCode?.next1Hour
 
+    
     return (
         <div className="hourly-forecast-element" key={time}>
             <div className="hourly-forecast-element__icon">
@@ -19,10 +19,10 @@ function HourlyForecastElement(singleForecast) {
             </div>
 
             <div className="hourly-forecast-element__time">
-                {DateTime.fromISO(time).toLocaleString({weekday: 'short'})}
+                {DateTime.fromISO(time).toLocaleString(DateTime.TIME_SIMPLE)}
             </div>
 
-            <div className="hourly-forecast-element__temperature">{maxTemp}<sup>°</sup> / {minTemp}<sup>°</sup></div>
+            <div className="hourly-forecast-element__temperature">{temp}<sup>°</sup> </div>
         </div>
     )
 }
@@ -31,7 +31,7 @@ function HourlyForecastElement(singleForecast) {
 function HourlyForecastContent({forecast}) {
 
     if (Array.isArray(forecast)) {
-        forecast = forecast.slice(0, 6)
+        forecast = forecast.slice(0, 24)
         return (
             <div className='hourly-forecast'>
                 {forecast.map(HourlyForecastElement)}
@@ -47,13 +47,13 @@ function HourlyForecastContent({forecast}) {
 
 function HourlyForecast({forecast}) {
     //  todo real hourly forecast here
-    
+    console.log(forecast)
     return (
         <Card className='hourly-forecast-card'>
             <Card.Body>
                 <Card.Title>
                 Forecast for 5 days
-                <HourlyForecastContent forecast={forecast?.dayIntervals}/>
+                <HourlyForecastContent forecast={forecast?.shortIntervals}/>
                 </Card.Title>
             </Card.Body>
         </Card>
