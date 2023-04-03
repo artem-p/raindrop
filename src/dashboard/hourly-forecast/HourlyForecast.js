@@ -46,8 +46,6 @@ function HourlyForecastContent({forecast}) {
 }
 
 function HourlyForecast({forecast}) {
-    //  todo real hourly forecast here
-    console.log(forecast)
     return (
         <Card className='hourly-forecast-card'>
             <Card.Body>
