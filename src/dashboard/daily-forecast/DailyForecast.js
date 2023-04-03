@@ -1,6 +1,7 @@
 import React from 'react'
 import { DateTime } from 'luxon';
-import YrIcon from '../../../weather-icons-yrno/YrIcon';
+import Card from 'react-bootstrap/Card';
+import YrIcon from '../../weather-icons-yrno/YrIcon';
 
 import './DailyForecast.css'
 
@@ -27,7 +28,8 @@ function ForecastElement(singleForecast) {
 }
 
 
-function DailyForecast({forecast}) {
+function DailyForecastContent({forecast}) {
+
     if (Array.isArray(forecast)) {
         forecast = forecast.slice(0, 6)
         return (
@@ -42,5 +44,19 @@ function DailyForecast({forecast}) {
     }
   
 }
+
+function DailyForecast({forecast}) {
+    return (
+        <Card className='forecast-card'>
+            <Card.Body>
+                <Card.Title>
+                Forecast for 5 days
+                <DailyForecastContent forecast={forecast?.dayIntervals}/>
+                </Card.Title>
+            </Card.Body>
+        </Card>
+    )
+}
+  
 
 export default DailyForecast

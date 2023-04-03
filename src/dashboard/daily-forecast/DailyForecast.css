@@ -1,3 +1,7 @@
+.forecast-card {
+    margin-top: 10px;
+}
+
 .forecast {
     display: flex;
     flex-direction: row;
