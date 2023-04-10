@@ -1,0 +1,29 @@
+.hourly-forecast-card {
+    margin-top: 10px;
+}
+
+
+.hourly-forecast {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    overflow-x: auto;
+}
+
+
+.hourly-forecast-element:not(:first-child) {
+    margin-left: 30px;
+}
+
+
+.hourly-forecast-element__time {
+    text-align: center;
+}
+
+
+.hourly-forecast-element__temperature {
+    text-align: center;
+    font-weight: bold;
+}
+
+

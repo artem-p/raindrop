@@ -4,7 +4,7 @@ import { WiThermometer, WiWind } from 'react-icons/wi'
 import { FiUmbrella } from 'react-icons/fi'
 import { BiWind } from 'react-icons/bi'
 import YrIcon from '../weather-icons-yrno/YrIcon'
-import OwmYrIcon from '../weather-icons-yrno/OwmYrIcon'
+import {OwmYrIcon} from '../weather-icons-yrno/OwmYrIcon'
 import { owmRequests } from '../api'
 import { kelvinToCelcius } from '../common';
 import WindIcon from './WindIcon'
@@ -35,16 +35,20 @@ function CurrentWeather({lat, lon, place}) {
   const feelsLike = kelvinToCelcius(currentWeather?.main?.feels_like);
   const wind = currentWeather?.wind;
 
+  const isDay=currentWeather?.sys?.sunrise <= currentWeather?.dt && currentWeather?.dt < currentWeather?.sys?.sunset
+
   let prec = 0;
   if (currentWeather?.rain) prec = currentWeather?.rain['1h']
   if (currentWeather?.snow) prec = currentWeather?.snow['1h']
+  
+  const cloudiness = currentWeather?.clouds?.all
 
   return (
     <Card>
         <Card.Body>
             <Card.Title>Current Conditions: <strong>{weatherText}</strong></Card.Title>
             <div className="current-weather">
-              <OwmYrIcon owmCode={weatherCode}/>
+              <OwmYrIcon owmCode={weatherCode} isDay={isDay} cloudiness={cloudiness}/>
 
               <div className="temperature">
               <div className="temperature__icon">
