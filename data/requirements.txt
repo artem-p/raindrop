@@ -2,3 +2,4 @@ xarray
 matplotlib
 cfgrib
 ecmwflibs
+cartopy
