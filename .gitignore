@@ -25,3 +25,5 @@ yarn-error.log*
 *.idx
 
 data/gfs/
+
+__pycache__
