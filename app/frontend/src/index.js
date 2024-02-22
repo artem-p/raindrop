@@ -7,14 +7,14 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import Dashboard from './dashboard/Dashboard';
-import Map from './map/Map';
+import MapPage from './map/Map';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Dashboard />} />
-        {/* <Route path="/raindrop/map" element={<Map />} /> */}
+        <Route path="/map" element={<MapPage />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

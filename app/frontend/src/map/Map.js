@@ -1,103 +1,133 @@
 import React, { useRef, useEffect, useState } from 'react';
-import 'mapbox-gl/dist/mapbox-gl.css';
-import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
-import Slider from '@mui/material/Slider';
-import './Map.css';
-// import { owmRequests } from '../requests';
+// https://taylor.callsen.me/using-openlayers-with-react-functional-components/
+// openlayers
+import Map from 'ol/map'
+import View from 'ol/View'
+import TileLayer from 'ol/layer/Tile'
+import VectorLayer from 'ol/layer/Vector'
+import VectorSource from 'ol/source/Vector'
+import XYZ from 'ol/source/XYZ'
+import {transform} from 'ol/proj/transorm'
+import {toStringXY} from 'ol/coordinate';
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiYXJ0ZW1wdWdhY2hldiIsImEiOiJja3l1NWJwZ3owM2IxMnd0NDUydDZqazUyIn0.b1G2XUsJEhO49s7vTH2q1Q';
+function MapWrapper(props) {
 
-function Map() {
-  const mapContainer = useRef(null);
-  const map = useRef(null);
-  const [long, setLong] = useState(30);
-  const [lat, setLat] = useState(59.9);
-  const [zoom, setZoom] = useState(6);
-  const [timestamps, setTimestamps] = useState([]);
-  const [sliderValue, setSliderValue] = useState(0);
+  // set intial state
+  const [ map, setMap ] = useState()
+  const [ featuresLayer, setFeaturesLayer ] = useState()
+  const [ selectedCoord , setSelectedCoord ] = useState()
 
+  // pull refs
+  const mapElement = useRef()
   
-  // useEffect(() => {
-  //   fetch(owmRequests.fetchRadarData)
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       if (data?.radar?.past) {
-  //         const timestamps = data.radar.past;
-          
-  //         setTimestamps(timestamps);
-          
-  //         if (timestamps.length > 0) {
-  //           setSliderValue(timestamps[timestamps.length - 1].time)
-  //         }
-  //       }    
-  //     });
-  // }, []);
+  // create state ref that can be accessed in OpenLayers onclick callback function
+  //  https://stackoverflow.com/a/60643670
+  const mapRef = useRef()
+  mapRef.current = map
 
+  // initialize map on first render - logic formerly put into componentDidMount
+  useEffect( () => {
 
-  useEffect(() => {
-    if (map.current) return; // initialize map only once
+    // create and add vector source layer
+    const initalFeaturesLayer = new VectorLayer({
+      source: new VectorSource()
+    })
 
-    map.current = new mapboxgl.Map({
-      container: mapContainer.current,
-      style: 'mapbox://styles/mapbox/satellite-streets-v11',
-      center: [long, lat],
-      zoom: zoom
-    });
-  });
+    // create map
+    const initialMap = new Map({
+      target: mapElement.current,
+      layers: [
+        
+        // USGS Topo
+        new TileLayer({
+          source: new XYZ({
+            url: 'https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer/tile/{z}/{y}/{x}',
+          })
+        }),
 
-  
-  useEffect(() => {
-    if (!timestamps || timestamps.length === 0) return;
+        // Google Maps Terrain
+        /* new TileLayer({
+          source: new XYZ({
+            url: 'http://mt0.google.com/vt/lyrs=p&hl=en&x={x}&y={y}&z={z}',
+          })
+        }), */
 
-    let lastRadarPath = timestamps[timestamps.length - 1].path;
+        initalFeaturesLayer
+        
+      ],
+      view: new View({
+        projection: 'EPSG:3857',
+        center: [0, 0],
+        zoom: 2
+      }),
+      controls: []
+    })
 
-    map.current.on('load', function(){
-      map.current.addLayer({
-        "id": "precipitation",
-        "type": "raster",
-        "source": {
-          "type": "raster",
-          "tiles": [`https://tilecache.rainviewer.com/${lastRadarPath}/512/{z}/{x}/{y}/1/1_0.png`],
-          "tileSize": 256
-        },
-        "minzoom": 0,
-        "maxzoom": 22
-      });
+    // set map onclick handler
+    initialMap.on('click', handleMapClick)
 
-      map.current.setPaintProperty(
-        'precipitation',
-        'raster-opacity',
-        1
+    // save map and vector layer references to state
+    setMap(initialMap)
+    setFeaturesLayer(initalFeaturesLayer)
+
+  },[])
+
+  // update map if features prop changes - logic formerly put into componentDidUpdate
+  useEffect( () => {
+
+    if (props.features.length) { // may be null on first render
+
+      // set features to map
+      featuresLayer.setSource(
+        new VectorSource({
+          features: props.features // make sure features is an array
+        })
       )
-    });
 
-  }, [timestamps]);
+      // fit map to feature extent (with 100px of padding)
+      map.getView().fit(featuresLayer.getSource().getExtent(), {
+        padding: [100,100,100,100]
+      })
 
-  
-  const handleSliderChange = (event, newValue) => {
-    setSliderValue(newValue);
+    }
+
+  },[props.features])
+
+  // map click handler
+  const handleMapClick = (event) => {
+
+    // get clicked coordinate using mapRef to access current React state inside OpenLayers callback
+    //  https://stackoverflow.com/a/60643670
+    const clickedCoord = mapRef.current.getCoordinateFromPixel(event.pixel);
+
+    // transform coord to EPSG 4326 standard Lat Long
+    const transormedCoord = transform(clickedCoord, 'EPSG:3857', 'EPSG:4326')
+
+    // set React state
+    setSelectedCoord( transormedCoord )
+
+    console.log(transormedCoord)
+    
   }
 
-  const getSliderMin = () => {
-    return timestamps ? timestamps?.length > 0 ? timestamps[0].time : 0 : 0;
-  }
+  // render component
+  return (      
+    <div ref={mapElement} className="map-container"></div>
+  ) 
 
-  const getSliderMax = () => {
-    return timestamps ? timestamps?.length > 0 ? timestamps[timestamps.length - 1].time : 0 : 0;
-  }
-  
-  return <div>
-          <div id='map'>
-            <div ref={mapContainer} className="map-container" />
-          </div>
-
-          <div className='bottom-controls'>
-            <Slider value={sliderValue} defaultValue={getSliderMax()} onChange={handleSliderChange} marks={true} min={getSliderMin()} max={getSliderMax()} step={600}/>
-          </div>
-        </div>;
 }
 
-export default Map;
+
+function MapPage() {
+  
+  return (
+    <div className="map-container">
+      <MapWrapper />
+    </div>
+  )
+}
+
+export default MapPage;
 
   
   
