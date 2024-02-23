@@ -3,16 +3,21 @@ import React, { useRef, useEffect, useState } from 'react';
 // openlayers
 import Map from 'ol/Map'
 import View from 'ol/View'
+import OSM from 'ol/source/OSM'
 import TileLayer from 'ol/layer/Tile'
 import VectorLayer from 'ol/layer/Vector'
 import VectorSource from 'ol/source/Vector'
-import XYZ from 'ol/source/XYZ'
 import {transform} from 'ol/proj'
+import Static from 'ol/source/ImageStatic.js';
+import Projection from 'ol/proj/Projection.js';
 import {toStringXY} from 'ol/coordinate';
 
 import './Map.css'
 
 function MapWrapper(props) {
+
+  // todo add image
+  // https://openlayers.org/en/latest/examples/static-image.html
 
   // set intial state
   const [ map, setMap ] = useState()
@@ -49,9 +54,7 @@ function MapWrapper(props) {
         // }),
 
         new TileLayer({
-          source: new XYZ({
-            url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-          })
+          source: new OSM()
         }),
 
         // Google Maps Terrain
