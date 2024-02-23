@@ -41,9 +41,16 @@ function MapWrapper(props) {
       layers: [
         
         // USGS Topo
+        // new TileLayer({
+        //   source: new XYZ({
+        //     url: 'https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer/tile/{z}/{y}/{x}',
+        //   })
+
+        // }),
+
         new TileLayer({
           source: new XYZ({
-            url: 'https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer/tile/{z}/{y}/{x}',
+            url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
           })
         }),
 
