@@ -1,14 +1,16 @@
 import React, { useRef, useEffect, useState } from 'react';
 // https://taylor.callsen.me/using-openlayers-with-react-functional-components/
 // openlayers
-import Map from 'ol/map'
+import Map from 'ol/Map'
 import View from 'ol/View'
 import TileLayer from 'ol/layer/Tile'
 import VectorLayer from 'ol/layer/Vector'
 import VectorSource from 'ol/source/Vector'
 import XYZ from 'ol/source/XYZ'
-import {transform} from 'ol/proj/transorm'
+import {transform} from 'ol/proj'
 import {toStringXY} from 'ol/coordinate';
+
+import './Map.css'
 
 function MapWrapper(props) {
 
@@ -75,7 +77,7 @@ function MapWrapper(props) {
   // update map if features prop changes - logic formerly put into componentDidUpdate
   useEffect( () => {
 
-    if (props.features.length) { // may be null on first render
+    if (props?.features?.length) { // may be null on first render
 
       // set features to map
       featuresLayer.setSource(
@@ -101,12 +103,12 @@ function MapWrapper(props) {
     const clickedCoord = mapRef.current.getCoordinateFromPixel(event.pixel);
 
     // transform coord to EPSG 4326 standard Lat Long
-    const transormedCoord = transform(clickedCoord, 'EPSG:3857', 'EPSG:4326')
+    const transformedCoord = transform(clickedCoord, 'EPSG:3857', 'EPSG:4326')
 
     // set React state
-    setSelectedCoord( transormedCoord )
+    setSelectedCoord( transformedCoord )
 
-    console.log(transormedCoord)
+    // console.log(transormedCoord)
     
   }
 
@@ -121,9 +123,7 @@ function MapWrapper(props) {
 function MapPage() {
   
   return (
-    <div className="map-container">
       <MapWrapper />
-    </div>
   )
 }
 
