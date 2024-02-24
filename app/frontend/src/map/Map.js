@@ -5,6 +5,7 @@ import Map from 'ol/Map'
 import View from 'ol/View'
 import OSM from 'ol/source/OSM'
 import TileLayer from 'ol/layer/Tile'
+import ImageLayer from 'ol/layer/Image';
 import VectorLayer from 'ol/layer/Vector'
 import VectorSource from 'ol/source/Vector'
 import {transform} from 'ol/proj'
@@ -82,6 +83,21 @@ function MapWrapper(props) {
     setMap(initialMap)
     setFeaturesLayer(initalFeaturesLayer)
 
+    const extent = [0, -90, 360, 90]
+
+    const projection = new Projection({
+      units: 'degrees',
+      extent: extent
+    })
+
+    let imageLayer = new ImageLayer({
+      source: new Static({
+          url: '/grib/gfs/gfs.f000.png',
+          projection: 'EPSG:4326',
+          imageExtent: extent
+      })
+    });
+    initialMap.addLayer(imageLayer)
   },[])
 
   // update map if features prop changes - logic formerly put into componentDidUpdate
