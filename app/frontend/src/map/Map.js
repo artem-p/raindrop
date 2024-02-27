@@ -4,14 +4,15 @@ import React, { useRef, useEffect, useState } from 'react';
 import Map from 'ol/Map'
 import View from 'ol/View'
 import OSM from 'ol/source/OSM'
-import TileLayer from 'ol/layer/Tile'
-import ImageLayer from 'ol/layer/Image';
+import GeoTIFF from 'ol/source/GeoTIFF.js'
+import TileLayer from 'ol/layer/WebGLTile'
+import ImageLayer from 'ol/layer/Image'
 import VectorLayer from 'ol/layer/Vector'
 import VectorSource from 'ol/source/Vector'
 import {transform} from 'ol/proj'
 import Static from 'ol/source/ImageStatic.js';
 import Projection from 'ol/proj/Projection.js';
-import {toStringXY} from 'ol/coordinate';
+import {toStringXY, wrapX} from 'ol/coordinate';
 
 import './Map.css'
 
@@ -90,14 +91,32 @@ function MapWrapper(props) {
       extent: extent
     })
 
-    let imageLayer = new ImageLayer({
-      source: new Static({
-          url: '/grib/gfs/gfs.f000.png',
-          projection: 'EPSG:4326',
-          imageExtent: extent
-      })
-    });
-    initialMap.addLayer(imageLayer)
+    // let imageLayer = new ImageLayer({
+    //   source: new Static({
+    //       url: '/grib/gfs/gfs.f000.png',
+    //       projection: 'EPSG:4326',
+    //       imageExtent: extent
+    //   })
+    // });
+    
+    // initialMap.addLayer(imageLayer)
+    
+    let gribTiff = new GeoTIFF({
+      sources: [
+        {
+          url: '/grib/gfs/gfs.f000.geotiff'
+        },
+      ],
+      wrapX: true
+    })
+
+    let gribLayer = new TileLayer({
+      source: gribTiff,
+    })
+
+    
+
+    initialMap.addLayer(gribLayer)
   },[])
 
   // update map if features prop changes - logic formerly put into componentDidUpdate
