@@ -104,14 +104,34 @@ function MapWrapper(props) {
     let gribTiff = new GeoTIFF({
       sources: [
         {
-          url: '/grib/gfs/gfs.f000.geotiff'
+          url: '/grib/gfs/gfs.f000.geotiff',
+          min: - 70,
+          max: 70,
+          nodata: -32768
         },
       ],
       wrapX: true
     })
 
+    let band = ['band', 1]
+    
+    let style = {
+      color: [
+        'interpolate',
+        ['linear'],
+        band,
+        // -71, [255, 255, 255, 0],
+        -70, [30, 30, 30, 1],
+        70, [200, 200, 200, 1],
+        // 289, [196, 229, 183, 1],
+        // 294, [217, 164, 73, 1],
+        // 300, [199, 69, 40, 1]
+      ]
+    }
+
     let gribLayer = new TileLayer({
       source: gribTiff,
+      style: style
     })
 
     
