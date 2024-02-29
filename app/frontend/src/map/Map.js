@@ -110,7 +110,8 @@ function MapWrapper(props) {
           nodata: -32768
         },
       ],
-      wrapX: true
+      wrapX: true,
+      normalize: false
     })
 
     let band = ['band', 1]
@@ -120,23 +121,33 @@ function MapWrapper(props) {
         'interpolate',
         ['linear'],
         band,
-        // -71, [255, 255, 255, 0],
-        -70, [30, 30, 30, 1],
-        70, [200, 200, 200, 1],
-        // 289, [196, 229, 183, 1],
-        // 294, [217, 164, 73, 1],
-        // 300, [199, 69, 40, 1]
+        -70, [19, 22, 180, 1],
+        -35, [70, 111, 207, 1],
+        0, [196, 229, 183, 1],
+        35, [217, 164, 73, 1],
+        70, [199, 69, 40, 1]
       ]
     }
 
     let gribLayer = new TileLayer({
       source: gribTiff,
-      style: style
+      style: style,
+      opacity: 0.8
     })
 
     
-
     initialMap.addLayer(gribLayer)
+
+    initialMap.on('singleclick', function(evt) {
+      var coordinate = evt.coordinate;
+      var data = gribLayer.getData(evt.pixel);
+      console.log(data[0])
+      var celcius = data[0] - 273.15
+      var codeText = "Temp in Celcius"
+      // content.innerHTML = "<div class='popupText'>Sea Surface Temperature: <strong>" +     
+          // celcius.toFixed(2) + "</strong><div class=returnVal>" + codeText + "</div></div>";
+      // overlay.setPosition(coordinate);
+    })
   },[])
 
   // update map if features prop changes - logic formerly put into componentDidUpdate
